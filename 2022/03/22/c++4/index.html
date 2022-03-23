@@ -12,7 +12,9 @@
   <meta name="google" content="notranslate" />
   
   <meta name="description" content="C++4static
-local val123456v...">
+local val
+
+12345...">
   <meta name="author" content="John Doe">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -179,7 +181,7 @@ local val123456v...">
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>March 22, 2022</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1390</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1401</span>
     </div>
   </div>
 </section>
@@ -187,31 +189,39 @@ local val123456v...">
       <section class="content">
         
         <h1 id="C-4"><a href="#C-4" class="headerlink" title="C++4"></a>C++4</h1><h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ol>
-<li>local val<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> a=<span class="hljs-number">0</span>;<br>    a++;<br>    std::cout&lt;&lt;a&lt;&lt;std::endl;<br>&#125;<br></code></pre></td></tr></table></figure>
-静态局部变量在全局变量区<br>一次构造，不再释放</li>
-<li>static fun<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
-函数声明static只能在当前文件内调用</li>
+<li>local val</li>
 </ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> a=<span class="hljs-number">0</span>;<br>    a++;<br>    std::cout&lt;&lt;a&lt;&lt;std::endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>静态局部变量在全局变量区<br>一次构造，不再释放<br>2. static fun</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>函数声明static只能在当前文件内调用</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">extern</span> <span class="hljs-type">int</span> a;<br></code></pre></td></tr></table></figure>
 <p>调用其他文件中的全局变量、函数</p>
 <p>一般函数默认全局链接，变量默认为本文件</p>
 <p>全局变量如果static只能在本文件使用</p>
 <ol start="3">
-<li>static data number<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span><br>&#123;<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> i;<br>pubilc:<br>    Test::<span class="hljs-built_in">Test</span>();<br>&#125;;<br></code></pre></td></tr></table></figure>
-属性static属于所有该类对象，不允许构造，直接一次性赋值<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> Test::i=<span class="hljs-number">100</span>;<br></code></pre></td></tr></table></figure></li>
+<li>static data number</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span><br>&#123;<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> i;<br>pubilc:<br>    Test::<span class="hljs-built_in">Test</span>();<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>属性static属于所有该类对象，不允许构造，直接一次性赋值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> Test::i=<span class="hljs-number">100</span>;<br></code></pre></td></tr></table></figure>
+<ol start="4">
 <li>static funcation number<br>类内函数static，可以直接从类调用，不必构造对象</li>
 </ol>
 <p><strong>限制：不能进行写操作，失去this指针</strong></p>
 <p>其他：design pattern 设计模式<br>单件模式</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Single</span><br>&#123;<br>    <span class="hljs-type">static</span> Single* self;<br>    <span class="hljs-built_in">Single</span>();<br>pubilc:<br>    <span class="hljs-function"><span class="hljs-type">static</span> Single* <span class="hljs-title">get_instance</span><span class="hljs-params">()</span></span>;<br>&#125;<br><span class="hljs-function">Single* <span class="hljs-title">Single::get_instance</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(self==<span class="hljs-literal">NULL</span>)<br>    &#123;<br>        self=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Single</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> self;<br>&#125;;<br>Single* Single::self=<span class="hljs-literal">NULL</span>;<br></code></pre></td></tr></table></figure>
 <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><ol>
-<li><p>const parameter<br>传地址时cosnt修饰只读参数</p>
+<li>const parameter<br>传地址时cosnt修饰只读参数</li>
+</ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span>* i)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//...</span><br>    <span class="hljs-comment">//不可写入</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <p>l-value 左值<br><em><strong>作业：自学UDP socket完成两个计算机或两个程序之间的数据收发，发送：一个字符串、一个数据对象</strong></em></p>
-</li>
-<li><p>const return value</p>
+<ol start="2">
+<li>const return value</li>
+</ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span><br>&#123;<br>    <br>&#125;;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span><br>&#123;<br>    <span class="hljs-comment">//&#x27;&#x27;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">const</span> A <span class="hljs-title">fun</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
+
+<ol start="3">
 <li><p>const data number</p>
 </li>
 <li><p>const funcation number</p>
