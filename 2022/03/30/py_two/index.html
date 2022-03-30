@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html lang="zh,en,default" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>py2 - yunfei</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content=", help_zx,py">
+  <meta name="description" content="第二章、列表和元组2.1序列概述想象一下如和表达一个有...">
+  <meta name="author" content="yunfei">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/vs2015.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/donate/alipay.jpg',
+        wechat: '/images/donate/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">py2</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://s1.ax1x.com/2022/03/29/q6cmJH.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">py2</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>March 30, 2022</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3117</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <h3 id="第二章、列表和元组"><a href="#第二章、列表和元组" class="headerlink" title="第二章、列表和元组"></a>第二章、列表和元组</h3><h4 id="2-1序列概述"><a href="#2-1序列概述" class="headerlink" title="2.1序列概述"></a>2.1序列概述</h4><p>想象一下如和表达一个有限长的数列，或者表示一个有限个元素构成的集合。一个一个变量的去定义肯定是不现实的，不仅耗时耗力而且不能很好的表达这些值之间的联系。所以需要<strong>容器</strong>（container）的数据结构。容器就是一种可以包含其他对象的对象。</p>
+<p>容器主要有序列、映射和集合。序列类型适合表示上面的有限长数列，集合自然用集合数据类型表示。<strong>这一章主要阐述序列</strong>。</p>
+<p>python种序列对应的数据类型——列表和元组。区别就是，<strong>列表成员可变，元组成员不可变</strong>。当然字符串也是一种序列结构。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">lst=[<span class="hljs-number">1</span>,<span class="hljs-string">&quot;this&quot;</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">#这是一个列表</span><br>tup=(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;lalala&quot;</span>) <span class="hljs-comment">#这是一个元组</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2通用序列操作"><a href="#2-2通用序列操作" class="headerlink" title="2.2通用序列操作"></a>2.2通用序列操作</h4><p>序列是一串<strong>有序</strong>变量，既然是<strong>一串</strong>，那么就能进行一些操作。比如直接找到第几个位置的变量，比如把这一串切成几串，比如把几串合成一串，比如从前向后依次进行某种操作等。这些都是对于序列的通用操作。</p>
+<p><strong>索引</strong>（indexing）就是访问某个特定位置的元素，因为序列是有序的，所以每个元素都有一个对应的值来表示它的位置，通常叫下标或索引值。从第一个元素往后，分别是<strong>0</strong>、1、……。<strong>程序中所有数数的东西都是从0开始的</strong>。</p>
+<p>python出来的比较晚，所以新奇、简单的方法比较多，它还支持从后往前数，<strong>最后一个元素对应-1</strong>，往前依次减1。也就是所你可以通过两种下标索引。</p>
+<p>注意：<strong>不要试图访问不存在的下标</strong>。这个非常重要。比如当你的列表只有两个元素时，你访问第三个元素（下标为2），就会导致程序出错。</p>
+<p><strong>切片</strong>（slicing）就是从序列中切出来你想要的那段。注意lit[n:m]中的下标为n的包含在切片内而后一个下标为m的<strong>不包含</strong>。步长为负时，第一个索引必须比第二个大，因为它时是从后往前切的。当你神略一个索引时，省略前一个表示从0开始，省略后一个时表示到最后一个结束（<strong>包含最后一个</strong>）。</p>
+<p>序列拼接可使用+运算符，可将<strong>同类型</strong>的序列拼接。</p>
+<p>序列只能与整数相乘，表示<strong>重复</strong>含义。你可以试试两个序列相乘会怎么样。</p>
+<p>in运算符是一种运算符，就如同加减乘除（算数运算符）。用来检查序列中是否含有<strong>该元素</strong>。在字符串中还可用来检查是否含有该子串。</p>
+<h4 id="2-3列表：Python的主力"><a href="#2-3列表：Python的主力" class="headerlink" title="2.3列表：Python的主力"></a>2.3列表：Python的主力</h4><p>列表是Python中最常用的数据类型，因为它的成员数据类型不限（列表的元素可以是整型变量也可以是其他列表等）且自身<strong>可变</strong>。</p>
+<p>列表可通过以下方式修改：</p>
+<ol>
+<li>元素赋值</li>
+<li>删除元素del</li>
+<li>切片赋值</li>
+<li>删除切片</li>
+<li>等等</li>
+</ol>
+<p>这里，书中提到了方法一词，方法就是函数，只不过我们更常用方法称呼类中的函数。至于类，比如列表、比如字符串等数据类型都是一种类。现在可以将方法理解为<strong>和数据类型紧密联系的函数</strong>。比如，列表的方法只有列表类型的变量可以使用，其他类型的变量不能使用。</p>
+<p>通过以下方式使用方法使用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">object</span>.method(arguments)<br></code></pre></td></tr></table></figure>
+<p>列表有以下方法：</p>
+<ol>
+<li>append<br>将<strong>一个对象</strong>添加到列表末尾，注意不管你传入什么东西，这个东西都将以一个对象的形式添加到列表尾部。且append方法不会返回新列表，它会直接更改当前列表。</li>
+</ol>
+<p>比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst2=[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst.append(lst2)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]] <span class="hljs-comment">#这里的结果不是[1,2,3,4,5,6]</span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>clear<br>清空列表。</li>
+<li>copy<br>这里涉及到<strong>浅拷贝和深拷贝</strong>的概念。</li>
+</ol>
+<p>数据在内存中以二进制方式储存。当你执行<code>lst1=[1,2,3]</code>时，内存中会分配一定空间来储存这个<code>[1,2,3]</code>，你又说了把这个东西赋值给lst1，所以lst1就成为了你访问这片空间的钥匙或者说handle。此时如果你再执行<code>lst2=lst1</code>，用lst1给lst2赋值，这时其实是给你那个存储着<code>[1,2,3]</code>的空间又加了一个handle，<strong>一个门两把手</strong>。所以<strong>此时lst1与lst2指向的空间是一个东西</strong>，对于lst1的操作等同于对于lst2的操作。这种拷贝叫做浅拷贝。</p>
+<p><strong>浅拷贝会带来很多问题</strong>，有时候你这样拷贝完了，然后去动了lst2，然后lst1其实也变了，你以为它没变，这就会导致很多未知错误。</p>
+<p>而深拷贝，就是创建一个与本体完全分离且内容相同的副本。在内存上考虑这件事，其实是<strong>又开辟了一片空间</strong>，空间内储存着和本体指向的空间内相同的东西，然后lst2作为这片新空间的handle。自然此时lst1与lst2半毛钱关系都没有。</p>
+<p>copy方法就是用来进行深拷贝的，等同于[:]。但是这种做法<strong>真的所有情况下都能深拷贝吗</strong>？考虑以下如果lst中某个元素也是列表的情况。可以参考我<a target="_blank" rel="noopener" href="https://blog.csdn.net/yanyunfei0921/article/details/118739162">以前的笔记</a>。<br>4. count<br>计算指定<strong>元素</strong>出现的次数。<br>5. extend<br>与append相反，它将参数序列中<strong>每一个元素作为元素</strong>添加到列表末尾。如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst1=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst2=[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst1.extend(lst2)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst1<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]]<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>index<br>查找参数元素<strong>第一次出现</strong>的索引。</li>
+<li>insert<br>指定位置插入元素，<strong>指定索引为插入后该元素所在位置</strong>。</li>
+<li>pop<br>删除列表最后一个元素并将其返回。为什么叫pop这个名称？这与书中提到的栈结构有关，<strong>该部分看不懂没关系</strong>。</li>
+<li>remove<br>删除<strong>第一个</strong>为指定值的元素，无返回值。</li>
+<li>reverse<br>将列表倒序，无返回值。</li>
+<li>sort<br>sort意为排序，sort方法就将该列表更改为排序后的样子的方法。无返回值。sort有两个<strong>关键字参数</strong>，这种参数在使用是必须指名关键字，而对顺序无所谓。sort的key参数是你用来排序的依据，reverse是是否降序排列（True为降序）。</li>
+</ol>
+<p>事实上，排序是一件<strong>很复杂的事情</strong>，存在着各种各样的排序算法，这里使用的是python内置的排序算法——Timsort。关于Timsort可参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sunshuyi/p/12680918.html">这里</a>。关于sort的更详细使用可以参考<a target="_blank" rel="noopener" href="https://wiki.python.org/moin/HowTo/Sorting">这里</a>。</p>
+<p>小小总结一下。</p>
+<ol>
+<li>列表的方法中用于添加元素的有：<br>append、insert、extend。</li>
+<li>用于删除元素的有：<br>clear、pop、remove</li>
+<li>直接改变当前列表无返回值的有：<br>append、clear、extend、insert、remove、reverse、sort</li>
+<li>有返回值的有：<br>copy、count、index、pop</li>
+</ol>
+<h4 id="2-4元组：不可修改的序列"><a href="#2-4元组：不可修改的序列" class="headerlink" title="2.4元组：不可修改的序列"></a>2.4元组：不可修改的序列</h4><p>元组不可修改是指<strong>元组本身包含的元素不增不减</strong>。如果一个元组包含的一个元素是列表，这个列表的元素是可以修改的。如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup=(lst,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst.append(<span class="hljs-number">4</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup<br>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>
+<p>需要小小注意一下，只有一个元素的元组需要在这个元素后面加上一个逗号以表示它是元组。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a=(<span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>b=(<span class="hljs-number">1</span>,)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(a,b)<br><span class="hljs-number">1</span> (<span class="hljs-number">1</span>,) <span class="hljs-comment">#a是整数，b是元组</span><br></code></pre></td></tr></table></figure>
+
+<p>元组多用于返回值，很多内置函数的返回值都是元组。序列通用的操作（索引、切片等）元组都可以做，只要你<strong>不尝试去写入</strong>就没毛病。</p>
+<h4 id="2-5小结"><a href="#2-5小结" class="headerlink" title="2.5小结"></a>2.5小结</h4><p>本章主要内容：</p>
+<ol>
+<li>序列</li>
+<li>in运算符</li>
+<li>列表的方法</li>
+<li>元组</li>
+</ol>
+<p>本章还提到了浅拷贝与深拷贝、排序等知识。</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>yunfei</li>
+    <li><strong>本文链接：</strong><a href="https://yanyunfei0921.github.io/2022/03/30/py_two/index.html" title="https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;03&#x2F;30&#x2F;py_two&#x2F;index.html">https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;03&#x2F;30&#x2F;py_two&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="/images/donate/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/" rel="tag">py</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2022/03/30/py_one/">py1<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%E3%80%81%E5%88%97%E8%A1%A8%E5%92%8C%E5%85%83%E7%BB%84"><span class="toc-text">第二章、列表和元组</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/yanyunfei0921 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:2920241726@qq.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
