@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html lang="zh,en,default" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>default_parameter_of_C++ - yunfei</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content=", C++,default_parameter">
+  <meta name="description" content="C++默认参数C语言中，函数定义时指定了几个形参，在使...">
+  <meta name="author" content="yunfei">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/vs2015.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/donate/alipay.jpg',
+        wechat: '/images/donate/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">default_parameter_of_C++</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIM3VJ.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">default_parameter_of_C++</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 03, 2022</span>
+      
+        <span class="post-info-item">
+          <i class="iconfont iconeye"></i><span id="/2022/04/03/C++_default_parameter/" class="leancloud-counter" data-flag-title="default_parameter_of_C++"></span>
+        </span>
+        <span class="post-info-item">
+          <i class="iconfont iconheart"></i><span id="/2022/04/03/C++_default_parameter/" class="leancloud-like" data-flag-title="default_parameter_of_C++"></span>
+        </span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1344</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <h1 id="C-默认参数"><a href="#C-默认参数" class="headerlink" title="C++默认参数"></a>C++默认参数</h1><p>C语言中，函数定义时指定了几个形参，在使用时就必须传入传入与定义时个数、类型相同的参数。</p>
+<p>在某些时候这样做不太方便，比如说，创建一个窗体的函数。使用者需要指定窗体的尺寸、颜色等所有参数，而往往窗体都是黑的，这就需要定义“黑的”为默认值。C++中引入默认参数优化该问题。</p>
+<h2 id="默认参数形式"><a href="#默认参数形式" class="headerlink" title="默认参数形式"></a>默认参数形式</h2><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI 3.14</span><br><span class="hljs-comment">//声明部分指定sec_par的默认值为PI，若该形参没有参数传入，则使用PI</span><br><span class="hljs-function"><span class="hljs-type">float</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> fir_par,<span class="hljs-type">float</span> sec_par=PI)</span></span>;<br><br><span class="hljs-comment">//声明部分指定后，函数定义不能重复指定默认值</span><br><span class="hljs-function"><span class="hljs-type">float</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> fir_par,<span class="hljs-type">float</span> sec_par)</span></span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*fir_par*sec_par;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  cout&lt;&lt;<span class="hljs-built_in">fun</span>(<span class="hljs-number">2</span>)&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>&lt;&lt;<span class="hljs-built_in">fun</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)&lt;&lt;endl;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>此处sec_par的参数为3.14，第一个输出的结果即为2<em>2</em>3.14&#x3D;12.56。第二个输出为3，因为此时的sec_par为传入的3。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="声明与定义中仅写一次默认参数"><a href="#声明与定义中仅写一次默认参数" class="headerlink" title="声明与定义中仅写一次默认参数"></a>声明与定义中仅写一次默认参数</h3><p>如上例，函数声明与定义时，只能写一次默认参数，一般在函数声明中。若没有函数声明，则写在函数定义中。这是因为<strong>在一个作用域中C++只能指定一次默认参数</strong>。</p>
+<p>当出现同一函数多次声明时，可以为没有默认值的参数指定默认值，此时它的右侧必须是已指定值的默认参数。<br>如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b,<span class="hljs-type">int</span> c=<span class="hljs-number">1</span>)</span></span>; <br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> c)</span></span>; <span class="hljs-comment">/*只有c为默认参数才行*/</span><br></code></pre></td></tr></table></figure>
+<p>这样是没问题的。</p>
+<h3 id="默认参数只能在形参中最后的位置"><a href="#默认参数只能在形参中最后的位置" class="headerlink" title="默认参数只能在形参中最后的位置"></a>默认参数只能在形参中最后的位置</h3><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>正确</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> b)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>错误，因为a参数有默认参数，而b不是，不符合C++语法标准。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>正确</p>
+<h3 id="函数使用传参时，必须从左到右依次传入，不能跳过某一个参数"><a href="#函数使用传参时，必须从左到右依次传入，不能跳过某一个参数" class="headerlink" title="函数使用传参时，必须从左到右依次传入，不能跳过某一个参数"></a>函数使用传参时，必须从左到右依次传入，不能跳过某一个参数</h3><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> c=<span class="hljs-number">1</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>下面是函数使用时的几种情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)<br><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<p>正确</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+<p>错误，如果要将后面的拥有默认参数的参数赋值，必须对该参数及该参数前面的参数都进行赋值。如将c赋值2必须对b进行赋值。不存在直接空着的语法。<br>即将上述错误的做法改为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="当函数存在重载时，谨慎使用默认参数"><a href="#当函数存在重载时，谨慎使用默认参数" class="headerlink" title="当函数存在重载时，谨慎使用默认参数"></a>当函数存在重载时，谨慎使用默认参数</h3><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">0</span>)</span></span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span></span>;<br><br><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<p>这时如果这样[fun(1)]调用fun()函数，则会出现错误，编译器无法识别调用哪一个fun()函数。</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>yunfei</li>
+    <li><strong>本文链接：</strong><a href="https://yanyunfei0921.github.io/2022/04/03/C++_default_parameter/index.html" title="https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;03&#x2F;C++_default_parameter&#x2F;index.html">https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;03&#x2F;C++_default_parameter&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="/images/donate/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C_C++</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2022/04/02/C_C++_macros/">macro_in_C_or_C++<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-text">C++默认参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%E5%BD%A2%E5%BC%8F"><span class="toc-text">默认参数形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89%E4%B8%AD%E4%BB%85%E5%86%99%E4%B8%80%E6%AC%A1%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-text">声明与定义中仅写一次默认参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%E5%8F%AA%E8%83%BD%E5%9C%A8%E5%BD%A2%E5%8F%82%E4%B8%AD%E6%9C%80%E5%90%8E%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">默认参数只能在形参中最后的位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E4%BC%A0%E5%8F%82%E6%97%B6%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%BB%8E%E5%B7%A6%E5%88%B0%E5%8F%B3%E4%BE%9D%E6%AC%A1%E4%BC%A0%E5%85%A5%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%B7%B3%E8%BF%87%E6%9F%90%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-text">函数使用传参时，必须从左到右依次传入，不能跳过某一个参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%87%BD%E6%95%B0%E5%AD%98%E5%9C%A8%E9%87%8D%E8%BD%BD%E6%97%B6%EF%BC%8C%E8%B0%A8%E6%85%8E%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-text">当函数存在重载时，谨慎使用默认参数</span></a></li></ol></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/yanyunfei0921 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:2920241726@qq.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+    <div class="fab fab-like">
+      <i class="iconfont iconheart"></i>
+    </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
+
+    AV.init({
+      appId: '9YqvILfcMNAuoz9weLQbgEzI-gzGzoHsz',
+      appKey: 'PGDBxqD01loXmDecijeRxB7I',
+      serverURLs: 'https://leancloud.cn/',
+    });
+
+    const Counter = AV.Object.extend("Counter");
+    const Like = AV.Object.extend("Like");
+
+    const showCount = (Counter) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud-counter").each(async (e) => {
+        const url = $(".leancloud-counter").eq(e).attr('id').trim();
+        const query = new AV.Query("Counter");
+        query.equalTo("words", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud-counter").eq(e).text(count ? count : 0);
+      });
+    }
+
+    const addCount = (Counter) => {
+      const url = $(".leancloud-counter").length === 1 ? $(".leancloud-counter").attr('id').trim() : 'https://yanyunfei0921.github.io';
+      var query = new Counter;
+      query.save({
+        words: url
+      });
+    }
+
+    const showLike = (Like) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud-like").each(async (e) => {
+        const url = $(".leancloud-like").eq(e).attr('id').trim();
+        const query = new AV.Query("Like");
+        query.equalTo("path", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud-like").eq(e).text(count ? count : 0);
+      });
+    }
+
+    const addLike = (Like) => {
+      const url = $(".leancloud-like").length === 1 ? $(".leancloud-like").attr('id').trim() : 'https://yanyunfei0921.github.io';
+      var query = new Like;
+      query.save({
+        path: url,
+        nickName: 'Anonymous'
+      });
+      $(".leancloud-like").addClass('islike');
+      $(".fab-like").children(".iconfont").removeClass("iconheart").addClass("iconheart-fill").css("color", "#eb3223");
+      ZHAOO.zui.message({ text: '爱你哦~', type: 'success' });
+      setTimeout(() => showLike(Like), 1000);
+    }
+
+    const handleLikeClick = () => {
+      const isLike = $(".leancloud-like").length === 1 && $(".leancloud-like").hasClass('islike') ? true : false;
+      if (isLike) {
+        ZHAOO.zui.message({ text: '小心心不可以收回呢~', type: 'warning' });
+      } else {
+        addLike(Like);
+      }
+    }
+
+    $(function () {
+      addCount(Counter);
+      showCount(Counter);
+      showLike(Like);
+      $(".fab-like").on("click", function () {
+        handleLikeClick();
+      });
+    });
+
+  });
+</script>
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
