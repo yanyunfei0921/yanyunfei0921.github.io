@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<html lang="zh,en,default" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>py5 - yunfei</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content=", help_zx,py">
+  <meta name="description" content="第五章、条件、循环及其他语句你还记得第一章里提到的文本...">
+  <meta name="author" content="yunfei">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/vs2015.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/donate/alipay.jpg',
+        wechat: '/images/donate/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">py5</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://s1.ax1x.com/2022/03/29/q6cmJH.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">py5</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 05, 2022</span>
+      
+        <span class="post-info-item">
+          <i class="iconfont iconeye"></i><span id="/2022/04/05/py5/" class="leancloud-counter" data-flag-title="py5"></span>
+        </span>
+        <span class="post-info-item">
+          <i class="iconfont iconheart"></i><span id="/2022/04/05/py5/" class="leancloud-like" data-flag-title="py5"></span>
+        </span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5099</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <h3 id="第五章、条件、循环及其他语句"><a href="#第五章、条件、循环及其他语句" class="headerlink" title="第五章、条件、循环及其他语句"></a>第五章、条件、循环及其他语句</h3><p>你还记得<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>里提到的文本编辑器界面吗？一直以来我们使用的都是交互式解释器，因为它简单方便，用来验证语法再好不过。但是当你需要写很多很多行并且保存的时候，它显然不能做的很好。当学完这一章，可能就需要使用IDLE进行编程了。</p>
+<h4 id="5-1-再谈print与import"><a href="#5-1-再谈print与import" class="headerlink" title="5.1 再谈print与import"></a>5.1 再谈print与import</h4><ol>
+<li><p>print的两个参数<br>print可以打印多个字符串，默认的间隔符是空格，默认的结束符是换行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>)<br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>,sep=<span class="hljs-string">&#x27; &#x27;</span>,end=<span class="hljs-string">&#x27;\n&#x27;</span>)<br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<p>这两条语句是等价的。sep为间隔符关键字参数，end为结束符关键字参数。</p>
+</li>
+<li><p>导入模块时重命名<br>这部分在<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>讲过了哦。</p>
+</li>
+</ol>
+<h4 id="5-2-赋值魔法"><a href="#5-2-赋值魔法" class="headerlink" title="5.2 赋值魔法"></a>5.2 赋值魔法</h4><ol>
+<li>序列解包<br>元组不可改变，多用于函数返回值。而序列解包可以很方便的直接访问元组元素。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x,y,z=funcation1() <span class="hljs-comment">#funcation的返回值为包含三个元素的元组</span><br></code></pre></td></tr></table></figure>
+这时就能直接通过x，y，z访问该元组的三个元素。注意数量要对等（xyz是三个，返回值元组所含元素也是三个）。</li>
+</ol>
+<p>可通过*来实现“一对多的匹配”：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x,y,*z=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>z<br>[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>链式赋值<br>就是一个连等号呗。但是<strong>注意浅拷贝的问题</strong>。</li>
+<li>简便写法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">a=a+<span class="hljs-number">1</span><br>a+=<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+这两种写法等效。</li>
+</ol>
+<h4 id="5-3-代码块：关于缩进"><a href="#5-3-代码块：关于缩进" class="headerlink" title="5.3 代码块：关于缩进"></a>5.3 代码块：关于缩进</h4><p>代码块就是一块代码，包括若干行。为什么能将其称为块，因为他们共同属于某个函数或某个循环之类的。</p>
+<p>python使用缩进来表示代码的包含关系，即创建代码块。<strong>使用四个空格来缩进</strong>！<strong>别用Tab键，也别用其他数量的空格</strong>（尽管这样没有语法错误）！</p>
+<p>看不懂没关系，再看几行就懂了。</p>
+<h4 id="5-4-条件语句"><a href="#5-4-条件语句" class="headerlink" title="5.4 条件语句"></a>5.4 条件语句</h4><p>以前写的东西都是一行一行顺序执行的，加上条件判断语句就能跳着执行了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>：<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the bool is ture&quot;</span>)<br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the bool is false&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>当if判断语句后的真值为True时，执行if下面的语句块，为False时执行else后语句块。若无else则继续顺序执行下方代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">num=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter a number:&quot;</span>))<br><span class="hljs-keyword">if</span> num&gt;<span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;大于0&quot;</span>)<br><span class="hljs-keyword">elif</span> num&lt;<span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;小于0&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;等于0&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>当if后条件不满足时，顺序向下查看elif中条件是否满足，若满足执行该elif后语句块，然后跳过本次if判断这一大块。若所有elif都不满足执行else后语句块。<br>故上例中这些print语句所在语句块肯定<strong>有一个且仅有一个</strong>被执行。</p>
+<p>如果if、else下面都只有一条语句，可以简化的写在一行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">status=<span class="hljs-string">&quot;friend&quot;</span> <span class="hljs-keyword">if</span> name.endswith(<span class="hljs-string">&quot;Tom&quot;</span>) <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;stranger&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>这时候我们就好考虑<strong>什么是True</strong>？</p>
+<p>False、空的东西（{}、[]等）、None为假，其他东西都为真。</p>
+<p>如果if后面是一条比较运算式，按常理理解就行了。比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>&lt;<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>&gt;<span class="hljs-number">1</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>&lt;=<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>==<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
+<p><strong>注意</strong>：判等时使用&#x3D;&#x3D;而非&#x3D;，&#x3D;是赋值操作，不能用于逻辑判断。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> a=<span class="hljs-number">1</span>:<br>  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> a=<span class="hljs-number">1</span>:<br>       ^^^<br>SyntaxError: invalid syntax. Maybe you meant <span class="hljs-string">&#x27;==&#x27;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&#x27;:=&#x27;</span> instead of <span class="hljs-string">&#x27;=&#x27;</span>?<br></code></pre></td></tr></table></figure>
+
+<p>下面看几个其他<strong>比较运算符</strong>：</p>
+<ol>
+<li>&#x3D;&#x3D;与is<br>上面已经说过，&#x3D;&#x3D;是<strong>判等</strong>的比较运算符，is是用来判定是否<strong>相同</strong>的运算符。有什么区别呢？</li>
+</ol>
+<p>这要结合<a href="https://yanyunfei0921.github.io/2022/03/30/py_two/">第二章</a>提到的内存相关知识来说。&#x3D;&#x3D;是判断两个变量的内容是否相同，is是判断两个变量是否指向同一块内存。对于int、string这些非容器变量类型，两者并无差别，但对于list、tuple、set等千差万别。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x=<span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>y=<span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x==y<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x <span class="hljs-keyword">is</span> y<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst_=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst==lst_<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>lst <span class="hljs-keyword">is</span> lst_<br><span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>in<br>这是第二章提到的成员资格运算符，就是判断容器内是否有该元素的。也可用于条件表达式。<br>这些用来判断“是不是”、“有没有”的东西都也可用在if后面，毕竟如果他们不返回一个布尔值怎么反应是或不是呢？</li>
+<li>字符串与序列的比较<br>python中字符是按Unicode编码规则储存的，所有每个字符都对应着一个数字（码点），字符的大小比较就是按着这个数字大小来的。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&#x27;a&#x27;</span>&lt;<span class="hljs-string">&#x27;c&#x27;</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)<br><span class="hljs-number">97</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;c&#x27;</span>)<br><span class="hljs-number">99</span><br></code></pre></td></tr></table></figure>
+可以看出，小写字母的码点是连续依次递增的，大写字母也是如此。但<strong>大小写字母之间不是的</strong>。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;Z&#x27;</span>)<br><span class="hljs-number">90</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>下面说几个<strong>布尔逻辑运算符</strong>：</p>
+<ol>
+<li>and</li>
+<li>or</li>
+<li>not<br>他们分别对应于逻辑与、或、非。正常使用就行。但是注意<strong>短路逻辑</strong>现象。<br><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/05/qLs5TK.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">短路逻辑</span></li>
+</ol>
+<p>看出来毛病了吗？fun2压根没有执行。因为在或逻辑里，第一个如果是True的话，第二个是什么将不再重要，结果都将是True。所以or后面的代码将不再执行。特别是后面是个函数时，该情况下<strong>这个函数不会执行</strong>。</p>
+<p>接下来是一个有趣且使用的东西——断言。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">age=<span class="hljs-number">10</span><br><span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>age=-<span class="hljs-number">1</span><br><span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>Traceback (most recent call last):<br>  File <span class="hljs-string">&quot;C:/Users/86178/Desktop/test.py&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> &lt;module&gt;<br>    <span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>AssertionError<br></code></pre></td></tr></table></figure>
+<p>当不满足assert条件时，程序报错中断。这个可以用来找bug。</p>
+<h4 id="5-5循环"><a href="#5-5循环" class="headerlink" title="5.5循环"></a>5.5循环</h4><p>程序就是用来实现大量计算的，想想你要计算1+2+……+10000，难道要写一万行吗？</p>
+<p>循环可以解决这个问题。循环这里掌握while、for、break、continue、zip、enumerate、reversed就好了。</p>
+<h5 id="while"><a href="#while" class="headerlink" title="while"></a>while</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do somthing</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="for"><a href="#for" class="headerlink" title="for"></a>for</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="break"><a href="#break" class="headerlink" title="break"></a>break</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do something</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do something</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-keyword">continue</span><br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> num,string <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(nums,strings):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> index ,num <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="reversed"><a href="#reversed" class="headerlink" title="reversed"></a>reversed</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(lst):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="5-6-简单推导"><a href="#5-6-简单推导" class="headerlink" title="5.6 简单推导"></a>5.6 简单推导</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-built_in">str</span>(x)+<span class="hljs-string">&#x27;and&#x27;</span>+<span class="hljs-built_in">str</span>(y) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">if</span> x%<span class="hljs-number">2</span>==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> y%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>]<br>[<span class="hljs-string">&#x27;0and1&#x27;</span>, <span class="hljs-string">&#x27;0and3&#x27;</span>, <span class="hljs-string">&#x27;0and5&#x27;</span>, <span class="hljs-string">&#x27;0and7&#x27;</span>, <span class="hljs-string">&#x27;0and9&#x27;</span>, <span class="hljs-string">&#x27;2and1&#x27;</span>, <span class="hljs-string">&#x27;2and3&#x27;</span>, <span class="hljs-string">&#x27;2and5&#x27;</span>, <span class="hljs-string">&#x27;2and7&#x27;</span>, <span class="hljs-string">&#x27;2and9&#x27;</span>, <span class="hljs-string">&#x27;4and1&#x27;</span>, <span class="hljs-string">&#x27;4and3&#x27;</span>, <span class="hljs-string">&#x27;4and5&#x27;</span>, <span class="hljs-string">&#x27;4and7&#x27;</span>, <span class="hljs-string">&#x27;4and9&#x27;</span>, <span class="hljs-string">&#x27;6and1&#x27;</span>, <span class="hljs-string">&#x27;6and3&#x27;</span>, <span class="hljs-string">&#x27;6and5&#x27;</span>, <span class="hljs-string">&#x27;6and7&#x27;</span>, <span class="hljs-string">&#x27;6and9&#x27;</span>, <span class="hljs-string">&#x27;8and1&#x27;</span>, <span class="hljs-string">&#x27;8and3&#x27;</span>, <span class="hljs-string">&#x27;8and5&#x27;</span>, <span class="hljs-string">&#x27;8and7&#x27;</span>, <span class="hljs-string">&#x27;8and9&#x27;</span>, <span class="hljs-string">&#x27;10and1&#x27;</span>, <span class="hljs-string">&#x27;10and3&#x27;</span>, <span class="hljs-string">&#x27;10and5&#x27;</span>, <span class="hljs-string">&#x27;10and7&#x27;</span>, <span class="hljs-string">&#x27;10and9&#x27;</span>]<br></code></pre></td></tr></table></figure>
+
+<p>的确很简单。</p>
+<h4 id="5-7-del-pass-exec"><a href="#5-7-del-pass-exec" class="headerlink" title="5.7 del pass exec"></a>5.7 del pass exec</h4><ol>
+<li>pass<br>pass就是<strong>啥也不做</strong>。由于python靠<strong>缩进表达层次关系</strong>，什么也不做的地方空着容易误会，就写个pass吧（C语言等靠大括号的就是空着）。</li>
+<li>del</li>
+</ol>
+<p><strong>del会删除变量所指向的那块内存与变量名自身</strong>。但如果多个变量名指向同一块内存，只会删除变量名。</p>
+<p>这里提到了python的<strong>垃圾回收机制</strong>。当你创建一个列表时，程序为你的这个列表分配了一块内存，然后你执行lst&#x3D;None，让lst不再指向那块内存了，想一想如果那块内存一直储存着以前lst的内容的话会导致什么后果？一个lst可能没有感觉，那如果一百万个lst再指向别处时它以前占用的内存都没有释放的话，程序一定会崩溃，因为内存不足了（C语言中称为<strong>内存泄漏</strong>）。所以python的垃圾回收机制就是把这些无家可归的内存（没有变量指向的内存）清除，以便重用。</p>
+<p>在C&#x2F;C++中是没有垃圾回收机制的，所以使用时程序员必须手动释放内存回收垃圾。</p>
+<p>内存泄漏是及其可怕的事，可能什么事也不会发生，可能会导致程序运行缓慢，可能上午可以运行下午再试就崩溃了。<br>3. exec<br>将字符串作为代码运行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">exec</span>(<span class="hljs-string">&quot;print(&#x27;this is exec!&#x27;)&quot;</span>)<br>this <span class="hljs-keyword">is</span> <span class="hljs-built_in">exec</span>!<br></code></pre></td></tr></table></figure>
+<p>但是一般不要使用它。</p>
+<h4 id="5-8小结"><a href="#5-8小结" class="headerlink" title="5.8小结"></a>5.8小结</h4><p>本章主要内容：</p>
+<ol>
+<li>print的两个关键字参数：sep、end</li>
+<li>import …… as ……</li>
+<li>赋值中的序列解包、连续赋值和一个<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20651624">语法糖</a></li>
+<li>代码块与缩进（一定要用四个空格）</li>
+<li>if、elif、else</li>
+<li>assert</li>
+<li>while、for、range、break、continue、zip、enumerate、reversed</li>
+<li>列表生成式</li>
+<li>pass、del、exec</li>
+</ol>
+<p>本章还提到了何为True、短路逻辑等知识。</p>
+<p>恭喜你，目前为止，最基础的语法学完了（貌似少了个函数）！</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>yunfei</li>
+    <li><strong>本文链接：</strong><a href="https://yanyunfei0921.github.io/2022/04/05/py5/index.html" title="https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;05&#x2F;py5&#x2F;index.html">https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;05&#x2F;py5&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="/images/donate/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/" rel="tag">py</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2022/04/04/py4/">py4<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%E3%80%81%E6%9D%A1%E4%BB%B6%E3%80%81%E5%BE%AA%E7%8E%AF%E5%8F%8A%E5%85%B6%E4%BB%96%E8%AF%AD%E5%8F%A5"><span class="toc-text">第五章、条件、循环及其他语句</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/yanyunfei0921 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:2920241726@qq.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+    <div class="fab fab-like">
+      <i class="iconfont iconheart"></i>
+    </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
+
+    AV.init({
+      appId: '9YqvILfcMNAuoz9weLQbgEzI-gzGzoHsz',
+      appKey: 'PGDBxqD01loXmDecijeRxB7I',
+      serverURLs: 'https://leancloud.cn/',
+    });
+
+    const Counter = AV.Object.extend("Counter");
+    const Like = AV.Object.extend("Like");
+
+    const showCount = (Counter) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud-counter").each(async (e) => {
+        const url = $(".leancloud-counter").eq(e).attr('id').trim();
+        const query = new AV.Query("Counter");
+        query.equalTo("words", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud-counter").eq(e).text(count ? count : 0);
+      });
+    }
+
+    const addCount = (Counter) => {
+      const url = $(".leancloud-counter").length === 1 ? $(".leancloud-counter").attr('id').trim() : 'https://yanyunfei0921.github.io';
+      var query = new Counter;
+      query.save({
+        words: url
+      });
+    }
+
+    const showLike = (Like) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud-like").each(async (e) => {
+        const url = $(".leancloud-like").eq(e).attr('id').trim();
+        const query = new AV.Query("Like");
+        query.equalTo("path", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud-like").eq(e).text(count ? count : 0);
+      });
+    }
+
+    const addLike = (Like) => {
+      const url = $(".leancloud-like").length === 1 ? $(".leancloud-like").attr('id').trim() : 'https://yanyunfei0921.github.io';
+      var query = new Like;
+      query.save({
+        path: url,
+        nickName: 'Anonymous'
+      });
+      $(".leancloud-like").addClass('islike');
+      $(".fab-like").children(".iconfont").removeClass("iconheart").addClass("iconheart-fill").css("color", "#eb3223");
+      ZHAOO.zui.message({ text: '爱你哦~', type: 'success' });
+      setTimeout(() => showLike(Like), 1000);
+    }
+
+    const handleLikeClick = () => {
+      const isLike = $(".leancloud-like").length === 1 && $(".leancloud-like").hasClass('islike') ? true : false;
+      if (isLike) {
+        ZHAOO.zui.message({ text: '小心心不可以收回呢~', type: 'warning' });
+      } else {
+        addLike(Like);
+      }
+    }
+
+    $(function () {
+      addCount(Counter);
+      showCount(Counter);
+      showLike(Like);
+      $(".fab-like").on("click", function () {
+        handleLikeClick();
+      });
+    });
+
+  });
+</script>
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
