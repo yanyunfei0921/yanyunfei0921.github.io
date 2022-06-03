@@ -1,221 +1,78 @@
 
-
 <!DOCTYPE html>
-<html lang="zh,en,default" color-mode=light>
+<html lang="zh,en,default" class="loading">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>polymorphism_of_C++ - yunfei</title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="google" content="notranslate" />
-  <meta name="keywords" content=", C,C++,macro">
-  <meta name="description" content="多态概念百度百科：多态
-本文所指的多态，即通过类继承与...">
-  <meta name="author" content="yunfei">
-  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
-  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
-  
-    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
-    <meta rel="msapplication-TileColor" content="#000000">
-  
-
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>polymorphism_of_C++ - yunfei</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,C,C++,macro"> 
+    <meta name="description" content="多态概念百度百科：多态
+本文所指的多态，即通过类继承与虚函数机制于运行时生效的动态多态。
+引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时,"> 
+    <meta name="author" content="yunfei"> 
+    <link rel="alternative" href="atom.xml" title="yunfei" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
     
-<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
-
-  
-
-  
     
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-
-  
-
-  
     
-      
-        
-        
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/vs2015.min.css" name="highlight-style" mode="light">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="polymorphism_of_C++ - yunfei"/>
+    <meta name="twitter:description" content="多态概念百度百科：多态
+本文所指的多态，即通过类继承与虚函数机制于运行时生效的动态多态。
+引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="yunfei"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="polymorphism_of_C++ - yunfei"/>
+    <meta property="og:description" content="多态概念百度百科：多态
+本文所指的多态，即通过类继承与虚函数机制于运行时生效的动态多态。
+引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
-      
-        
-        
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
-
-      
-  
-
-  <script>
-    var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
-    CONFIG = {
-      isHome: false,
-      fancybox: true,
-      pjax: false,
-      loading: {
-        gif: '/images/theme/loading.gif',
-        lottie: ''
-      },
-      lazyload: {
-        enable: true,
-        only_post: 'false',
-        loading: {
-          gif: '/images/theme/loading.gif',
-          lottie: ''
-        }
-      },
-      donate: {
-        enable: true,
-        alipay: '/images/donate/alipay.jpg',
-        wechat: '/images/donate/wechat.jpg'
-      },
-      galleries: {
-        enable: true
-      },
-      fab: {
-        enable: true,
-        always_show: false
-      },
-      carrier: {
-        enable: true
-      },
-      daovoice: {
-        enable: false
-      },
-      preview: {
-        background: {
-          default: '',
-          api: ''
-        },
-        motto: {
-          default: '我在开了灯的床头下，想问问自己的心啊。',
-          typing: true,
-          api: 'https://v2.jinrishici.com/one.json',
-          data_contents: '["data","content"]'
-        },
-      },
-      qrcode: {
-        enable: true,
-        type: 'url',
-        image: 'https://pic.izhaoo.com/weapp-code.jpg',
-      },
-      toc: {
-        enable: true
-      },
-      scrollbar: {
-        type: 'default'
-      },
-      notification: {
-        enable: false,
-        delay: 4500,
-        list: '',
-        page_white_list: '',
-        page_black_list: ''
-      },
-      search: {
-        enable: false,
-        path: ''
-      }
-    }
-  </script>
-
-  
-
-  
-
+    <script>window.searchDbPath = "/search.xml";</script>
 <meta name="generator" content="Hexo 6.1.0"></head>
 
-<body class="lock-screen">
-  <div class="loading" id="loading"></div>
-  
-    
+<body class="loading">
+    <span id="config-title" style="display:none">yunfei</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yanyunfei0921.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">polymorphism_of_C++</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">polymorphism_of_C++</h1>
+        <div class="stuff">
+            <span>四月 13, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C-C/" rel="tag">C_C++</a></li></ul>
 
 
-  <nav class="navbar">
-    <div class="left">
-      
-        <i class="iconfont iconhome j-navbar-back-home"></i>
-      
-      
-        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
-      
-      
-        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
-      
-      
-    </div>
-    <div class="center">polymorphism_of_C++</div>
-    <div class="right">
-      <i class="iconfont iconmenu j-navbar-menu"></i>
-    </div>
-    
-      <div id="qrcode-navbar"></div>
-    
-  </nav>
-
-  
-  
-
-<nav class="menu">
-  <div class="menu-container">
-    <div class="menu-close">
-      <i class="iconfont iconbaseline-close-px"></i>
-    </div>
-    <ul class="menu-content"><li class="menu-item">
-        <a href="/ " class="underline "> 首页</a>
-      </li><li class="menu-item">
-        <a href="/galleries/ " class="underline "> 摄影</a>
-      </li><li class="menu-item">
-        <a href="/archives/ " class="underline "> 归档</a>
-      </li><li class="menu-item">
-        <a href="/tags/ " class="underline "> 标签</a>
-      </li><li class="menu-item">
-        <a href="/categories/ " class="underline "> 分类</a>
-      </li><li class="menu-item">
-        <a href="/about/ " class="underline "> 关于</a>
-      </li></ul>
-    
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
-    
-  </div>
-</nav>
-  <main id="main">
-  <div class="article-wrap">
-    <div class="row container">
-      <div class="col-xl-3"></div>
-      <div class="col-xl-6"><article class="article">
-  <div class="wrap">
-    <section class="head">
-  <img   class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIM3VJ.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-  <div class="head-mask">
-    <h1 class="head-title">polymorphism_of_C++</h1>
-    <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 13, 2022</span>
-      
-        <span class="post-info-item">
-          <i class="iconfont iconeye"></i><span id="/2022/04/13/polymorphism_of_C++/" class="leancloud-counter" data-flag-title="polymorphism_of_C++"></span>
-        </span>
-        <span class="post-info-item">
-          <i class="iconfont iconheart"></i><span id="/2022/04/13/polymorphism_of_C++/" class="leancloud-like" data-flag-title="polymorphism_of_C++"></span>
-        </span>
-      
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6621</span>
-    </div>
-  </div>
-</section>
-    <section class="main">
-      <section class="content">
-        
-        <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/13/LK75cT.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">多态</span></p>
+        </div>
+        <div class="content markdown">
+            <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img  src="https://s1.ax1x.com/2022/04/13/LK75cT.png"  ><span class="image-caption">多态</span></p>
 <p>本文所指的多态，即通过<strong>类继承</strong>与<strong>虚函数</strong>机制于运行时生效的动态多态。</p>
 <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>考虑下面场景：<br>父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物会叫。宠物医院给各种宠物打针，Inject方法的参数自然是Pet类型的指针。</p>
 <p>实现如下：</p>
@@ -245,7 +102,7 @@
 
 <p>Pet与Cat对象现在只需要16字节了，为什么不是4+8&#x3D;12呢，这时<strong>编译器为了CPU计算的方便做的数据对齐处理</strong>。所以我们可以发现，加上virtual（类中有虚函数）时，每个类对象会<strong>多出8字节</strong>（无论含有多少个虚函数都是多出一个指针大小的字节，可以自己验证）。</p>
 <p>这与后绑定机制的实现有关：<br>当一个类中含有虚函数时，这个类的对象的内存起始位置会加上一个虚指针（virtual ptr）（这是为何多8字节的原因），这个虚指针指向该类的虚函数表（virtual table），虚函数表中存有该类中所有虚函数地址。当一个对象调用虚函数时，编译器会从该对象起始位置的前8个字节中读出虚指针，再在虚函数表中找到该虚函数，实现<strong>后绑定</strong>。<strong>所以此时调用的是子类的虚函数还是子类的虚函数完全取决于起始位置虚指针指向的虚函数表中的虚函数实现。</strong></p>
-<p>如图：<br><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/13/LK743V.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">虚指针与虚函数表</span></p>
+<p>如图：<br><img  src="https://s1.ax1x.com/2022/04/13/LK743V.png"  ><span class="image-caption">虚指针与虚函数表</span></p>
 <p>我们可以通过改变一个对象所含虚指针指向位置来验证这个实现，将一个Cat对象虚指针指向Dog类的虚函数表：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span>* name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;	<span class="hljs-comment">//宠物会叫 </span><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Pet::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m a Pet.&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>:<span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类猫 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Cat::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;miao miao.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//猫叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>: <span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类狗 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Dog::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;wang wang.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//狗叫 </span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    Dog* pDog=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Dog</span>();<br>	Cat cat;<br>	Cat* pCat= &amp;cat; <br>	<span class="hljs-built_in">memcpy</span>(&amp;cat,pDog,<span class="hljs-number">8</span>);<br>	pCat-&gt;<span class="hljs-built_in">Speak</span>();<br>	cat.<span class="hljs-built_in">Speak</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>输出：</p>
@@ -275,253 +132,108 @@
 <p>这样，我们就从本不相关的两个类（鸟和飞机），抽象出其共性行为（会飞）了。当你有一个函数需要传入会飞的东西为参数，那么传入FlyObject类型对象指针就好了。这里的FlyObject就是一个抽象类，通过<strong>多重继承的形式</strong>来抽象出鸟类与飞机类的共性行为——会飞。</p>
 <p>那么这种方式算不算多重继承？这不重要了。对于多重继承，我们认为不要多重继承两个都有明确成员变量、成员方法的类，容易导致很多问题。<strong>但继承一个“实际意义父类”与多个抽象类是没有问题的</strong>。在Java中，明确指出一个类最多只有一个父类，但可以有多个接口。接口的作用就与C++中抽象类的这种作用相同。</p>
 
-      </section>
-      <section class="extra">
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
         
-          <ul class="copyright">
-  
-    <li><strong>本文作者：</strong>yunfei</li>
-    <li><strong>本文链接：</strong><a href="https://yanyunfei0921.github.io/2022/04/13/polymorphism_of_C++/index.html" title="https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;13&#x2F;polymorphism_of_C++&#x2F;index.html">https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;13&#x2F;polymorphism_of_C++&#x2F;index.html</a></li>
-    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
-  
-</ul>
-        
-        
-          <section class="donate">
-  <div id="qrcode-donate">
-    <img   class="lazyload" data-original="/images/donate/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
-  </div>
-  <div class="icon">
-    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
-    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
-  </div>
-</section>
-        
-        
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C_C++</a></li></ul> 
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
 
-        
-  <nav class="nav">
-    <a></a>
-    <a href="/2022/04/05/py5/">py5<i class="iconfont iconright"></i></a>
-  </nav>
 
-      </section>
-      
-    </section>
-  </div>
-</article></div>
-      <div class="col-xl-3">
-        
-          
-  <aside class="toc-wrap">
-    <h3 class="toc-title">文章目录：</h3>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">多态的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E4%B8%8A%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">向上类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%90%8E%E7%BB%91%E5%AE%9A"><span class="toc-text">前绑定与后绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E4%B8%8E%E8%99%9A%E6%8C%87%E9%92%88"><span class="toc-text">虚函数表与虚指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0"><span class="toc-text">纯虚函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5-1"><span class="toc-text">引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">纯虚函数的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">抽象类的作用</span></a></li></ol></li></ol></li></ol>
-  </aside>
-
-        
-      </div>
     </div>
-  </div>
-</main>
-  
-
-<footer class="footer">
-  <div class="footer-social"><a 
-        href="tencent://message/?Menu=yes&uin=894519210 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#12B7F5'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconQQ "></i>
-      </a><a 
-        href="javascript:; "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#09BB07'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconwechat-fill "></i>
-      </a><a 
-        href="https://www.instagram.com/izhaoo/ "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#DA2E76'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconinstagram "></i>
-      </a><a 
-        href="https://github.com/yanyunfei0921 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  icongithub-fill "></i>
-      </a><a 
-        href="mailto:2920241726@qq.com "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color=#FF3B00" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconmail"></i>
-      </a></div>
-  
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
-  
-</footer>
-  
-      <div class="fab fab-plus">
-    <i class="iconfont iconplus"></i>
-  </div>
-  
-    <div class="fab fab-like">
-      <i class="iconfont iconheart"></i>
-    </div>
-  
-  
-  
-  <div class="fab fab-up">
-    <i class="iconfont iconcaret-up"></i>
-  </div>
-  
-  
-  
     
-<script src="/js/color-mode.js"></script>
+</div>
 
-  
-  
+
+    </div>
+</div>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
 
 
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 
 
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
 
 
-
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-
-
-
-
-<script src="/js/utils.js"></script>
-<script src="/js/script.js"></script>
-
-
-
-  <script>
-  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
-
-    AV.init({
-      appId: '9YqvILfcMNAuoz9weLQbgEzI-gzGzoHsz',
-      appKey: 'PGDBxqD01loXmDecijeRxB7I',
-      serverURLs: 'https://leancloud.cn/',
-    });
-
-    const Counter = AV.Object.extend("Counter");
-    const Like = AV.Object.extend("Like");
-
-    const showCount = (Counter) => {
-      const asyncLimit = new AsyncLimit(2);
-      $(".leancloud-counter").each(async (e) => {
-        const url = $(".leancloud-counter").eq(e).attr('id').trim();
-        const query = new AV.Query("Counter");
-        query.equalTo("words", url);
-        let count = await asyncLimit.run(() => query.count());
-        $(".leancloud-counter").eq(e).text(count ? count : 0);
-      });
-    }
-
-    const addCount = (Counter) => {
-      const url = $(".leancloud-counter").length === 1 ? $(".leancloud-counter").attr('id').trim() : 'https://yanyunfei0921.github.io';
-      var query = new Counter;
-      query.save({
-        words: url
-      });
-    }
-
-    const showLike = (Like) => {
-      const asyncLimit = new AsyncLimit(2);
-      $(".leancloud-like").each(async (e) => {
-        const url = $(".leancloud-like").eq(e).attr('id').trim();
-        const query = new AV.Query("Like");
-        query.equalTo("path", url);
-        let count = await asyncLimit.run(() => query.count());
-        $(".leancloud-like").eq(e).text(count ? count : 0);
-      });
-    }
-
-    const addLike = (Like) => {
-      const url = $(".leancloud-like").length === 1 ? $(".leancloud-like").attr('id').trim() : 'https://yanyunfei0921.github.io';
-      var query = new Like;
-      query.save({
-        path: url,
-        nickName: 'Anonymous'
-      });
-      $(".leancloud-like").addClass('islike');
-      $(".fab-like").children(".iconfont").removeClass("iconheart").addClass("iconheart-fill").css("color", "#eb3223");
-      ZHAOO.zui.message({ text: '爱你哦~', type: 'success' });
-      setTimeout(() => showLike(Like), 1000);
-    }
-
-    const handleLikeClick = () => {
-      const isLike = $(".leancloud-like").length === 1 && $(".leancloud-like").hasClass('islike') ? true : false;
-      if (isLike) {
-        ZHAOO.zui.message({ text: '小心心不可以收回呢~', type: 'warning' });
-      } else {
-        addLike(Like);
-      }
-    }
-
-    $(function () {
-      addCount(Counter);
-      showCount(Counter);
-      showLike(Like);
-      $(".fab-like").on("click", function () {
-        handleLikeClick();
-      });
-    });
-
-  });
-</script>
-
-
-
-
-
-  <script>
-    (function () {
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-      } else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-      }
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-
-
-
-
-
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

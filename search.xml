@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/03/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>how_network_works1</title>
+    <url>/2022/04/01/network_one/</url>
+    <content><![CDATA[<h3 id="第一章、浏览器内部"><a href="#第一章、浏览器内部" class="headerlink" title="第一章、浏览器内部"></a>第一章、浏览器内部</h3><h4 id="1-1-HTTP请求消息"><a href="#1-1-HTTP请求消息" class="headerlink" title="1.1 HTTP请求消息"></a>1.1 HTTP请求消息</h4><h5 id="1-1-1-输入网址"><a href="#1-1-1-输入网址" class="headerlink" title="1.1.1 输入网址"></a>1.1.1 输入网址</h5><p>浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。</p>
+<p>协议：通信操作的规则定义为协议。</p>
+<h5 id="1-1-2-解析URL"><a href="#1-1-2-解析URL" class="headerlink" title="1.1.2 解析URL"></a>1.1.2 解析URL</h5><p>HTTP规定的URL格式：http: &#x2F;&#x2F; Web服务器名 &#x2F; 目录名 &#x2F; … &#x2F; 文件名</p>
+<h5 id="1-1-3-省略文件名"><a href="#1-1-3-省略文件名" class="headerlink" title="1.1.3 省略文件名"></a>1.1.3 省略文件名</h5><p>如：<a href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com/</a><br>再省略&#x2F;：<a href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com</a><br>访问该目录默认文件，大多数是index.html等。</p>
+<h5 id="1-1-4-HTTP基本思路"><a href="#1-1-4-HTTP基本思路" class="headerlink" title="1.1.4 HTTP基本思路"></a>1.1.4 HTTP基本思路</h5><p>HTTP协议规定客户端与服务端交互的内容与步骤。客户端向服务器发送<strong>请求消息</strong>。请求消息中包括URI、方法等内容。对URI（统一资源标识符Uniform Resource Identifier）进行某些操作。其中<strong>URI就是访问目标</strong>，可以是网页文件名可以是URL等。</p>
+<p>这些操作称为方法。如GET（获取网页数据）、POST等。</p>
+<p>HTTP请求消息中还有用来表示附加信息的<strong>头字段</strong>。先发头字段再发数据。</p>
+<p>Web服务器接收到请求消息完成对应工作后，将结果存在<strong>响应消息</strong>中。开头有一个状态码。</p>
+<h5 id="1-1-5-生成HTTP请求消息"><a href="#1-1-5-生成HTTP请求消息" class="headerlink" title="1.1.5 生成HTTP请求消息"></a>1.1.5 生成HTTP请求消息</h5><p>第一行为请求行，接着是消息头，空行后为消息体。</p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIp4h9.png"  ><span class="image-caption">HTTP消息</span></p>
+<h5 id="1-1-6-发送请求收到响应"><a href="#1-1-6-发送请求收到响应" class="headerlink" title="1.1.6 发送请求收到响应"></a>1.1.6 发送请求收到响应</h5><p>响应与请求的格式只有第一行有差别，响应为HTTP版本 状态码 响应短语。</p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIpfk4.png"  ><span class="image-caption">HTTP响应消息状态码</span></p>
+<p>返回响应消息后，浏览器将数据显示，但如果有图片，就需要在图片处留出位置，再次访问服务器获得响应信息来取得图片。</p>
+<h4 id="1-2-向DNS服务器查询Web服务器IP地址"><a href="#1-2-向DNS服务器查询Web服务器IP地址" class="headerlink" title="1.2 向DNS服务器查询Web服务器IP地址"></a>1.2 向DNS服务器查询Web服务器IP地址</h4><h5 id="1-2-1-IP地址"><a href="#1-2-1-IP地址" class="headerlink" title="1.2.1 IP地址"></a>1.2.1 IP地址</h5><p>HTTP消息发送到服务器这一过程是浏览器委托操作系统实现的，必须告诉操作系统你目标服务器的IP地址。</p>
+<p>TCP&#x2F;IP基本思路：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpR7F.png"  ><span class="image-caption">子网</span></p>
+<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpy60.png"  ><span class="image-caption">子网掩码</span></p>
+<p>子网掩码为1部分为网络号，为0部分为主机号。<br>主机号部分全为0表示整个子网，全为1表示广播。</p>
+<h5 id="1-2-2-域名与IP"><a href="#1-2-2-域名与IP" class="headerlink" title="1.2.2 域名与IP"></a>1.2.2 域名与IP</h5><p>让人看域名，让机器传IP。</p>
+<h5 id="1-2-3-Socket库提供查询IP地址功能"><a href="#1-2-3-Socket库提供查询IP地址功能" class="headerlink" title="1.2.3 Socket库提供查询IP地址功能"></a>1.2.3 Socket库提供查询IP地址功能</h5><p>Socket库是用于调用网络功能的程序组件集合。其中包含解析器，相当于DNS客户端部分。</p>
+<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpIpR.png"  ><span class="image-caption">解析器调用</span></p>
+<h5 id="1-2-5-解析器内部原理"><a href="#1-2-5-解析器内部原理" class="headerlink" title="1.2.5 解析器内部原理"></a>1.2.5 解析器内部原理</h5><p>解析器的调用就是计算机与DNS服务器的通信，通过协议栈（操作系统中网络控制软件）来执行：</p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIp6XV.png"  ><span class="image-caption">解析器与DNS服务器通信</span></p>
+<p>DNS的IP是计算机已知的。</p>
+<h4 id="1-3-全世界DNS服务器的大接力"><a href="#1-3-全世界DNS服务器的大接力" class="headerlink" title="1.3 全世界DNS服务器的大接力"></a>1.3 全世界DNS服务器的大接力</h4><h5 id="1-3-1-DNS服务器的基本工作"><a href="#1-3-1-DNS服务器的基本工作" class="headerlink" title="1.3.1 DNS服务器的基本工作"></a>1.3.1 DNS服务器的基本工作</h5><p>解析器发出的查询消息包含：</p>
+<ol>
+<li>域名</li>
+<li>Class<br>区别互联网与其他网络，Class of Network：IN</li>
+<li>记录类型<br>表示域名对应什么。IP：A（Address）；邮件服务器：MX</li>
+</ol>
+<h5 id="1-3-2-域名的层次结构"><a href="#1-3-2-域名的层次结构" class="headerlink" title="1.3.2 域名的层次结构"></a>1.3.2 域名的层次结构</h5><p>域名是有层次结构的，以.分隔，越靠右层次越高。如<a href="http://www.lab.glasscom.com.com域最高.dns服务器按照域名的层次结构储存./">www.lab.glasscom.com。com域最高。DNS服务器按照域名的层次结构储存。</a></p>
+<h5 id="1-3-3-寻找相应的DNS服务器并获得IP地址"><a href="#1-3-3-寻找相应的DNS服务器并获得IP地址" class="headerlink" title="1.3.3 寻找相应的DNS服务器并获得IP地址"></a>1.3.3 寻找相应的DNS服务器并获得IP地址</h5><p>上级DNS服务器储存下级DNS服务器的IP，最上级为根域（最后的一个点）。每个DNS服务器都储存有根域服务器的IP，以便快速访问根域。</p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIp20U.png"  ><span class="image-caption">DNS服务器的接力工作</span></p>
+<h5 id="1-3-4-通过缓存加快DNS服务器响应"><a href="#1-3-4-通过缓存加快DNS服务器响应" class="headerlink" title="1.3.4 通过缓存加快DNS服务器响应"></a>1.3.4 通过缓存加快DNS服务器响应</h5><p>如果访问的几级域在同一台DNS服务器中，可以越级访问。DNS服务器中具有缓存功能，可以迅速返回查询过的域名对应IP。</p>
+<h4 id="1-4-委托协议栈发送消息"><a href="#1-4-委托协议栈发送消息" class="headerlink" title="1.4 委托协议栈发送消息"></a>1.4 委托协议栈发送消息</h4><h5 id="1-4-1-数据收发操作概览"><a href="#1-4-1-数据收发操作概览" class="headerlink" title="1.4.1 数据收发操作概览"></a>1.4.1 数据收发操作概览</h5><ol>
+<li>创建套接字。</li>
+<li>将管道连接到服务器端套接字。</li>
+<li>收发数据。</li>
+<li>断开管道并删除套接字。</li>
+</ol>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIpgmT.png"  ><span class="image-caption">收发操作</span></p>
+<h5 id="1-4-2-创建套接字"><a href="#1-4-2-创建套接字" class="headerlink" title="1.4.2 创建套接字"></a>1.4.2 创建套接字</h5><p>调用socket组件。<br>描述符：应用程序用来识别套接字的东西。</p>
+<h5 id="1-4-3-连接阶段"><a href="#1-4-3-连接阶段" class="headerlink" title="1.4.3 连接阶段"></a>1.4.3 连接阶段</h5><p>调用connect组件，三个参数：描述符、IP、端口号。<br>服务器IP与端口号：客户端用来识别服务器套接字的东西。客户端套接字的端口号在创建时分配，在连接时会发送给服务器。</p>
+<h5 id="1-4-4-通信阶段"><a href="#1-4-4-通信阶段" class="headerlink" title="1.4.4 通信阶段"></a>1.4.4 通信阶段</h5><p>调用write与read。</p>
+<h5 id="1-4-5-断开阶段"><a href="#1-4-5-断开阶段" class="headerlink" title="1.4.5 断开阶段"></a>1.4.5 断开阶段</h5><p>调用close。<br>实际收发消息的是协议栈、网卡驱动和网卡。</p>
+]]></content>
+      <categories>
+        <category>how_network_works</category>
+      </categories>
+      <tags>
+        <tag>network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>py1</title>
+    <url>/2022/03/30/py_one/</url>
+    <content><![CDATA[<h3 id="引言部分"><a href="#引言部分" class="headerlink" title="引言部分"></a>引言部分</h3><p>下载<a href="https://www.python.org/getit/">python</a>，访问该网站下载python3.10.4<strong>forwindows版本</strong>。<br><img  src="https://s1.ax1x.com/2022/03/29/q6ceFe.png"  ><span class="image-caption">下载网页.png</span></p>
+<h3 id="第一章、基础知识"><a href="#第一章、基础知识" class="headerlink" title="第一章、基础知识"></a>第一章、基础知识</h3><h4 id="1-1交互式解释器"><a href="#1-1交互式解释器" class="headerlink" title="1.1交互式解释器"></a>1.1交互式解释器</h4><p><strong>解释器</strong>就是将高级语言代码（人直接看得懂）转换为机器码（机器看的）的东西，以便于机器执行。交互式是当你的代码有任何输出操作它就会直接输出到当前界面，适合当计算器或验证语法等。</p>
+<p>现在语言可分为两种，解释型与编译型，c语言就是编译型，暂时不说他们的区别。</p>
+<p>按win键加R快捷键进入“运行”，输入<strong>cmd</strong>进入命令提示符界面，如果你安装好了python，在此<strong>输入python回车</strong>就会进入python的交互式解释器界面。<br><img  src="https://s1.ax1x.com/2022/03/29/q6cVoD.png"  ><span class="image-caption">交互式解释器.png</span></p>
+<p><strong>如果没有成功</strong>出现这些字样并且已经下载好了python，那么可能需要你自己动手将python所在位置添加到环境变量当中去。</p>
+<p>设置-&gt;系统-&gt;关于-&gt;高级系统设置-&gt;环境变量-&gt;用户变量或系统变量中的Path选项-&gt;编辑-&gt;新建-&gt;输入<strong>你的</strong>python路径（不是下面中我的）。</p>
+<p>比如，我的在C盘根目录下的Python310中，则输C:\Python310\Scripts<br>与C:\Python310\这两个新的环境变量，然后<strong>确定保存</strong>。<br><img  src="https://s1.ax1x.com/2022/03/29/q6cEdO.png"  ><span class="image-caption">配置环境变量.png</span></p>
+<p>至于环境变量的作用，就相当于桌面的快捷方式，让人们在cmd中可以直接访问到某个地方。<strong>不懂不要紧，但必须确保你有python的环境变量（出交互式解释器就是有了）</strong>。</p>
+<h4 id="1-2算法"><a href="#1-2算法" class="headerlink" title="1.2算法"></a>1.2算法</h4><p>简单来说，算法就是计算机程序的特定的工作流程。由于计算机计算功能强大，通过某些不同于人类的其他特定的流程工作会让它更强大。</p>
+<h4 id="1-3数和表达式"><a href="#1-3数和表达式" class="headerlink" title="1.3数和表达式"></a>1.3数和表达式</h4><p>在交互式解释器界面把py当计算器用，加减乘除都与正常的运算相同。需要注意的是，带有小数部分的数在计算机中称为<strong>浮点数</strong>。</p>
+<p>你可能会陌生的两个运算符：%、**与&#x2F;&#x2F;。%为取模运算，就是得到整除不完的余数部分，如10%3&#x3D;1。**是幂运算，3**2&#x3D;9。&#x2F;&#x2F;为整除运算，得到<strong>向下取值</strong>的一个整数，<strong>不会四舍五入</strong>。</p>
+<p><em>书中关于python2.几的论述不用看，2.几的年代已经过去了。</em></p>
+<p>最后部分的其他进制数，就是说<strong>满几进一</strong>。正常生活中使用的是10进制数，满10进1，然后就需要10个符号表示这个十进制数的某一位，这10个符号就是0、1、……、9。所以<strong>十六进制就需要16个符号</strong>，9以后的符号不能用10……因为这样看不出是这个数的<strong>一位</strong>，所以采用A<del>F表示10</del>15。至于数前面的前缀，如0x（不是o是0）等是表示该数采用的进制，0x是16进制等。</p>
+<h4 id="1-4变量"><a href="#1-4变量" class="headerlink" title="1.4变量"></a>1.4变量</h4><p>变量与小学到初中过程中把数值用字母表示的过程差不多，既然能当计算器，如果能用字母代替指定数值，再用字母运算，就可以实现更多有趣的效果。</p>
+<p>计算机中x&#x3D;3这个语句，它与数学题中我们经常写的“设x&#x3D;3”或“令x&#x3D;3”相同，是一种强行让x这个符号代表3这个整数的过程，称之为<strong>赋值</strong>。这时候你再在下一行输入x回车就会输出3（这是输出x是多少的操作）。这里的x叫做<strong>变量</strong>，因为你可以再写一行x&#x3D;4，这时候x就被你令成4了，可以变。x这个名称（叫做变量的<strong>标识符</strong>）<strong>不能乱起</strong>，只能由字母与数字与下划线组成且只能字母或下划线打头。</p>
+<h4 id="1-5语句"><a href="#1-5语句" class="headerlink" title="1.5语句"></a>1.5语句</h4><p>上面我已经提到了语句这个词，简单来说就是<strong>你输入的一行</strong>。x&#x3D;3回车就是一条将x这个变量定义并且赋值为3的<strong>赋值操作语句</strong>。</p>
+<h4 id="1-6获取用户输入"><a href="#1-6获取用户输入" class="headerlink" title="1.6获取用户输入"></a>1.6获取用户输入</h4><p>这一节看不懂没关系，就是如何获取用户输入的一个函数。将你输入的东西放在&#x3D;前面的变量里保存。用等号前面的东西接着等号后面的东西或者等号后面执行后返回的东西。</p>
+<h4 id="1-7函数"><a href="#1-7函数" class="headerlink" title="1.7函数"></a>1.7函数</h4><p>完成特定功能的一块东西。比如你经常用到比较两个数的大小，那么写好那一段代码后你要用就要复制粘贴过来，如果放在函数内部，每次使用时就只需要<strong>调用函数</strong>，不用赋值粘贴。</p>
+<p>书中举的例子都是内置函数，直接可以使用的那种，用户也能自己定义函数。</p>
+<h4 id="1-8模块"><a href="#1-8模块" class="headerlink" title="1.8模块"></a>1.8模块</h4><p>模块是一种扩展，使用他人定义的函数就需要导入包含该函数的模块（<code>import module</code>），然后通过<code>module.funcation</code>的方式使用这个函数。</p>
+<p>导入的写法有很多种。</p>
+<ol>
+<li>import module</li>
+<li>import module as othername</li>
+<li>import module.funcation<br>其中最后这种可以直接调通过函数名调用该函数<strong>但不推荐</strong>，因为很可能出现这个函数与其他库中的函数重名或与自定义的函数重名的情况。一般使用第二种，as后面是自己起的别名，然后<strong>调用时用别名替代模块名</strong>，更加简短方便。</li>
+</ol>
+<p>使用双下划线开头和结束的东西（模块、函数等）是比较特殊的东西，以后会提到。</p>
+<h4 id="1-9保存并执行程序"><a href="#1-9保存并执行程序" class="headerlink" title="1.9保存并执行程序"></a>1.9保存并执行程序</h4><p>前面所说的语法实例都可以通过交互式解释器来验证实现，但解释器关闭后，写的东西都会消失不见，且程序的输出与输入在一个界面，不美观。这节主要阐述<strong>在哪写代码的问题</strong>。</p>
+<p>注意书中很大一部分都是在说UNIX的命令行，但你使用的是windows，不用管它。可以通过<strong>下面的步骤</strong>找到一个可以保存并运行程序的东西——python自带的IDLE。</p>
+<p>windows菜单栏中找到标有python3.10的文件夹，点击其中的带有IDLE字样的图标。</p>
+<p>注意此时弹出的白框仍是交互式解释器，如下图。<br><img  src="https://s1.ax1x.com/2022/03/30/qc5mX4.png"  ><span class="image-caption">白的交互式解释器</span></p>
+<p>点击左上角的file-&gt;new file，此时进入文本编辑器界面。左上角的untitled即为该文件未命名，未保存。<br><img  src="https://s1.ax1x.com/2022/03/30/qc5KB9.png"  ><span class="image-caption">文本编辑器界面</span></p>
+<p>这时候就可以在这个界面编写代码，而不会写一行输出一下，只有你解释执行整个文件时才会输出程序输出（如果有输出的话）。</p>
+<p>写完代码<strong>保存后</strong>点击最上方的run-&gt;run module，然后之前看到的交互式解释器就会蹦出来显示你的输出，并显示你这个py文件的位置。<br><img  src="https://s1.ax1x.com/2022/03/30/qc5unJ.png"  ><span class="image-caption">输出样式</span></p>
+<p>这样你就成功的使用python IDLE编写代码了。</p>
+<p>在windows环境下，其实也能使用命令行（power shell）执行可执行文件（py文件也是一种可执行文件），也是能运行出来但是目前没啥其他作用。</p>
+<p>最后是<strong>注释</strong>的问题，代码是人写的，机器解释并运行的，但同时更是人看的，看的最多的人还是你自己。所以往往一段时间后，自己看不懂自己的代码。但是如果在代码中间穿插一部分解释性语句，<strong>只给人看，而电脑自动跳这部分</strong>，就能增强代码的可读性，这就是注释的作用。python中有两种注释方式，单行注释与多行注释。</p>
+<ol>
+<li>单行，<strong>以#开头</strong>，这一行内#后面的全为注释。</li>
+<li>多行，<strong>以三个单引号开头三个单引号结束</strong>，在此之内的全为注释，这种方式可以跨行。</li>
+</ol>
+<h4 id="1-10字符串"><a href="#1-10字符串" class="headerlink" title="1.10字符串"></a>1.10字符串</h4><p>字符串就是一串话，但计算机更擅长处理数值进一步说跟喜欢逻辑运算（01）。所以字符串在计算机中通过<strong>编码的方式</strong>转换成数来表示。比如用65表示A，这就是ASCII码的编码方式。</p>
+<p>所以程序中，我们要<strong>通过一定的方式告诉计算机，这是一个字符串</strong>，你的按照编码的方式处理它。python中，字符串用三种表达形式——双引号、单引号、三个单引号。</p>
+<ol>
+<li>双引号<br>“hello world!”</li>
+<li>单引号<br>‘hello world!’</li>
+<li>三引号<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;hello </span><br><span class="hljs-string">world!&#x27;&#x27;&#x27;</span><br></code></pre></td></tr></table></figure>
+为何要有三种表达方式？考虑这几种字符串：包含双引号的、包含单引号的、很长很长需要跨行写的。</li>
+</ol>
+<p>字符串中含有双引号，再用双引号表示字符串就会有歧义，此时使用单引号就更方便；包含单引号的用双引号就更方便。而三个单引号就是为了解决跨行问题的，有没有想起来前一部分讲的<strong>多行注释</strong>，对的，那就是一个跨行的字符串，对于一个跨行字符串，<strong>如果你对它什么都不干</strong>，解释器就不会管它，自然起到注释作用。</p>
+<p>书中提到的反斜杠与原始字符串部分，其实就是对于<strong>转义字符</strong>的阐述。键盘上只有常用的部分字符，如&amp;、%等。想一想你敲Enter（或Mac中的return）输入了什么？如何通过输出字符串的方式达到输出一个Enter？Enter会使光标位置变为下一行行首，在windows中这一操作相当于输出”\r\n”字符串。’\r’都是’\n’转义字符。</p>
+<p>转义字符都以’\‘开头，后面大多为一个字母，是对于不可见字符的编码。比如你想在hello的下一行在输出world!，就可以这样：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;hello \nworld!&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>其中”\n”起到换行作用。</p>
+<p>这样也会导致很多不便，比如输入文件路径的时候，本身就会有很多反斜杠，如果直接print就会优先按着转义字符来，不知道输出什么乱七八糟的。这种想输出反斜杠自身的时候，可以使用’\\‘两个反斜杠来表示反斜杠。或者采用原始字符串的方式，在字符串前加r（python是r，其他语言不一定是）。</p>
+<p>书中最后一部分提到的Unicode与三种编码方式（<strong>ASCII</strong>、UTF-32、UTF-8），可以先了解一下。至于bytes与bytearray暂时不用管。</p>
+<h4 id="1-11小结"><a href="#1-11小结" class="headerlink" title="1.11小结"></a>1.11小结</h4><p>本章主要内容：</p>
+<ol>
+<li>算法</li>
+<li>表达式</li>
+<li>变量</li>
+<li>语句</li>
+<li>函数</li>
+<li>模块</li>
+<li>程序</li>
+<li>字符串</li>
+</ol>
+<p>这一章还提到了一部分关于编码的知识。</p>
+<p>其中表达式、变量、语句、函数、字符串最为重要。</p>
+]]></content>
+      <categories>
+        <category>beginning_py</category>
+      </categories>
+      <tags>
+        <tag>py</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>py2</title>
+    <url>/2022/03/30/py_two/</url>
+    <content><![CDATA[<h3 id="第二章、列表和元组"><a href="#第二章、列表和元组" class="headerlink" title="第二章、列表和元组"></a>第二章、列表和元组</h3><h4 id="2-1序列概述"><a href="#2-1序列概述" class="headerlink" title="2.1序列概述"></a>2.1序列概述</h4><p>想象一下如和表达一个有限长的数列，或者表示一个有限个元素构成的集合。一个一个变量的去定义肯定是不现实的，不仅耗时耗力而且不能很好的表达这些值之间的联系。所以需要<strong>容器</strong>（container）的数据结构。容器就是一种可以包含其他对象的对象。</p>
+<p>容器主要有序列、映射和集合。序列类型适合表示上面的有限长数列，集合自然用集合数据类型表示。<strong>这一章主要阐述序列</strong>。</p>
+<p>python种序列对应的数据类型——列表和元组。区别就是，<strong>列表成员可变，元组成员不可变</strong>。当然字符串也是一种序列结构。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">lst=[<span class="hljs-number">1</span>,<span class="hljs-string">&quot;this&quot;</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">#这是一个列表</span><br>tup=(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;lalala&quot;</span>) <span class="hljs-comment">#这是一个元组</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2通用序列操作"><a href="#2-2通用序列操作" class="headerlink" title="2.2通用序列操作"></a>2.2通用序列操作</h4><p>序列是一串<strong>有序</strong>变量，既然是<strong>一串</strong>，那么就能进行一些操作。比如直接找到第几个位置的变量，比如把这一串切成几串，比如把几串合成一串，比如从前向后依次进行某种操作等。这些都是对于序列的通用操作。</p>
+<p><strong>索引</strong>（indexing）就是访问某个特定位置的元素，因为序列是有序的，所以每个元素都有一个对应的值来表示它的位置，通常叫下标或索引值。从第一个元素往后，分别是<strong>0</strong>、1、……。<strong>程序中所有数数的东西都是从0开始的</strong>。</p>
+<p>python出来的比较晚，所以新奇、简单的方法比较多，它还支持从后往前数，<strong>最后一个元素对应-1</strong>，往前依次减1。也就是所你可以通过两种下标索引。</p>
+<p>注意：<strong>不要试图访问不存在的下标</strong>。这个非常重要。比如当你的列表只有两个元素时，你访问第三个元素（下标为2），就会导致程序出错。</p>
+<p><strong>切片</strong>（slicing）就是从序列中切出来你想要的那段。注意lit[n:m]中的下标为n的包含在切片内而后一个下标为m的<strong>不包含</strong>。步长为负时，第一个索引必须比第二个大，因为它时是从后往前切的。当你神略一个索引时，省略前一个表示从0开始，省略后一个时表示到最后一个结束（<strong>包含最后一个</strong>）。</p>
+<p>序列拼接可使用+运算符，可将<strong>同类型</strong>的序列拼接。</p>
+<p>序列只能与整数相乘，表示<strong>重复</strong>含义。你可以试试两个序列相乘会怎么样。</p>
+<p>in运算符是一种运算符，就如同加减乘除（算数运算符）。用来检查序列中是否含有<strong>该元素</strong>。在字符串中还可用来检查是否含有该子串。</p>
+<h4 id="2-3列表：Python的主力"><a href="#2-3列表：Python的主力" class="headerlink" title="2.3列表：Python的主力"></a>2.3列表：Python的主力</h4><p>列表是Python中最常用的数据类型，因为它的成员数据类型不限（列表的元素可以是整型变量也可以是其他列表等）且自身<strong>可变</strong>。</p>
+<p>列表可通过以下方式修改：</p>
+<ol>
+<li>元素赋值</li>
+<li>删除元素del</li>
+<li>切片赋值</li>
+<li>删除切片</li>
+<li>等等</li>
+</ol>
+<p>这里，书中提到了方法一词，方法就是函数，只不过我们更常用方法称呼类中的函数。至于类，比如列表、比如字符串等数据类型都是一种类。现在可以将方法理解为<strong>和数据类型紧密联系的函数</strong>。比如，列表的方法只有列表类型的变量可以使用，其他类型的变量不能使用。</p>
+<p>通过以下方式使用方法使用方法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">object</span>.method(arguments)<br></code></pre></td></tr></table></figure>
+<p>列表有以下方法：</p>
+<ol>
+<li>append<br>将<strong>一个对象</strong>添加到列表末尾，注意不管你传入什么东西，这个东西都将以一个对象的形式添加到列表尾部。且append方法不会返回新列表，它会直接更改当前列表。</li>
+</ol>
+<p>比如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst2=[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst.append(lst2)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]] <span class="hljs-comment">#这里的结果不是[1,2,3,4,5,6]</span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>clear<br>清空列表。</li>
+<li>copy<br>这里涉及到<strong>浅拷贝和深拷贝</strong>的概念。</li>
+</ol>
+<p>数据在内存中以二进制方式储存。当你执行<code>lst1=[1,2,3]</code>时，内存中会分配一定空间来储存这个<code>[1,2,3]</code>，你又说了把这个东西赋值给lst1，所以lst1就成为了你访问这片空间的钥匙或者说handle。此时如果你再执行<code>lst2=lst1</code>，用lst1给lst2赋值，这时其实是给你那个存储着<code>[1,2,3]</code>的空间又加了一个handle，<strong>一个门两把手</strong>。所以<strong>此时lst1与lst2指向的空间是一个东西</strong>，对于lst1的操作等同于对于lst2的操作。这种拷贝叫做浅拷贝。</p>
+<p><strong>浅拷贝会带来很多问题</strong>，有时候你这样拷贝完了，然后去动了lst2，然后lst1其实也变了，你以为它没变，这就会导致很多未知错误。</p>
+<p>而深拷贝，就是创建一个与本体完全分离且内容相同的副本。在内存上考虑这件事，其实是<strong>又开辟了一片空间</strong>，空间内储存着和本体指向的空间内相同的东西，然后lst2作为这片新空间的handle。自然此时lst1与lst2半毛钱关系都没有。</p>
+<p>copy方法就是用来进行深拷贝的，等同于[:]。但是这种做法<strong>真的所有情况下都能深拷贝吗</strong>？考虑以下如果lst中某个元素也是列表的情况。可以参考我<a href="https://blog.csdn.net/yanyunfei0921/article/details/118739162">以前的笔记</a>。<br>4. count<br>计算指定<strong>元素</strong>出现的次数。<br>5. extend<br>与append相反，它将参数序列中<strong>每一个元素作为元素</strong>添加到列表末尾。如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst1=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst2=[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst1.extend(lst2)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst1<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]]<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>index<br>查找参数元素<strong>第一次出现</strong>的索引。</li>
+<li>insert<br>指定位置插入元素，<strong>指定索引为插入后该元素所在位置</strong>。</li>
+<li>pop<br>删除列表最后一个元素并将其返回。为什么叫pop这个名称？这与书中提到的栈结构有关，<strong>该部分看不懂没关系</strong>。</li>
+<li>remove<br>删除<strong>第一个</strong>为指定值的元素，无返回值。</li>
+<li>reverse<br>将列表倒序，无返回值。</li>
+<li>sort<br>sort意为排序，sort方法就将该列表更改为排序后的样子的方法。无返回值。sort有两个<strong>关键字参数</strong>，这种参数在使用是必须指名关键字，而对顺序无所谓。sort的key参数是你用来排序的依据，reverse是是否降序排列（True为降序）。</li>
+</ol>
+<p>事实上，排序是一件<strong>很复杂的事情</strong>，存在着各种各样的排序算法，这里使用的是python内置的排序算法——Timsort。关于Timsort可参考<a href="https://www.cnblogs.com/sunshuyi/p/12680918.html">这里</a>。关于sort的更详细使用可以参考<a href="https://wiki.python.org/moin/HowTo/Sorting">这里</a>。</p>
+<p>小小总结一下。</p>
+<ol>
+<li>列表的方法中用于添加元素的有：<br>append、insert、extend。</li>
+<li>用于删除元素的有：<br>clear、pop、remove</li>
+<li>直接改变当前列表无返回值的有：<br>append、clear、extend、insert、remove、reverse、sort</li>
+<li>有返回值的有：<br>copy、count、index、pop</li>
+</ol>
+<h4 id="2-4元组：不可修改的序列"><a href="#2-4元组：不可修改的序列" class="headerlink" title="2.4元组：不可修改的序列"></a>2.4元组：不可修改的序列</h4><p>元组不可修改是指<strong>元组本身包含的元素不增不减</strong>。如果一个元组包含的一个元素是列表，这个列表的元素是可以修改的。如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup=(lst,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst.append(<span class="hljs-number">4</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup<br>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>
+<p>需要小小注意一下，只有一个元素的元组需要在这个元素后面加上一个逗号以表示它是元组。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a=(<span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>b=(<span class="hljs-number">1</span>,)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(a,b)<br><span class="hljs-number">1</span> (<span class="hljs-number">1</span>,) <span class="hljs-comment">#a是整数，b是元组</span><br></code></pre></td></tr></table></figure>
+
+<p>元组多用于返回值，很多内置函数的返回值都是元组。序列通用的操作（索引、切片等）元组都可以做，只要你<strong>不尝试去写入</strong>就没毛病。</p>
+<h4 id="2-5小结"><a href="#2-5小结" class="headerlink" title="2.5小结"></a>2.5小结</h4><p>本章主要内容：</p>
+<ol>
+<li>序列</li>
+<li>in运算符</li>
+<li>列表的方法</li>
+<li>元组</li>
+</ol>
+<p>本章还提到了浅拷贝与深拷贝、排序等知识。</p>
+]]></content>
+      <categories>
+        <category>beginning_py</category>
+      </categories>
+      <tags>
+        <tag>py</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2022/03/29/test/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>macro_in_C_or_C++</title>
+    <url>/2022/04/02/C_C++_macros/</url>
+    <content><![CDATA[<h1 id="C-C-中的宏"><a href="#C-C-中的宏" class="headerlink" title="C\C++中的宏"></a>C\C++中的宏</h1><p>C中的有三种：常量宏、函数宏、控制宏。</p>
+<h2 id="常量宏"><a href="#常量宏" class="headerlink" title="常量宏"></a>常量宏</h2><p>常数宏经常用于<strong>消除代码当中的魔法数</strong>，增强代码的可读性。同时便于代码的维护与优化。<br>如：<br>将该段代码中的201替换为STU_CON，就可以很清楚的知道201是学生的数量。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> a[<span class="hljs-number">201</span>];<br>  cout &lt;&lt; <span class="hljs-string">&quot;over&quot;</span> &lt;&lt; endl;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>替换完为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> STU_CON 201</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> a[STU_CON];<br>  cout &lt;&lt; <span class="hljs-string">&quot;over&quot;</span> &lt;&lt; endl;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p>工程中宏应该写在单独的Global或其他名称的头文件中，此处仅为演示。</p>
+<h2 id="函数宏"><a href="#函数宏" class="headerlink" title="函数宏"></a>函数宏</h2><p>每一次函数的调用都需要将“现有状况保留现场”，即入栈保存，进入函数部分执行，执行完毕后再出栈。苛刻的说，函数的调用是有损程序的效率的。函数宏的初心是为了消除<strong>小型常用函数</strong>的调用开销。<br>如：<br>这段代码定义了一个名为ADD的函数宏，实现两int类型数相加的功能。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ADD(a,b) ((a)+(b))</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  cout&lt;&lt; <span class="hljs-built_in">ADD</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)&lt;&lt;endl;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>函数宏虽然形似函数，但没有函数调用的开销，等价于将<code>ADD(1,2)</code>替换为<code>((1)+(2))</code>。但这就会出现一个问题，考虑如下使用方式是否正确：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ADD(a,b) a+b</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  cout&lt;&lt; <span class="hljs-built_in">ADD</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)*<span class="hljs-number">2</span>&lt;&lt;endl;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>使用者本意输出(1+2)*2&#x3D;6，而实际上会变成1+2*2&#x3D;5。这就是函数宏使用不当导致的错误，所以使用函数宏时要<strong>尽可能多的加括号</strong>。</p>
+<h2 id="控制宏"><a href="#控制宏" class="headerlink" title="控制宏"></a>控制宏</h2><p>控制宏是C++中用来控制代码块是否编译的预编译指令。主要有以下几种：<br>|指令  |含义  |<br>|#define|            定义一个预处理宏|<br>|#undef          |  取消宏的定义|<br>|#if                   |编译预处理中的条件命令|<br>|#ifdef              |判断某个宏是否被定义，若已定义，执行随后的语句|<br>|#ifndef            |与#ifdef相反，判断某个宏是否未被定义|<br>|#elif                |若#if, #ifdef, #ifndef或前面的#elif条件不满足，则执行#elif之后的语句|<br>|#else              |与#if, #ifdef, #ifndef对应, 若这些条件不满足，则执行#else之后的语句|<br>|#endif             |#if, #ifdef, #ifndef这些条件命令的结束标志.|<br>|defined         　|与#if, #elif配合使用，判断某个宏是否被定义|<br>控制宏的使用场景较为广泛，<strong>相当于一个“开关”</strong>。控制编译器是否编译其包含的代码块。<br>如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-meta">#<span class="hljs-keyword">ifdef</span> VER_ONE</span><br>  <span class="hljs-comment">//codes</span><br>  cout&lt;&lt;<span class="hljs-string">&quot;version one over&quot;</span>&lt;&lt;endl;<br>  <span class="hljs-meta">#<span class="hljs-keyword">else</span></span><br>  <span class="hljs-comment">//codes</span><br>  cout&lt;&lt;<span class="hljs-string">&quot;version two over&quot;</span>&lt;&lt;endl;<br>  <span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>若直接单独执行这段代码，会只输出version two over。当该文件中或其包含的头文件中定义了宏VER_ONE则会仅输出version one over。</p>
+]]></content>
+      <categories>
+        <category>C++_from_liuyu</category>
+      </categories>
+      <tags>
+        <tag>C_C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>default_parameter_of_C++</title>
+    <url>/2022/04/03/C++_default_parameter/</url>
+    <content><![CDATA[<h1 id="C-默认参数"><a href="#C-默认参数" class="headerlink" title="C++默认参数"></a>C++默认参数</h1><p>C语言中，函数定义时指定了几个形参，在使用时就必须传入传入与定义时个数、类型相同的参数。</p>
+<p>在某些时候这样做不太方便，比如说，创建一个窗体的函数。使用者需要指定窗体的尺寸、颜色等所有参数，而往往窗体都是黑的，这就需要定义“黑的”为默认值。C++中引入默认参数优化该问题。</p>
+<h2 id="默认参数形式"><a href="#默认参数形式" class="headerlink" title="默认参数形式"></a>默认参数形式</h2><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI 3.14</span><br><span class="hljs-comment">//声明部分指定sec_par的默认值为PI，若该形参没有参数传入，则使用PI</span><br><span class="hljs-function"><span class="hljs-type">float</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> fir_par,<span class="hljs-type">float</span> sec_par=PI)</span></span>;<br><br><span class="hljs-comment">//声明部分指定后，函数定义不能重复指定默认值</span><br><span class="hljs-function"><span class="hljs-type">float</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> fir_par,<span class="hljs-type">float</span> sec_par)</span></span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*fir_par*sec_par;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  cout&lt;&lt;<span class="hljs-built_in">fun</span>(<span class="hljs-number">2</span>)&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>&lt;&lt;<span class="hljs-built_in">fun</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)&lt;&lt;endl;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>此处sec_par的参数为3.14，第一个输出的结果即为2<em>2</em>3.14&#x3D;12.56。第二个输出为3，因为此时的sec_par为传入的3。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="声明与定义中仅写一次默认参数"><a href="#声明与定义中仅写一次默认参数" class="headerlink" title="声明与定义中仅写一次默认参数"></a>声明与定义中仅写一次默认参数</h3><p>如上例，函数声明与定义时，只能写一次默认参数，一般在函数声明中。若没有函数声明，则写在函数定义中。这是因为<strong>在一个作用域中C++只能指定一次默认参数</strong>。</p>
+<p>当出现同一函数多次声明时，可以为没有默认值的参数指定默认值，此时它的右侧必须是已指定值的默认参数。<br>如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b,<span class="hljs-type">int</span> c=<span class="hljs-number">1</span>)</span></span>; <br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> c)</span></span>; <span class="hljs-comment">/*只有c为默认参数才行*/</span><br></code></pre></td></tr></table></figure>
+<p>这样是没问题的。</p>
+<h3 id="默认参数只能在形参中最后的位置"><a href="#默认参数只能在形参中最后的位置" class="headerlink" title="默认参数只能在形参中最后的位置"></a>默认参数只能在形参中最后的位置</h3><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>正确</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> b)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>错误，因为a参数有默认参数，而b不是，不符合C++语法标准。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>正确</p>
+<h3 id="函数使用传参时，必须从左到右依次传入，不能跳过某一个参数"><a href="#函数使用传参时，必须从左到右依次传入，不能跳过某一个参数" class="headerlink" title="函数使用传参时，必须从左到右依次传入，不能跳过某一个参数"></a>函数使用传参时，必须从左到右依次传入，不能跳过某一个参数</h3><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> c=<span class="hljs-number">1</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>下面是函数使用时的几种情况。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)<br><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<p>正确</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+<p>错误，如果要将后面的拥有默认参数的参数赋值，必须对该参数及该参数前面的参数都进行赋值。如将c赋值2必须对b进行赋值。不存在直接空着的语法。<br>即将上述错误的做法改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="当函数存在重载时，谨慎使用默认参数"><a href="#当函数存在重载时，谨慎使用默认参数" class="headerlink" title="当函数存在重载时，谨慎使用默认参数"></a>当函数存在重载时，谨慎使用默认参数</h3><p>如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b=<span class="hljs-number">0</span>)</span></span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span></span>;<br><br><span class="hljs-built_in">fun</span>(<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<p>这时如果这样[fun(1)]调用fun()函数，则会出现错误，编译器无法识别调用哪一个fun()函数。</p>
+]]></content>
+      <categories>
+        <category>C++_from_liuyu</category>
+      </categories>
+      <tags>
+        <tag>C_C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>py3</title>
+    <url>/2022/04/04/py3/</url>
+    <content><![CDATA[<h3 id="第三章、使用字符串"><a href="#第三章、使用字符串" class="headerlink" title="第三章、使用字符串"></a>第三章、使用字符串</h3><h4 id="3-1-字符串基本操作"><a href="#3-1-字符串基本操作" class="headerlink" title="3.1 字符串基本操作"></a>3.1 字符串基本操作</h4><p>所有标准序列操作都能作，但是和元组一样，你不能改变字符串的值。</p>
+<h4 id="3-2-设置字符串的格式"><a href="#3-2-设置字符串的格式" class="headerlink" title="3.2 设置字符串的格式"></a>3.2 设置字符串的格式</h4><ol>
+<li>转换说明符%<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">format</span>=<span class="hljs-string">&quot;hello %s,this is %d day&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>values=(<span class="hljs-string">&quot;someone&quot;</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">format</span>%values<br><span class="hljs-string">&#x27;hello someone,this is 5 day&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>关键字参数<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;this is the &#123;0&#125; parameter,and &#123;1&#125; is the next&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;first&quot;</span>,<span class="hljs-string">&quot;that&quot;</span>)<br><span class="hljs-string">&#x27;this is the first parameter,and that is the next&#x27;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;my name is &#123;name&#125;,and i am &#123;age&#125;&quot;</span>.<span class="hljs-built_in">format</span>(name=<span class="hljs-string">&quot;Bob&quot;</span>,age=<span class="hljs-number">19</span>)<br><span class="hljs-string">&#x27;my name is Bob,and i am 19&#x27;</span><br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>f字符串<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>name=<span class="hljs-string">&quot;S&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&quot;I&#x27;m <span class="hljs-subst">&#123;name&#125;</span>&quot;</span><br><span class="hljs-string">&quot;I&#x27;m S&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="3-4-字符串方法"><a href="#3-4-字符串方法" class="headerlink" title="3.4 字符串方法"></a>3.4 字符串方法</h4><ol>
+<li>center<br>两边填充字符，使得字符串居中。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;The Middle by Jim&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.center(<span class="hljs-number">20</span>,<span class="hljs-string">&#x27;#&#x27;</span>)<br><span class="hljs-string">&#x27;#The Middle by Jim##&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>find<br>查找子串，返回其第一个字符索引，没有返回-1。<br>第一个参数为子串，第二个第三个为查找起始处（包含）与终点（不包含）。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;The Middle by Jim&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.find(<span class="hljs-string">&quot;Jim&quot;</span>)<br><span class="hljs-number">14</span><br></code></pre></td></tr></table></figure>
+还记得in操作符吗？对于字符串来说，它与find方法有何区别？</li>
+<li>join<br>用于合并序列的元素，这里的所有元素必须为字符串。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-string">&#x27;1&#x27;</span>,<span class="hljs-string">&#x27;2&#x27;</span>,<span class="hljs-string">&#x27;3&#x27;</span>,<span class="hljs-string">&#x27;4&#x27;</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>sep=<span class="hljs-string">&#x27;+&#x27;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>sep.join(lst)<br><span class="hljs-string">&#x27;1+2+3+4&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>lower<br>返回字符串小写版本。</li>
+<li>replace<br>指定子串替换为另一个字符串，返回替换结果。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;Tom is a small cat&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.replace(<span class="hljs-string">&quot;Tom&quot;</span>,<span class="hljs-string">&quot;Job&quot;</span>)<br><span class="hljs-string">&#x27;Job is a small cat&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>split<br>字符串拆分，与join相反。若不指定分隔符则默认为单个或多个空白字符。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;1+2+3&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.split(<span class="hljs-string">&#x27;+&#x27;</span>)<br>[<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-string">&#x27;3&#x27;</span>]<br></code></pre></td></tr></table></figure></li>
+<li>strip<br>删除字符串两端空白字符，返回删除后结果。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;          lalala  &quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.strip()<br><span class="hljs-string">&#x27;lalala&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>translate<br>替换单个字符，使用时要指名字符的替代关系（Unicode码点之间的映射，采用字典数据类型）。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>table=<span class="hljs-built_in">str</span>.maketrans(<span class="hljs-string">&#x27;cs&#x27;</span>,<span class="hljs-string">&#x27;kz&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>table<br>&#123;<span class="hljs-number">99</span>: <span class="hljs-number">107</span>, <span class="hljs-number">115</span>: <span class="hljs-number">122</span>, <span class="hljs-number">32</span>: <span class="hljs-literal">None</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;this is an incredible test&quot;</span>.translate(table)<br><span class="hljs-string">&#x27;thizizaninkredibletezt&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>isXXX<br>如isspace等，他们返回一个Bool值。</li>
+</ol>
+<h4 id="3-5-小结"><a href="#3-5-小结" class="headerlink" title="3.5 小结"></a>3.5 小结</h4><p>本章主要包括这些内容：</p>
+<ol>
+<li>字符串格式设置。</li>
+<li>字符串方法。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>beginning_py</category>
+      </categories>
+      <tags>
+        <tag>py</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>py4</title>
+    <url>/2022/04/04/py4/</url>
+    <content><![CDATA[<h3 id="第四章、当索引行不通时"><a href="#第四章、当索引行不通时" class="headerlink" title="第四章、当索引行不通时"></a>第四章、当索引行不通时</h3><p>字典是python中唯一的映射数据结构。值与键相对应。</p>
+<h4 id="4-1-字典的用途"><a href="#4-1-字典的用途" class="headerlink" title="4.1 字典的用途"></a>4.1 字典的用途</h4><p>用列表储存一个电话簿，需要一个列表记录人名，一个列表记录电话号码。查询时也得动点脑筋。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>name=[<span class="hljs-string">&quot;Yan&quot;</span>,<span class="hljs-string">&quot;Li&quot;</span>,<span class="hljs-string">&quot;Zhao&quot;</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>tel=[<span class="hljs-string">&quot;1303244321&quot;</span>,<span class="hljs-string">&quot;123456&quot;</span>,<span class="hljs-string">&quot;97580&quot;</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>tel[name.index(<span class="hljs-string">&quot;Li&quot;</span>)]<br><span class="hljs-string">&#x27;123456&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>其实我们更希望直接建立一个人名与电话号码的映射，而不是通过索引这个桥梁。</p>
+<h4 id="4-2-创建和使用字典"><a href="#4-2-创建和使用字典" class="headerlink" title="4.2 创建和使用字典"></a>4.2 创建和使用字典</h4><p>字典实现的电话簿如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>phonebook=&#123;<span class="hljs-string">&quot;Yan&quot;</span>:<span class="hljs-string">&quot;1093244321&quot;</span>,<span class="hljs-string">&quot;Li&quot;</span>:<span class="hljs-string">&quot;123456&quot;</span>,<span class="hljs-string">&quot;Zhao&quot;</span>:<span class="hljs-string">&quot;97580&quot;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span>phonebook[<span class="hljs-string">&quot;Li&quot;</span>]<br><span class="hljs-string">&#x27;123456&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>字典的每个item由键和值组成，一个字典中键不能重复，值可以。这也很好理解，毕竟访问时是以键为索引。</p>
+<h5 id="4-2-1-函数dict"><a href="#4-2-1-函数dict" class="headerlink" title="4.2.1 函数dict"></a>4.2.1 函数dict</h5><p>函数dict可使用其他映射创建字典。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>tup1=(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;Li&quot;</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup2=(<span class="hljs-string">&quot;age&quot;</span>,<span class="hljs-number">18</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>items=[tup1,tup2]<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dict</span>(items)<br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">18</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>也可使用关键字参数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dict</span>(name=<span class="hljs-string">&quot;Li&quot;</span>,age:<span class="hljs-number">18</span>)<br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">18</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<h5 id="4-2-2-基本的字典操作"><a href="#4-2-2-基本的字典操作" class="headerlink" title="4.2.2 基本的字典操作"></a>4.2.2 基本的字典操作</h5><p>字典与列表不同之处：</p>
+<ol>
+<li>字典的键必须为不可变数据类型。</li>
+<li>字典可对不存在的键赋值，此时会自动创建。</li>
+<li>字典通过键判断是否存在该item，列表通过值。</li>
+</ol>
+<p>基本行为：<br>| len(dir)|返回字典的item数|<br>|dir[k]|返回键为k的值|<br>|dir[k]&#x3D;v|将键k对应的值赋为v|<br>|del dir[k]|删除该item|<br>|k in dir|检查键为k的item是否在dir中|</p>
+<h5 id="4-2-3-通过字典指定字符串格式设置"><a href="#4-2-3-通过字典指定字符串格式设置" class="headerlink" title="4.2.3 通过字典指定字符串格式设置"></a>4.2.3 通过字典指定字符串格式设置</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>=&#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Li&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">18</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;&#123;name&#125; is &#123;age&#125;&quot;</span>.format_map(<span class="hljs-built_in">dir</span>)<br><span class="hljs-string">&#x27;Li is 18&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="4-2-4-字典方法"><a href="#4-2-4-字典方法" class="headerlink" title="4.2.4 字典方法"></a>4.2.4 字典方法</h5><ol>
+<li>clear<br>删除字典中所有元素。注意clear与赋值为空字典的区别。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>dir1=&#123;&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir2=dir1<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir1[<span class="hljs-string">&quot;name&quot;</span>]=<span class="hljs-string">&quot;Li&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>dir2<br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir1.clear()<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir2<br>&#123;&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>dir1=&#123;&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir2=dir1<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir1[<span class="hljs-string">&quot;name&quot;</span>]=<span class="hljs-string">&quot;Li&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>dir2<br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir1=&#123;&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span>dir2<br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>对比发现，clear清空了dir1指向的内存，而直接进行赋值操作改变了dir1的指向，它不再与dir2指向同一位置，而是直接指向None。<br>2. copy<br>从上述对于clear的阐述中就可以看出，与列表一样，直接赋值是不靠谱的。字典同样存在浅拷贝、深拷贝的问题。copy方法就是一种浅拷贝。如果字典的值都是常量，这样的浅拷贝没问题。但如果字典的值为字典或列表等，<strong>就会出问题</strong>。</p>
+<p>此时可采用deepcopy方法。<br>3. fromkeys<br>创建一个指定键，值都相同的字典，值默认为空。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dict</span>.fromkeys([<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>],<span class="hljs-string">&quot;unknown&quot;</span>)<br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>get<br>直接通过键索引时，如果键不存在，就会出现错误。但使用get方法访问不存在的键时会返回None，提供了较为宽松的访问。</li>
+<li>items<br>返回一个<strong>字典视图</strong>类型的数据。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>=&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>.items()<br>dict_items([(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;unknown&#x27;</span>), (<span class="hljs-string">&#x27;age&#x27;</span>, <span class="hljs-string">&#x27;unknown&#x27;</span>)])<br></code></pre></td></tr></table></figure></li>
+<li>keys<br>返回一个仅包含键的字典视图。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>=&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>.keys()<br>dict_keys([<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>])<br></code></pre></td></tr></table></figure></li>
+<li>pop<br>出栈指定键对应的值。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>=&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>.pop(<span class="hljs-string">&quot;age&quot;</span>)<br><span class="hljs-string">&#x27;unknown&#x27;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span><br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;unknown&#x27;</span>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>popitem<br>随机出栈一个item。</li>
+<li>setdefault<br>与get类似，只不过在不存在时自动添加上所访问的不存在键值对。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>=&#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Li&quot;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>.setdefault(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;Wang&quot;</span>)<br><span class="hljs-string">&#x27;Li&#x27;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span><br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span>.setdefault(<span class="hljs-string">&quot;age&quot;</span>,<span class="hljs-number">18</span>)<br><span class="hljs-number">18</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">dir</span><br>&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Li&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">18</span>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>update<br>使用一个字典或其他映射或关键字参数来更新该字典。</li>
+<li>values<br>返回一个只有值的字典视图。</li>
+</ol>
+<h4 id="4-3-小结"><a href="#4-3-小结" class="headerlink" title="4.3 小结"></a>4.3 小结</h4><p>本章主要介绍了一下内容：</p>
+<ol>
+<li>映射</li>
+<li>使用字典设置字符串格式</li>
+<li>字典的方法</li>
+</ol>
+<p>本章还复习了浅拷贝与深拷贝等内存相关概念。</p>
+]]></content>
+      <categories>
+        <category>beginning_py</category>
+      </categories>
+      <tags>
+        <tag>py</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>py5</title>
+    <url>/2022/04/05/py5/</url>
+    <content><![CDATA[<h3 id="第五章、条件、循环及其他语句"><a href="#第五章、条件、循环及其他语句" class="headerlink" title="第五章、条件、循环及其他语句"></a>第五章、条件、循环及其他语句</h3><p>你还记得<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>里提到的文本编辑器界面吗？一直以来我们使用的都是交互式解释器，因为它简单方便，用来验证语法再好不过。但是当你需要写很多很多行并且保存的时候，它显然不能做的很好。当学完这一章，可能就需要使用IDLE进行编程了。</p>
+<h4 id="5-1-再谈print与import"><a href="#5-1-再谈print与import" class="headerlink" title="5.1 再谈print与import"></a>5.1 再谈print与import</h4><ol>
+<li><p>print的两个参数<br>print可以打印多个字符串，默认的间隔符是空格，默认的结束符是换行。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>)<br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>,sep=<span class="hljs-string">&#x27; &#x27;</span>,end=<span class="hljs-string">&#x27;\n&#x27;</span>)<br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<p>这两条语句是等价的。sep为间隔符关键字参数，end为结束符关键字参数。</p>
+</li>
+<li><p>导入模块时重命名<br>这部分在<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>讲过了哦。</p>
+</li>
+</ol>
+<h4 id="5-2-赋值魔法"><a href="#5-2-赋值魔法" class="headerlink" title="5.2 赋值魔法"></a>5.2 赋值魔法</h4><ol>
+<li>序列解包<br>元组不可改变，多用于函数返回值。而序列解包可以很方便的直接访问元组元素。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">x,y,z=funcation1() <span class="hljs-comment">#funcation的返回值为包含三个元素的元组</span><br></code></pre></td></tr></table></figure>
+这时就能直接通过x，y，z访问该元组的三个元素。注意数量要对等（xyz是三个，返回值元组所含元素也是三个）。</li>
+</ol>
+<p>可通过*来实现“一对多的匹配”：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x,y,*z=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>z<br>[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>链式赋值<br>就是一个连等号呗。但是<strong>注意浅拷贝的问题</strong>。</li>
+<li>简便写法<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">a=a+<span class="hljs-number">1</span><br>a+=<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+这两种写法等效。</li>
+</ol>
+<h4 id="5-3-代码块：关于缩进"><a href="#5-3-代码块：关于缩进" class="headerlink" title="5.3 代码块：关于缩进"></a>5.3 代码块：关于缩进</h4><p>代码块就是一块代码，包括若干行。为什么能将其称为块，因为他们共同属于某个函数或某个循环之类的。</p>
+<p>python使用缩进来表示代码的包含关系，即创建代码块。<strong>使用四个空格来缩进</strong>！<strong>别用Tab键，也别用其他数量的空格</strong>（尽管这样没有语法错误）！</p>
+<p>看不懂没关系，再看几行就懂了。</p>
+<h4 id="5-4-条件语句"><a href="#5-4-条件语句" class="headerlink" title="5.4 条件语句"></a>5.4 条件语句</h4><p>以前写的东西都是一行一行顺序执行的，加上条件判断语句就能跳着执行了。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>：<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the bool is ture&quot;</span>)<br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the bool is false&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>当if判断语句后的真值为True时，执行if下面的语句块，为False时执行else后语句块。若无else则继续顺序执行下方代码。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">num=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter a number:&quot;</span>))<br><span class="hljs-keyword">if</span> num&gt;<span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;大于0&quot;</span>)<br><span class="hljs-keyword">elif</span> num&lt;<span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;小于0&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;等于0&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>当if后条件不满足时，顺序向下查看elif中条件是否满足，若满足执行该elif后语句块，然后跳过本次if判断这一大块。若所有elif都不满足执行else后语句块。<br>故上例中这些print语句所在语句块肯定<strong>有一个且仅有一个</strong>被执行。</p>
+<p>如果if、else下面都只有一条语句，可以简化的写在一行。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">status=<span class="hljs-string">&quot;friend&quot;</span> <span class="hljs-keyword">if</span> name.endswith(<span class="hljs-string">&quot;Tom&quot;</span>) <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;stranger&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>这时候我们就好考虑<strong>什么是True</strong>？</p>
+<p>False、空的东西（{}、[]等）、None为假，其他东西都为真。</p>
+<p>如果if后面是一条比较运算式，按常理理解就行了。比如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>&lt;<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>&gt;<span class="hljs-number">1</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>&lt;=<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>==<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
+<p><strong>注意</strong>：判等时使用&#x3D;&#x3D;而非&#x3D;，&#x3D;是赋值操作，不能用于逻辑判断。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> a=<span class="hljs-number">1</span>:<br>  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> a=<span class="hljs-number">1</span>:<br>       ^^^<br>SyntaxError: invalid syntax. Maybe you meant <span class="hljs-string">&#x27;==&#x27;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&#x27;:=&#x27;</span> instead of <span class="hljs-string">&#x27;=&#x27;</span>?<br></code></pre></td></tr></table></figure>
+
+<p>下面看几个其他<strong>比较运算符</strong>：</p>
+<ol>
+<li>&#x3D;&#x3D;与is<br>上面已经说过，&#x3D;&#x3D;是<strong>判等</strong>的比较运算符，is是用来判定是否<strong>相同</strong>的运算符。有什么区别呢？</li>
+</ol>
+<p>这要结合<a href="https://yanyunfei0921.github.io/2022/03/30/py_two/">第二章</a>提到的内存相关知识来说。&#x3D;&#x3D;是判断两个变量的内容是否相同，is是判断两个变量是否指向同一块内存。对于int、string这些非容器变量类型，两者并无差别，但对于list、tuple、set等千差万别。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x=<span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>y=<span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x==y<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x <span class="hljs-keyword">is</span> y<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst_=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst==lst_<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>lst <span class="hljs-keyword">is</span> lst_<br><span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>in<br>这是第二章提到的成员资格运算符，就是判断容器内是否有该元素的。也可用于条件表达式。<br>这些用来判断“是不是”、“有没有”的东西都也可用在if后面，毕竟如果他们不返回一个布尔值怎么反应是或不是呢？</li>
+<li>字符串与序列的比较<br>python中字符是按Unicode编码规则储存的，所有每个字符都对应着一个数字（码点），字符的大小比较就是按着这个数字大小来的。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&#x27;a&#x27;</span>&lt;<span class="hljs-string">&#x27;c&#x27;</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)<br><span class="hljs-number">97</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;c&#x27;</span>)<br><span class="hljs-number">99</span><br></code></pre></td></tr></table></figure>
+可以看出，小写字母的码点是连续依次递增的，大写字母也是如此。但<strong>大小写字母之间不是的</strong>。<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;Z&#x27;</span>)<br><span class="hljs-number">90</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>下面说几个<strong>布尔逻辑运算符</strong>：</p>
+<ol>
+<li>and</li>
+<li>or</li>
+<li>not<br>他们分别对应于逻辑与、或、非。正常使用就行。但是注意<strong>短路逻辑</strong>现象。<br><img  src="https://s1.ax1x.com/2022/04/05/qLs5TK.png"  ><span class="image-caption">短路逻辑</span></li>
+</ol>
+<p>看出来毛病了吗？fun2压根没有执行。因为在或逻辑里，第一个如果是True的话，第二个是什么将不再重要，结果都将是True。所以or后面的代码将不再执行。特别是后面是个函数时，该情况下<strong>这个函数不会执行</strong>。</p>
+<p>接下来是一个有趣且使用的东西——断言。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">age=<span class="hljs-number">10</span><br><span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>age=-<span class="hljs-number">1</span><br><span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>Traceback (most recent call last):<br>  File <span class="hljs-string">&quot;C:/Users/86178/Desktop/test.py&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> &lt;module&gt;<br>    <span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>AssertionError<br></code></pre></td></tr></table></figure>
+<p>当不满足assert条件时，程序报错中断。这个可以用来找bug。</p>
+<h4 id="5-5循环"><a href="#5-5循环" class="headerlink" title="5.5循环"></a>5.5循环</h4><p>程序就是用来实现大量计算的，想想你要计算1+2+……+10000，难道要写一万行吗？</p>
+<p>循环可以解决这个问题。循环这里掌握while、for、break、continue、zip、enumerate、reversed就好了。</p>
+<h5 id="while"><a href="#while" class="headerlink" title="while"></a>while</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do somthing</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="for"><a href="#for" class="headerlink" title="for"></a>for</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="break"><a href="#break" class="headerlink" title="break"></a>break</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do something</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do something</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-keyword">continue</span><br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> num,string <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(nums,strings):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> index ,num <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="reversed"><a href="#reversed" class="headerlink" title="reversed"></a>reversed</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(lst):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="5-6-简单推导"><a href="#5-6-简单推导" class="headerlink" title="5.6 简单推导"></a>5.6 简单推导</h4><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-built_in">str</span>(x)+<span class="hljs-string">&#x27;and&#x27;</span>+<span class="hljs-built_in">str</span>(y) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">if</span> x%<span class="hljs-number">2</span>==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> y%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>]<br>[<span class="hljs-string">&#x27;0and1&#x27;</span>, <span class="hljs-string">&#x27;0and3&#x27;</span>, <span class="hljs-string">&#x27;0and5&#x27;</span>, <span class="hljs-string">&#x27;0and7&#x27;</span>, <span class="hljs-string">&#x27;0and9&#x27;</span>, <span class="hljs-string">&#x27;2and1&#x27;</span>, <span class="hljs-string">&#x27;2and3&#x27;</span>, <span class="hljs-string">&#x27;2and5&#x27;</span>, <span class="hljs-string">&#x27;2and7&#x27;</span>, <span class="hljs-string">&#x27;2and9&#x27;</span>, <span class="hljs-string">&#x27;4and1&#x27;</span>, <span class="hljs-string">&#x27;4and3&#x27;</span>, <span class="hljs-string">&#x27;4and5&#x27;</span>, <span class="hljs-string">&#x27;4and7&#x27;</span>, <span class="hljs-string">&#x27;4and9&#x27;</span>, <span class="hljs-string">&#x27;6and1&#x27;</span>, <span class="hljs-string">&#x27;6and3&#x27;</span>, <span class="hljs-string">&#x27;6and5&#x27;</span>, <span class="hljs-string">&#x27;6and7&#x27;</span>, <span class="hljs-string">&#x27;6and9&#x27;</span>, <span class="hljs-string">&#x27;8and1&#x27;</span>, <span class="hljs-string">&#x27;8and3&#x27;</span>, <span class="hljs-string">&#x27;8and5&#x27;</span>, <span class="hljs-string">&#x27;8and7&#x27;</span>, <span class="hljs-string">&#x27;8and9&#x27;</span>, <span class="hljs-string">&#x27;10and1&#x27;</span>, <span class="hljs-string">&#x27;10and3&#x27;</span>, <span class="hljs-string">&#x27;10and5&#x27;</span>, <span class="hljs-string">&#x27;10and7&#x27;</span>, <span class="hljs-string">&#x27;10and9&#x27;</span>]<br></code></pre></td></tr></table></figure>
+
+<p>的确很简单。</p>
+<h4 id="5-7-del-pass-exec"><a href="#5-7-del-pass-exec" class="headerlink" title="5.7 del pass exec"></a>5.7 del pass exec</h4><ol>
+<li>pass<br>pass就是<strong>啥也不做</strong>。由于python靠<strong>缩进表达层次关系</strong>，什么也不做的地方空着容易误会，就写个pass吧（C语言等靠大括号的就是空着）。</li>
+<li>del</li>
+</ol>
+<p><strong>del会删除变量所指向的那块内存与变量名自身</strong>。但如果多个变量名指向同一块内存，只会删除变量名。</p>
+<p>这里提到了python的<strong>垃圾回收机制</strong>。当你创建一个列表时，程序为你的这个列表分配了一块内存，然后你执行lst&#x3D;None，让lst不再指向那块内存了，想一想如果那块内存一直储存着以前lst的内容的话会导致什么后果？一个lst可能没有感觉，那如果一百万个lst再指向别处时它以前占用的内存都没有释放的话，程序一定会崩溃，因为内存不足了（C语言中称为<strong>内存泄漏</strong>）。所以python的垃圾回收机制就是把这些无家可归的内存（没有变量指向的内存）清除，以便重用。</p>
+<p>在C&#x2F;C++中是没有垃圾回收机制的，所以使用时程序员必须手动释放内存回收垃圾。</p>
+<p>内存泄漏是及其可怕的事，可能什么事也不会发生，可能会导致程序运行缓慢，可能上午可以运行下午再试就崩溃了。<br>3. exec<br>将字符串作为代码运行。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">exec</span>(<span class="hljs-string">&quot;print(&#x27;this is exec!&#x27;)&quot;</span>)<br>this <span class="hljs-keyword">is</span> <span class="hljs-built_in">exec</span>!<br></code></pre></td></tr></table></figure>
+<p>但是一般不要使用它。</p>
+<h4 id="5-8小结"><a href="#5-8小结" class="headerlink" title="5.8小结"></a>5.8小结</h4><p>本章主要内容：</p>
+<ol>
+<li>print的两个关键字参数：sep、end</li>
+<li>import …… as ……</li>
+<li>赋值中的序列解包、连续赋值和一个<a href="https://www.zhihu.com/question/20651624">语法糖</a></li>
+<li>代码块与缩进（一定要用四个空格）</li>
+<li>if、elif、else</li>
+<li>assert</li>
+<li>while、for、range、break、continue、zip、enumerate、reversed</li>
+<li>列表生成式</li>
+<li>pass、del、exec</li>
+</ol>
+<p>本章还提到了何为True、短路逻辑等知识。</p>
+<p>恭喜你，目前为止，最基础的语法学完了（貌似少了个函数）！</p>
+]]></content>
+      <categories>
+        <category>beginning_py</category>
+      </categories>
+      <tags>
+        <tag>py</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>polymorphism_of_C++</title>
+    <url>/2022/04/13/polymorphism_of_C++/</url>
+    <content><![CDATA[<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img  src="https://s1.ax1x.com/2022/04/13/LK75cT.png"  ><span class="image-caption">多态</span></p>
+<p>本文所指的多态，即通过<strong>类继承</strong>与<strong>虚函数</strong>机制于运行时生效的动态多态。</p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>考虑下面场景：<br>父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物会叫。宠物医院给各种宠物打针，Inject方法的参数自然是Pet类型的指针。</p>
+<p>实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span>* name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;	<span class="hljs-comment">//宠物会叫 </span><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Pet::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m a Pet.&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>:<span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类猫 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Cat::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;miao miao.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//猫叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>: <span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类狗 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Dog::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;wang wang.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//狗叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">PetHospital</span>	<span class="hljs-comment">//宠物医院 </span><br>&#123;<br>	<span class="hljs-type">char</span>* name;<br>	<span class="hljs-type">char</span>* location;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Inject</span><span class="hljs-params">(Pet* pet)</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">PetHospital::Inject</span><span class="hljs-params">(Pet* pet)</span>	<span class="hljs-comment">//给宠物打针 </span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-comment">//catch(); 没实现这些函数所以注释了 </span><br>	<span class="hljs-comment">//inject();</span><br>	pet-&gt;<span class="hljs-built_in">Speak</span>();	<span class="hljs-comment">//打针时宠物会叫 </span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>	PetHospital* pXieheHospital=<span class="hljs-keyword">new</span> <span class="hljs-built_in">PetHospital</span>();<br>	Cat* pCat=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Cat</span>();<br>	pXieheHospital-&gt;<span class="hljs-built_in">Inject</span>(pCat);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">I<span class="hljs-number">&#x27;</span>m a Pet.<br></code></pre></td></tr></table></figure>
+
+<p>在main函数中，我们将一个Cat类型指针传给Inject方法，而Inject方法要的参数是一个Pet类型指针。子类包含父类，所以在我们期望中，既然传入的是Cat类型指针，那么Inject()中的Speak()应该是子类Cat中的Speak方法，输出应该是miaomiao，但输出的不是miaomiao。说明调用的是父类Speak方法。</p>
+<h2 id="多态的实现"><a href="#多态的实现" class="headerlink" title="多态的实现"></a>多态的实现</h2><h3 id="向上类型转换"><a href="#向上类型转换" class="headerlink" title="向上类型转换"></a>向上类型转换</h3><p>在引入中，Inject方法要父类，我们传入子类，将子类当作父类使用，参数传入时，进行了默认的<strong>向上类型转换</strong>，将Cat*类型转为Pet*类型。然后Inject方法调用Pet*类型指针指向的Speak方法，自然是Pet的Speak。</p>
+<p>那如果我们将Inject方法的参数改为Cat*类型不就好了嘛？对于Cat类型是好了，<strong>但那样宠物医院就变成猫猫医院了</strong>，除非对于每一种宠物都要写一个打针方法，但这些方法除了参数类型不同其他都一样。</p>
+<p>所以，我们希望需要父类是传入子类，可以将子类作为父类对待。<strong>在发生向上类型转换后，仍能根据传入的子类类型调用对应的同名子类方法</strong>。（传入Cat就miaomiao，Dog就wangwang）这就是多态的作用。</p>
+<h3 id="前绑定与后绑定"><a href="#前绑定与后绑定" class="headerlink" title="前绑定与后绑定"></a>前绑定与后绑定</h3><p>为什么Pet对象调用的Speak就是Pet类的Speak（这不废话嘛），这是在编译链接中链接器就已经干好了的事。<strong>将函数的一次调用与函数入口地址相映射，这个步骤称为绑定（binding）</strong>。在链接时进行的绑定称为前绑定（early binding）。所以尽管你的Pet对象是Cat对象向上类型转换而来的，是Pet对象那执行的Speak方法就应该是Pet类的Speak。这是编译链接时就已经明确的事了。</p>
+<p>所以要想实现上述目标（多态）就要通过不同于前绑定的方法绑定——<strong>后绑定（runtime binding）</strong>。在编译链接时不对要实现多态的函数进行绑定，而在运行时通过<strong>虚函数表、虚指针</strong>的方式进行后绑定。<br>实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//将上述代码中Pet类中Speak方法前加上virtual关键字即可，该关键字会自动继承</span><br><span class="hljs-comment">//所以在子类Cat、Dog中的Speak函数也是虚函数，无论他们是否加上virtual</span><br><span class="hljs-comment">//一般会加上加强程序可读性</span><br><span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">miao miao<br></code></pre></td></tr></table></figure>
+
+<p>即<strong>传入子类对象时执行子类的同名虚函数</strong>而不是父类的同名虚函数。这时，无论传入Cat对象还是Dog对象都会调用对应子类的Speak函数，而不是父类Speak函数。此时Speak函数称为虚函数。</p>
+<h3 id="虚函数表与虚指针"><a href="#虚函数表与虚指针" class="headerlink" title="虚函数表与虚指针"></a>虚函数表与虚指针</h3><p>这种通过虚函数来进行后绑定究竟是怎样实现的呢？来开以下下面的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span>* name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;	<span class="hljs-comment">//宠物会叫 </span><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Pet::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m a Pet.&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>:<span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类猫 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Cat::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;miao miao.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//猫叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>: <span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类狗 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Dog::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;wang wang.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//狗叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">PetHospital</span>	<span class="hljs-comment">//宠物医院 </span><br>&#123;<br>	<span class="hljs-type">char</span>* name;<br>	<span class="hljs-type">char</span>* location;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Inject</span><span class="hljs-params">(Pet* pet)</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">PetHospital::Inject</span><span class="hljs-params">(Pet* pet)</span>	<span class="hljs-comment">//给宠物打针 </span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-comment">//catch(); 没实现这些函数所以注释了 </span><br>	<span class="hljs-comment">//inject();</span><br>	pet-&gt;<span class="hljs-built_in">Speak</span>();	<span class="hljs-comment">//打针时宠物会叫 </span><br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-built_in">sizeof</span>(<span class="hljs-type">int</span>)&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;<span class="hljs-built_in">sizeof</span>(<span class="hljs-type">char</span>*)&lt;&lt;endl;<br>	cout&lt;&lt;<span class="hljs-built_in">sizeof</span>(Pet)&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;<span class="hljs-built_in">sizeof</span>(Cat)&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;<span class="hljs-built_in">sizeof</span>(PetHospital)&lt;&lt;endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">8</span><br><span class="hljs-number">24</span> <span class="hljs-number">24</span> <span class="hljs-number">16</span><br></code></pre></td></tr></table></figure>
+
+<p>第一行是说，我的电脑上int是4字节，char*是8字节。第二行是说，一个Pet对象需要<strong>24</strong>字节，一个Cat对象需要<strong>24</strong>字节，一个PetHospital需要<strong>16</strong>字节。其中Pet与Cat类中非静态成员变量只有一个int与一个char*，一个PetHospital只有两个char*成员。</p>
+<p>PetHospital16字节我们能理解，刚好两个char*之和。但Pet、Cat的24字节从哪里来？我们<strong>将Pet类中Speak方法前的virtual关键字去除</strong>再试一下，输出：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">8</span><br><span class="hljs-number">16</span> <span class="hljs-number">16</span> <span class="hljs-number">16</span><br></code></pre></td></tr></table></figure>
+
+<p>Pet与Cat对象现在只需要16字节了，为什么不是4+8&#x3D;12呢，这时<strong>编译器为了CPU计算的方便做的数据对齐处理</strong>。所以我们可以发现，加上virtual（类中有虚函数）时，每个类对象会<strong>多出8字节</strong>（无论含有多少个虚函数都是多出一个指针大小的字节，可以自己验证）。</p>
+<p>这与后绑定机制的实现有关：<br>当一个类中含有虚函数时，这个类的对象的内存起始位置会加上一个虚指针（virtual ptr）（这是为何多8字节的原因），这个虚指针指向该类的虚函数表（virtual table），虚函数表中存有该类中所有虚函数地址。当一个对象调用虚函数时，编译器会从该对象起始位置的前8个字节中读出虚指针，再在虚函数表中找到该虚函数，实现<strong>后绑定</strong>。<strong>所以此时调用的是子类的虚函数还是子类的虚函数完全取决于起始位置虚指针指向的虚函数表中的虚函数实现。</strong></p>
+<p>如图：<br><img  src="https://s1.ax1x.com/2022/04/13/LK743V.png"  ><span class="image-caption">虚指针与虚函数表</span></p>
+<p>我们可以通过改变一个对象所含虚指针指向位置来验证这个实现，将一个Cat对象虚指针指向Dog类的虚函数表：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span>* name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;	<span class="hljs-comment">//宠物会叫 </span><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Pet::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m a Pet.&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>:<span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类猫 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Cat::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;miao miao.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//猫叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>: <span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类狗 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Dog::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;wang wang.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//狗叫 </span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    Dog* pDog=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Dog</span>();<br>	Cat cat;<br>	Cat* pCat= &amp;cat; <br>	<span class="hljs-built_in">memcpy</span>(&amp;cat,pDog,<span class="hljs-number">8</span>);<br>	pCat-&gt;<span class="hljs-built_in">Speak</span>();<br>	cat.<span class="hljs-built_in">Speak</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">wang wang.<br>miao miao.<br></code></pre></td></tr></table></figure>
+
+<p>在上述代码中，我们将cat对象的前8个字节改为一个Dog类型对象的前8个字节。然后分别通过指针调用和直接调用Speak方法，结果发现指针调用的输出为狗叫，而对象直接调用的输出仍为猫叫。这说明，<strong>指针调用虚函数时，会通过虚指针和虚函数表来实现后绑定机制，而对象直接调用是通过前绑定机制。</strong> 这也很好理解，子类指针可以向上类型转换为父类指针，此时我们仍可能通过虚函数指针来调用子类的虚函数（多态），尽管该指针是父类指针。所以<strong>指针调用虚函数要走后绑定机制</strong>，指针不走后绑定就没法实现多态了；但通过对象直接调用虚函数，既然是猫对象，理应就该猫叫，<strong>直接走的前绑定机制</strong>。</p>
+<p>所以：</p>
+<ol>
+<li>没有继承就没有多态。</li>
+<li>没有向上类型转换就没有多态。</li>
+<li>没有指针就没有多态。</li>
+</ol>
+<h2 id="纯虚函数"><a href="#纯虚函数" class="headerlink" title="纯虚函数"></a>纯虚函数</h2><h3 id="引入-1"><a href="#引入-1" class="headerlink" title="引入"></a>引入</h3><p>我们发现，<strong>越抽象的类，它的方法的具体实现就越难写</strong>。是这样的，上面的例子中，Cat对象Speak是miao miao，Dog对象Speak是wang wang，但Pet对象不知道咋叫就只能写个I’m a Pet了。我们一次也没想着去调Pet的Speak，因为它没有什么现实意义。但是为了实现多态Pet又不能没有Speak函数，所以纯虚函数便有了用处。</p>
+<h3 id="纯虚函数的实现"><a href="#纯虚函数的实现" class="headerlink" title="纯虚函数的实现"></a>纯虚函数的实现</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//将上例中的virtual void Speak();与函数实现 改为</span><br><span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span> </span>=<span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<p>这就实现了一个纯虚函数。<strong>含有纯虚函数的类称为抽象类（abstract class），抽象类不能有对象</strong>。编译器会报错的，形如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">invalid cast to abstract <span class="hljs-keyword">class</span> <span class="hljs-title class_">type</span> <span class="hljs-string">&#x27;xxx&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>在上述例子中，将Pet中Speak函数换成纯虚函数，Pet成为抽象类。你会发现没有任何问题（除了第一个引入部分，因为调用了Pet中Speak方法）。这就是抽象类的第一个作用。</p>
+<h3 id="抽象类的作用"><a href="#抽象类的作用" class="headerlink" title="抽象类的作用"></a>抽象类的作用</h3><ol>
+<li>约束一个类家族的共性行为。</li>
+<li>连接本不相关的类家族，抽象其共性行为。</li>
+</ol>
+<h4 id="约束一个类家族共性行为"><a href="#约束一个类家族共性行为" class="headerlink" title="约束一个类家族共性行为"></a>约束一个类家族共性行为</h4><p>比如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">char</span>* name;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span> gender;<br>	<span class="hljs-comment">//...</span><br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>=<span class="hljs-number">0</span>;	<span class="hljs-comment">//宠物会叫 </span><br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Eat</span><span class="hljs-params">()</span></span>=<span class="hljs-number">0</span>;	<span class="hljs-comment">//宠物会吃饭</span><br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">MakeFeelGood</span><span class="hljs-params">(Person* person)</span></span>=<span class="hljs-number">0</span>;<span class="hljs-comment">//宠物让人感到愉悦</span><br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Dead</span><span class="hljs-params">()</span></span>=<span class="hljs-number">0</span>;	<span class="hljs-comment">//宠物会死去 </span><br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>我们对于宠物家族进行了这些共性约束，以后Dog类、Cat类就从Pet类继承，然后实现所有的纯虚函数（若不完全实现，那它还是个抽象类，没有对象）。</p>
+<h4 id="连接本不相关的类家族，抽象其共性行为"><a href="#连接本不相关的类家族，抽象其共性行为" class="headerlink" title="连接本不相关的类家族，抽象其共性行为"></a>连接本不相关的类家族，抽象其共性行为</h4><p>比如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FlyObject</span><br>&#123;<br>    <span class="hljs-comment">//...</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">fly</span><span class="hljs-params">()</span></span>=<span class="hljs-number">0</span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span><br>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> :<span class="hljs-keyword">public</span> Anmial,<span class="hljs-keyword">public</span> FlyObject<br>&#123;<br>    <span class="hljs-comment">//...</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fly</span><span class="hljs-params">()</span></span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Bird::fly</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Machine</span><br>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Airplane</span>:<span class="hljs-keyword">public</span> Machine,<span class="hljs-keyword">public</span> FlyObject<br>&#123;<br>    <span class="hljs-comment">//...</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fly</span><span class="hljs-params">()</span></span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Airplane::fly</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样，我们就从本不相关的两个类（鸟和飞机），抽象出其共性行为（会飞）了。当你有一个函数需要传入会飞的东西为参数，那么传入FlyObject类型对象指针就好了。这里的FlyObject就是一个抽象类，通过<strong>多重继承的形式</strong>来抽象出鸟类与飞机类的共性行为——会飞。</p>
+<p>那么这种方式算不算多重继承？这不重要了。对于多重继承，我们认为不要多重继承两个都有明确成员变量、成员方法的类，容易导致很多问题。<strong>但继承一个“实际意义父类”与多个抽象类是没有问题的</strong>。在Java中，明确指出一个类最多只有一个父类，但可以有多个接口。接口的作用就与C++中抽象类的这种作用相同。</p>
+]]></content>
+      <categories>
+        <category>C++_from_liuyu</category>
+      </categories>
+      <tags>
+        <tag>C_C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cailiaolixue2</title>
+    <url>/2022/06/03/%E5%A4%96%E5%8A%9B%E4%B8%8E%E5%86%85%E5%8A%9B%E3%80%81%E5%BA%94%E5%8A%9B%E4%B8%8E%E5%BA%94%E5%8F%98/</url>
+    <content><![CDATA[<h1 id="外力与内力、应力与应变"><a href="#外力与内力、应力与应变" class="headerlink" title="外力与内力、应力与应变"></a>外力与内力、应力与应变</h1><hr>
+<h2 id="外力与内力"><a href="#外力与内力" class="headerlink" title="外力与内力"></a>外力与内力</h2><p>对于系统（研究对象）来说，我们通常将其所受力分为<strong>外力与内力</strong>。外力指研究对象之外的物体对其作用之力，内力指由于外力产生的变形使得研究对象内部各个部分之间产生的相互作用力。</p>
+<p>外力可根据其作用方式、分布状态、随时间变化等维度分类。如根据随时间变化情况不同，我们可将其分为静载荷与动载荷，我所学的材料力学仅仅涉及更简单的静载荷。</p>
+<p>对于内力，由于其存在于构件内部各个部分之间，我们通常采用<strong>截面法</strong>来求解内力。</p>
+<div align=center>
+<img  src="https://s1.ax1x.com/2022/06/02/XYxU4e.png"  width="400" />
+</div>
+如上图所示，对于一个已经处于平衡状态的杆件，我们假想一个截面将其分为左右两个部分。由于外力作用，杆件产生形变，于截面处有左右两部分相互作用的内力。我们将截面左右分开，**将截面处内力添加上**，由于左右部分都是平衡的，所以可以通过平衡方程求解截面处内力。
+
+<p>对于截面处内力，我们常常将其等效简化为形心处的一个主矢与一个主矩，再向三个坐标轴投影，得到三个方向的内力分量与内力偶矩分量。如下图所示。我们将垂直于截面的内力分量$F_N$称为<strong>轴力</strong>，这个方向的内力偶矩$M_x$称为<strong>扭矩</strong>；将其他两个方向的内力称为<strong>剪力</strong>，其他两个方向的矩称为<strong>弯矩</strong>。</p>
+<div align=center>
+<img  src="https://s1.ax1x.com/2022/06/02/XtSNSH.png"  width="400" />
+</div> 
+我们来看一个截面法的使用实例。
+<div align=center>
+<img  src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602173042.png"  width="400" />
+</div> 
+1. 将要求内力的位置用假想平面切开。
+2. 对分离体（左或右）进行平衡方程列解。
+3. 求出截面处内力。
+
+<p>很显然，这儿的内力大小为$F$，方向垂直截面指向分离体外，为轴力。我们对于轴力方向问题做出下面的规定：<strong>指向分离体之外为正，反之为负</strong>。之所以做出这样的正负规定，是因为这样对于左右分离体来说，内力代数值是相同的。</p>
+<hr>
+<h2 id="应力与应变"><a href="#应力与应变" class="headerlink" title="应力与应变"></a>应力与应变</h2><h3 id="应力"><a href="#应力" class="headerlink" title="应力"></a>应力</h3><p>我们思考这样一个问题：为什么材料在强度不足时会断开？为什么同样材料、同样受力状态越粗越“结实”？为什么会断开，势必是断开位置的内力过大，超过材料强度极限；为什么越粗越“结实”？势必是内力在横截面更大时更加“分散”，每个微小面积分到的内力更小。</p>
+<p>我们学过压强作为外力的分布集度，那么自然同样可以定义一个<strong>内力分布集度——应力</strong>。<br><img  src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602174803.png"  ><span class="image-caption">应力概念||400</span></p>
+<p>在截面上我们取一微小面积$\Delta A$，在该面积上作用的内力为$\Delta F$，则定义：<br>$$<br>\begin{align}<br>p_{av}&amp;&#x3D;\frac{\Delta F}{\Delta A}\<br>p&amp;&#x3D;lim_{\Delta A-&gt;0}\frac{\Delta F}{\Delta A}\<br>\end{align}<br>$$<br>其中$p_{av}$为平均应力，当微小面积无穷小时，变成$p$，即某点处应力。通常我们将应力$p$沿着截面法线方向与其垂直方向分解，沿着法线方向的应力为正应力，用$\sigma$表示；平行于截面方向的叫做切应力，记作$\tau$。有$p^2&#x3D;\sigma ^2+\tau^2$。</p>
+<h3 id="应变"><a href="#应变" class="headerlink" title="应变"></a>应变</h3><p>应力是内力的分布集度，与材料强度相对应，当应力过大时，材料会被破坏。而变形与材料刚度相对应，自然可以定义一个量来<strong>反映材料各点处的变形</strong>，这个量就是应变。<br><img  src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602180332.png"  ><span class="image-caption">应变定义||400</span></p>
+<p>将材料分为一个个的小微体，它发生的形变可以分为两种。一种是棱长改变，也就是拉长了或者压短了；另一种是棱边夹角的改变，也就是歪了。对此，我们分别用<strong>正应变与切应变</strong>描述。<br>$$<br>\begin{align}<br>\epsilon_{av}&amp;&#x3D;\frac{bb^{‘}}{ab}\<br>\epsilon&amp;&#x3D;lim_{ab-&gt;0}\frac{bb^{‘}}{ab}<br>\end{align}<br>$$<br>$\epsilon$即为正应变。<br>$$<br>\tau&#x3D;\angle bab^{‘}<br>$$<br>$\tau$即为微体之直角改变量，即为切应变。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/06/03/%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E9%AD%85%E5%8A%9B%E4%B9%8B%E6%89%80%E5%9C%A8/</url>
+    <content><![CDATA[<h1 id="材料力学魅力之所在"><a href="#材料力学魅力之所在" class="headerlink" title="材料力学魅力之所在"></a>材料力学魅力之所在</h1><hr>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>由于我是自动化专业，目前学校课程对机械、材料、力学这块涉及都很少。我们学的材料力学也很简单，所以命名为简单材料力学，仅仅为了自己复习总结时留下点东西。</p>
+<hr>
+<h2 id="研究对象"><a href="#研究对象" class="headerlink" title="研究对象"></a>研究对象</h2><p>19世纪铁路、桥梁工程的大力发展推动了材料力学的建立。所以最初，材料力学研究对象主要为钢材。这也意味着，材料力学是<strong>面向工程应用的、面向实际的</strong>。理论力学的学习中，常常伴随着<strong>刚体假设</strong>，也不考虑<strong>材料强度与稳定性问题</strong>。最典型的例子，理论力学无法解决如下的静不定问题。</p>
+<div align=center> <img src="https://s1.ax1x.com/2022/06/01/XYCoa6.png" width="400"> </div>
+而事实上，这样的系统必定有一个确定的受力状态，但仅仅根据理论力学平面力系平衡方程无法解出。在材料力学中，对于此类静不定问题，考虑其变形协调方程，可以得出一个与事实相接近的答案。
+
+<p>所以，材料力学的<strong>研究对象</strong>是各种各样的机械零、构件，我们都称之为<strong>构件</strong>。为了合理的设计、使用构件组成的系统（比如桥梁设计），我们要对每一个构件进行研究分析。一般从<strong>刚度、强度、稳定性</strong>三个方面<br>进行探讨。</p>
+<ol>
+<li>刚度指构件抵抗变形的能力，所谓刚体，就是不考虑变形的物体。</li>
+<li>强度指构件抵抗破坏的能力，即抵抗断裂、塑性形变的能力。</li>
+<li>稳定性指构件保持原有平衡形式的能力，即不失稳的能力。</li>
+</ol>
+<p>到这里，我们就能很清楚的理解材料力学的定义。材料力学是固体力学的一个重要分支，主要研究构件在外力作用下的<strong>变形、受力与破坏或失效的规律</strong>，为合理设计构件提供有关<strong>强度、刚度与稳定性分析</strong>的基本理论与方法。</p>
+<p>由于生活中最常使用最简单的构件是<strong>杆件</strong>，所以材料力学的主要研究对象是杆件，以及简单杆系。杆件的分析方法与原理也是其他构件分析的基础。</p>
+<hr>
+<h2 id="基本假设"><a href="#基本假设" class="headerlink" title="基本假设"></a>基本假设</h2><p>一方面，构件可以使用的材料千奇百怪，不同的材料的微观组成各不相同。所以对于每一种材料或结构都进行建模分析太过于复杂；另一方面，材料力学是面向工程实践的，对于误差有一定的允许范围，所以不必追求百分百的精度。所以根据现有工程材料主要性质，对于构件做出以下假设。</p>
+<ol>
+<li><strong>连续性假设</strong><br>假设构件内的空间被材料充满，构件内部物理量是连续的。可以使用无限小的数学分析方法。</li>
+<li><strong>均匀性假设</strong><br>假设构件内部的所有微小单元都是全同的，材料的力学性能与其在构件中的位置无关。</li>
+<li><strong>各向同性假设</strong><br>假设构件材料沿各个方向有着相同的力学性能，即有各向同性。</li>
+</ol>
+<p>所以，我们一般假设材料是连续的、均匀的、各向同的材料。当然，对于现实生活中的材料，这三个假设一般都是不完全或者完全不符合的，比如钢材中可能有气泡，但这并不妨碍我们采用这样的假设研究钢材杆件。</p>
+<p>在后续的学习中，我们将经常看到另外两个假设——线弹性假设与小变形假设。</p>
+<ol>
+<li><strong>线弹性假设</strong><br>假设材料的变形与受力符合线性关系，且外力移除后，变形可恢复。</li>
+<li><strong>小变形假设</strong><br>假设构件的变形大小远远小于构件自身的几何尺寸，所以在受力分析时作为小量忽略不计。</li>
+</ol>
+<hr>
+<h2 id="魅力所在"><a href="#魅力所在" class="headerlink" title="魅力所在"></a>魅力所在</h2><p>这本是材料力学绪论中的内容，我之所以将其命名为“材料力学魅力之所在”，是因为我认为把握了材料力学研究对象、基本假设，体会到其<strong>工程性、实用性</strong>，就能更好的理解后续学习中遇到的假设或者近似，对于后续应力、应变分析方法的掌握也有帮助。</p>
+<p>同时，在我看来，材料力学的魅力所在也就是它利用<strong>合理的假设与近似</strong>将复杂的现实问题简单化，通过简单的计算即可得出合理、实用的答案。</p>
+]]></content>
+  </entry>
+</search>

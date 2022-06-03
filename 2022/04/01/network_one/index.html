@@ -1,220 +1,75 @@
 
-
 <!DOCTYPE html>
-<html lang="zh,en,default" color-mode=light>
+<html lang="zh,en,default" class="loading">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>how_network_works1 - yunfei</title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="google" content="notranslate" />
-  <meta name="keywords" content=", network weread">
-  <meta name="description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 ...">
-  <meta name="author" content="yunfei">
-  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
-  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
-  
-    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
-    <meta rel="msapplication-TileColor" content="#000000">
-  
-
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>how_network_works1 - yunfei</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,network weread"> 
+    <meta name="description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 输入网址浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。
+协议：通信操,"> 
+    <meta name="author" content="yunfei"> 
+    <link rel="alternative" href="atom.xml" title="yunfei" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
     
-<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
-
-  
-
-  
     
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-
-  
-
-  
     
-      
-        
-        
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/vs2015.min.css" name="highlight-style" mode="light">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="how_network_works1 - yunfei"/>
+    <meta name="twitter:description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 输入网址浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。
+协议：通信操,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="yunfei"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="how_network_works1 - yunfei"/>
+    <meta property="og:description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 输入网址浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。
+协议：通信操,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
-      
-        
-        
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
-
-      
-  
-
-  <script>
-    var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
-    CONFIG = {
-      isHome: false,
-      fancybox: true,
-      pjax: false,
-      loading: {
-        gif: '/images/theme/loading.gif',
-        lottie: ''
-      },
-      lazyload: {
-        enable: true,
-        only_post: 'false',
-        loading: {
-          gif: '/images/theme/loading.gif',
-          lottie: ''
-        }
-      },
-      donate: {
-        enable: true,
-        alipay: '/images/donate/alipay.jpg',
-        wechat: '/images/donate/wechat.jpg'
-      },
-      galleries: {
-        enable: true
-      },
-      fab: {
-        enable: true,
-        always_show: false
-      },
-      carrier: {
-        enable: true
-      },
-      daovoice: {
-        enable: false
-      },
-      preview: {
-        background: {
-          default: '',
-          api: ''
-        },
-        motto: {
-          default: '我在开了灯的床头下，想问问自己的心啊。',
-          typing: true,
-          api: 'https://v2.jinrishici.com/one.json',
-          data_contents: '["data","content"]'
-        },
-      },
-      qrcode: {
-        enable: true,
-        type: 'url',
-        image: 'https://pic.izhaoo.com/weapp-code.jpg',
-      },
-      toc: {
-        enable: true
-      },
-      scrollbar: {
-        type: 'default'
-      },
-      notification: {
-        enable: false,
-        delay: 4500,
-        list: '',
-        page_white_list: '',
-        page_black_list: ''
-      },
-      search: {
-        enable: false,
-        path: ''
-      }
-    }
-  </script>
-
-  
-
-  
-
+    <script>window.searchDbPath = "/search.xml";</script>
 <meta name="generator" content="Hexo 6.1.0"></head>
 
-<body class="lock-screen">
-  <div class="loading" id="loading"></div>
-  
-    
+<body class="loading">
+    <span id="config-title" style="display:none">yunfei</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yanyunfei0921.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">how_network_works1</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">how_network_works1</h1>
+        <div class="stuff">
+            <span>四月 01, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/network/" rel="tag">network</a></li></ul>
 
 
-  <nav class="navbar">
-    <div class="left">
-      
-        <i class="iconfont iconhome j-navbar-back-home"></i>
-      
-      
-        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
-      
-      
-        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
-      
-      
-    </div>
-    <div class="center">how_network_works1</div>
-    <div class="right">
-      <i class="iconfont iconmenu j-navbar-menu"></i>
-    </div>
-    
-      <div id="qrcode-navbar"></div>
-    
-  </nav>
-
-  
-  
-
-<nav class="menu">
-  <div class="menu-container">
-    <div class="menu-close">
-      <i class="iconfont iconbaseline-close-px"></i>
-    </div>
-    <ul class="menu-content"><li class="menu-item">
-        <a href="/ " class="underline "> 首页</a>
-      </li><li class="menu-item">
-        <a href="/galleries/ " class="underline "> 摄影</a>
-      </li><li class="menu-item">
-        <a href="/archives/ " class="underline "> 归档</a>
-      </li><li class="menu-item">
-        <a href="/tags/ " class="underline "> 标签</a>
-      </li><li class="menu-item">
-        <a href="/categories/ " class="underline "> 分类</a>
-      </li><li class="menu-item">
-        <a href="/about/ " class="underline "> 关于</a>
-      </li></ul>
-    
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
-    
-  </div>
-</nav>
-  <main id="main">
-  <div class="article-wrap">
-    <div class="row container">
-      <div class="col-xl-3"></div>
-      <div class="col-xl-6"><article class="article">
-  <div class="wrap">
-    <section class="head">
-  <img   class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIphtJ.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-  <div class="head-mask">
-    <h1 class="head-title">how_network_works1</h1>
-    <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 01, 2022</span>
-      
-        <span class="post-info-item">
-          <i class="iconfont iconeye"></i><span id="/2022/04/01/network_one/" class="leancloud-counter" data-flag-title="how_network_works1"></span>
-        </span>
-        <span class="post-info-item">
-          <i class="iconfont iconheart"></i><span id="/2022/04/01/network_one/" class="leancloud-like" data-flag-title="how_network_works1"></span>
-        </span>
-      
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1783</span>
-    </div>
-  </div>
-</section>
-    <section class="main">
-      <section class="content">
-        
-        <h3 id="第一章、浏览器内部"><a href="#第一章、浏览器内部" class="headerlink" title="第一章、浏览器内部"></a>第一章、浏览器内部</h3><h4 id="1-1-HTTP请求消息"><a href="#1-1-HTTP请求消息" class="headerlink" title="1.1 HTTP请求消息"></a>1.1 HTTP请求消息</h4><h5 id="1-1-1-输入网址"><a href="#1-1-1-输入网址" class="headerlink" title="1.1.1 输入网址"></a>1.1.1 输入网址</h5><p>浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。</p>
+        </div>
+        <div class="content markdown">
+            <h3 id="第一章、浏览器内部"><a href="#第一章、浏览器内部" class="headerlink" title="第一章、浏览器内部"></a>第一章、浏览器内部</h3><h4 id="1-1-HTTP请求消息"><a href="#1-1-HTTP请求消息" class="headerlink" title="1.1 HTTP请求消息"></a>1.1 HTTP请求消息</h4><h5 id="1-1-1-输入网址"><a href="#1-1-1-输入网址" class="headerlink" title="1.1.1 输入网址"></a>1.1.1 输入网址</h5><p>浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。</p>
 <p>协议：通信操作的规则定义为协议。</p>
 <h5 id="1-1-2-解析URL"><a href="#1-1-2-解析URL" class="headerlink" title="1.1.2 解析URL"></a>1.1.2 解析URL</h5><p>HTTP规定的URL格式：http: &#x2F;&#x2F; Web服务器名 &#x2F; 目录名 &#x2F; … &#x2F; 文件名</p>
 <h5 id="1-1-3-省略文件名"><a href="#1-1-3-省略文件名" class="headerlink" title="1.1.3 省略文件名"></a>1.1.3 省略文件名</h5><p>如：<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com/</a><br>再省略&#x2F;：<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com</a><br>访问该目录默认文件，大多数是index.html等。</p>
@@ -223,19 +78,19 @@
 <p>HTTP请求消息中还有用来表示附加信息的<strong>头字段</strong>。先发头字段再发数据。</p>
 <p>Web服务器接收到请求消息完成对应工作后，将结果存在<strong>响应消息</strong>中。开头有一个状态码。</p>
 <h5 id="1-1-5-生成HTTP请求消息"><a href="#1-1-5-生成HTTP请求消息" class="headerlink" title="1.1.5 生成HTTP请求消息"></a>1.1.5 生成HTTP请求消息</h5><p>第一行为请求行，接着是消息头，空行后为消息体。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIp4h9.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">HTTP消息</span></p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIp4h9.png"  ><span class="image-caption">HTTP消息</span></p>
 <h5 id="1-1-6-发送请求收到响应"><a href="#1-1-6-发送请求收到响应" class="headerlink" title="1.1.6 发送请求收到响应"></a>1.1.6 发送请求收到响应</h5><p>响应与请求的格式只有第一行有差别，响应为HTTP版本 状态码 响应短语。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIpfk4.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">HTTP响应消息状态码</span></p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIpfk4.png"  ><span class="image-caption">HTTP响应消息状态码</span></p>
 <p>返回响应消息后，浏览器将数据显示，但如果有图片，就需要在图片处留出位置，再次访问服务器获得响应信息来取得图片。</p>
 <h4 id="1-2-向DNS服务器查询Web服务器IP地址"><a href="#1-2-向DNS服务器查询Web服务器IP地址" class="headerlink" title="1.2 向DNS服务器查询Web服务器IP地址"></a>1.2 向DNS服务器查询Web服务器IP地址</h4><h5 id="1-2-1-IP地址"><a href="#1-2-1-IP地址" class="headerlink" title="1.2.1 IP地址"></a>1.2.1 IP地址</h5><p>HTTP消息发送到服务器这一过程是浏览器委托操作系统实现的，必须告诉操作系统你目标服务器的IP地址。</p>
-<p>TCP&#x2F;IP基本思路：<br><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIpR7F.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">子网</span></p>
-<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIpy60.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">子网掩码</span></p>
+<p>TCP&#x2F;IP基本思路：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpR7F.png"  ><span class="image-caption">子网</span></p>
+<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpy60.png"  ><span class="image-caption">子网掩码</span></p>
 <p>子网掩码为1部分为网络号，为0部分为主机号。<br>主机号部分全为0表示整个子网，全为1表示广播。</p>
 <h5 id="1-2-2-域名与IP"><a href="#1-2-2-域名与IP" class="headerlink" title="1.2.2 域名与IP"></a>1.2.2 域名与IP</h5><p>让人看域名，让机器传IP。</p>
 <h5 id="1-2-3-Socket库提供查询IP地址功能"><a href="#1-2-3-Socket库提供查询IP地址功能" class="headerlink" title="1.2.3 Socket库提供查询IP地址功能"></a>1.2.3 Socket库提供查询IP地址功能</h5><p>Socket库是用于调用网络功能的程序组件集合。其中包含解析器，相当于DNS客户端部分。</p>
-<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIpIpR.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">解析器调用</span></p>
+<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpIpR.png"  ><span class="image-caption">解析器调用</span></p>
 <h5 id="1-2-5-解析器内部原理"><a href="#1-2-5-解析器内部原理" class="headerlink" title="1.2.5 解析器内部原理"></a>1.2.5 解析器内部原理</h5><p>解析器的调用就是计算机与DNS服务器的通信，通过协议栈（操作系统中网络控制软件）来执行：</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIp6XV.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">解析器与DNS服务器通信</span></p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIp6XV.png"  ><span class="image-caption">解析器与DNS服务器通信</span></p>
 <p>DNS的IP是计算机已知的。</p>
 <h4 id="1-3-全世界DNS服务器的大接力"><a href="#1-3-全世界DNS服务器的大接力" class="headerlink" title="1.3 全世界DNS服务器的大接力"></a>1.3 全世界DNS服务器的大接力</h4><h5 id="1-3-1-DNS服务器的基本工作"><a href="#1-3-1-DNS服务器的基本工作" class="headerlink" title="1.3.1 DNS服务器的基本工作"></a>1.3.1 DNS服务器的基本工作</h5><p>解析器发出的查询消息包含：</p>
 <ol>
@@ -245,7 +100,7 @@
 </ol>
 <h5 id="1-3-2-域名的层次结构"><a href="#1-3-2-域名的层次结构" class="headerlink" title="1.3.2 域名的层次结构"></a>1.3.2 域名的层次结构</h5><p>域名是有层次结构的，以.分隔，越靠右层次越高。如<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com.com域最高.dns服务器按照域名的层次结构储存./">www.lab.glasscom.com。com域最高。DNS服务器按照域名的层次结构储存。</a></p>
 <h5 id="1-3-3-寻找相应的DNS服务器并获得IP地址"><a href="#1-3-3-寻找相应的DNS服务器并获得IP地址" class="headerlink" title="1.3.3 寻找相应的DNS服务器并获得IP地址"></a>1.3.3 寻找相应的DNS服务器并获得IP地址</h5><p>上级DNS服务器储存下级DNS服务器的IP，最上级为根域（最后的一个点）。每个DNS服务器都储存有根域服务器的IP，以便快速访问根域。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIp20U.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">DNS服务器的接力工作</span></p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIp20U.png"  ><span class="image-caption">DNS服务器的接力工作</span></p>
 <h5 id="1-3-4-通过缓存加快DNS服务器响应"><a href="#1-3-4-通过缓存加快DNS服务器响应" class="headerlink" title="1.3.4 通过缓存加快DNS服务器响应"></a>1.3.4 通过缓存加快DNS服务器响应</h5><p>如果访问的几级域在同一台DNS服务器中，可以越级访问。DNS服务器中具有缓存功能，可以迅速返回查询过的域名对应IP。</p>
 <h4 id="1-4-委托协议栈发送消息"><a href="#1-4-委托协议栈发送消息" class="headerlink" title="1.4 委托协议栈发送消息"></a>1.4 委托协议栈发送消息</h4><h5 id="1-4-1-数据收发操作概览"><a href="#1-4-1-数据收发操作概览" class="headerlink" title="1.4.1 数据收发操作概览"></a>1.4.1 数据收发操作概览</h5><ol>
 <li>创建套接字。</li>
@@ -253,259 +108,114 @@
 <li>收发数据。</li>
 <li>断开管道并删除套接字。</li>
 </ol>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2022/04/02/qIpgmT.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">收发操作</span></p>
+<p><img  src="https://s1.ax1x.com/2022/04/02/qIpgmT.png"  ><span class="image-caption">收发操作</span></p>
 <h5 id="1-4-2-创建套接字"><a href="#1-4-2-创建套接字" class="headerlink" title="1.4.2 创建套接字"></a>1.4.2 创建套接字</h5><p>调用socket组件。<br>描述符：应用程序用来识别套接字的东西。</p>
 <h5 id="1-4-3-连接阶段"><a href="#1-4-3-连接阶段" class="headerlink" title="1.4.3 连接阶段"></a>1.4.3 连接阶段</h5><p>调用connect组件，三个参数：描述符、IP、端口号。<br>服务器IP与端口号：客户端用来识别服务器套接字的东西。客户端套接字的端口号在创建时分配，在连接时会发送给服务器。</p>
 <h5 id="1-4-4-通信阶段"><a href="#1-4-4-通信阶段" class="headerlink" title="1.4.4 通信阶段"></a>1.4.4 通信阶段</h5><p>调用write与read。</p>
 <h5 id="1-4-5-断开阶段"><a href="#1-4-5-断开阶段" class="headerlink" title="1.4.5 断开阶段"></a>1.4.5 断开阶段</h5><p>调用close。<br>实际收发消息的是协议栈、网卡驱动和网卡。</p>
 
-      </section>
-      <section class="extra">
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
         
-          <ul class="copyright">
-  
-    <li><strong>本文作者：</strong>yunfei</li>
-    <li><strong>本文链接：</strong><a href="https://yanyunfei0921.github.io/2022/04/01/network_one/index.html" title="https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;01&#x2F;network_one&#x2F;index.html">https:&#x2F;&#x2F;yanyunfei0921.github.io&#x2F;2022&#x2F;04&#x2F;01&#x2F;network_one&#x2F;index.html</a></li>
-    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
-  
-</ul>
-        
-        
-          <section class="donate">
-  <div id="qrcode-donate">
-    <img   class="lazyload" data-original="/images/donate/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
-  </div>
-  <div class="icon">
-    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
-    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
-  </div>
-</section>
-        
-        
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/network/" rel="tag">network</a></li></ul> 
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
 
-        
-  <nav class="nav">
-    <a href="/2022/04/02/C_C++_macros/"><i class="iconfont iconleft"></i>macro_in_C_or_C++</a>
-    <a href="/2022/03/30/py_two/">py2<i class="iconfont iconright"></i></a>
-  </nav>
 
-      </section>
-      
-    </section>
-  </div>
-</article></div>
-      <div class="col-xl-3">
-        
-          
-  <aside class="toc-wrap">
-    <h3 class="toc-title">文章目录：</h3>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E9%83%A8"><span class="toc-text">第一章、浏览器内部</span></a></li></ol>
-  </aside>
-
-        
-      </div>
     </div>
-  </div>
-</main>
-  
-
-<footer class="footer">
-  <div class="footer-social"><a 
-        href="tencent://message/?Menu=yes&uin=894519210 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#12B7F5'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconQQ "></i>
-      </a><a 
-        href="javascript:; "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#09BB07'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconwechat-fill "></i>
-      </a><a 
-        href="https://www.instagram.com/izhaoo/ "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#DA2E76'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconinstagram "></i>
-      </a><a 
-        href="https://github.com/yanyunfei0921 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  icongithub-fill "></i>
-      </a><a 
-        href="mailto:2920241726@qq.com "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color=#FF3B00" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconmail"></i>
-      </a></div>
-  
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
-  
-</footer>
-  
-      <div class="fab fab-plus">
-    <i class="iconfont iconplus"></i>
-  </div>
-  
-    <div class="fab fab-like">
-      <i class="iconfont iconheart"></i>
-    </div>
-  
-  
-  
-  <div class="fab fab-up">
-    <i class="iconfont iconcaret-up"></i>
-  </div>
-  
-  
-  
     
-<script src="/js/color-mode.js"></script>
+</div>
 
-  
-  
+
+    </div>
+</div>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
 
 
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
 
 
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
 
 
-
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-
-
-
-
-<script src="/js/utils.js"></script>
-<script src="/js/script.js"></script>
-
-
-
-  <script>
-  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
-
-    AV.init({
-      appId: '9YqvILfcMNAuoz9weLQbgEzI-gzGzoHsz',
-      appKey: 'PGDBxqD01loXmDecijeRxB7I',
-      serverURLs: 'https://leancloud.cn/',
-    });
-
-    const Counter = AV.Object.extend("Counter");
-    const Like = AV.Object.extend("Like");
-
-    const showCount = (Counter) => {
-      const asyncLimit = new AsyncLimit(2);
-      $(".leancloud-counter").each(async (e) => {
-        const url = $(".leancloud-counter").eq(e).attr('id').trim();
-        const query = new AV.Query("Counter");
-        query.equalTo("words", url);
-        let count = await asyncLimit.run(() => query.count());
-        $(".leancloud-counter").eq(e).text(count ? count : 0);
-      });
-    }
-
-    const addCount = (Counter) => {
-      const url = $(".leancloud-counter").length === 1 ? $(".leancloud-counter").attr('id').trim() : 'https://yanyunfei0921.github.io';
-      var query = new Counter;
-      query.save({
-        words: url
-      });
-    }
-
-    const showLike = (Like) => {
-      const asyncLimit = new AsyncLimit(2);
-      $(".leancloud-like").each(async (e) => {
-        const url = $(".leancloud-like").eq(e).attr('id').trim();
-        const query = new AV.Query("Like");
-        query.equalTo("path", url);
-        let count = await asyncLimit.run(() => query.count());
-        $(".leancloud-like").eq(e).text(count ? count : 0);
-      });
-    }
-
-    const addLike = (Like) => {
-      const url = $(".leancloud-like").length === 1 ? $(".leancloud-like").attr('id').trim() : 'https://yanyunfei0921.github.io';
-      var query = new Like;
-      query.save({
-        path: url,
-        nickName: 'Anonymous'
-      });
-      $(".leancloud-like").addClass('islike');
-      $(".fab-like").children(".iconfont").removeClass("iconheart").addClass("iconheart-fill").css("color", "#eb3223");
-      ZHAOO.zui.message({ text: '爱你哦~', type: 'success' });
-      setTimeout(() => showLike(Like), 1000);
-    }
-
-    const handleLikeClick = () => {
-      const isLike = $(".leancloud-like").length === 1 && $(".leancloud-like").hasClass('islike') ? true : false;
-      if (isLike) {
-        ZHAOO.zui.message({ text: '小心心不可以收回呢~', type: 'warning' });
-      } else {
-        addLike(Like);
-      }
-    }
-
-    $(function () {
-      addCount(Counter);
-      showCount(Counter);
-      showLike(Like);
-      $(".fab-like").on("click", function () {
-        handleLikeClick();
-      });
-    });
-
-  });
-</script>
-
-
-
-
-
-  <script>
-    (function () {
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-      } else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-      }
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-
-
-
-
-
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
