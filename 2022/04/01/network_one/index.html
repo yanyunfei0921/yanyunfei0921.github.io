@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>how_network_works1 - yunfei</title>
+    <title>网络是怎样连接的（一） - yunfei</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,network weread"> 
+    <meta name="keywords" content="Fechin,"> 
     <meta name="description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 输入网址浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。
 协议：通信操,"> 
     <meta name="author" content="yunfei"> 
@@ -19,7 +19,7 @@
     
     
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="how_network_works1 - yunfei"/>
+    <meta name="twitter:title" content="网络是怎样连接的（一） - yunfei"/>
     <meta name="twitter:description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 输入网址浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。
 协议：通信操,"/>
     
@@ -28,7 +28,7 @@
     
     <meta property="og:site_name" content="yunfei"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="how_network_works1 - yunfei"/>
+    <meta property="og:title" content="网络是怎样连接的（一） - yunfei"/>
     <meta property="og:description" content="第一章、浏览器内部1.1 HTTP请求消息1.1.1 输入网址浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。
 协议：通信操,"/>
     
@@ -45,7 +45,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yanyunfei0921.github.io"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">how_network_works1</h3>
+    <h3 class="subtitle">网络是怎样连接的（一）</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -60,11 +60,11 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">how_network_works1</h1>
+        <h1 class="title">网络是怎样连接的（一）</h1>
         <div class="stuff">
             <span>四月 01, 2022</span>
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/network/" rel="tag">network</a></li></ul>
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
 
 
         </div>
@@ -78,19 +78,19 @@
 <p>HTTP请求消息中还有用来表示附加信息的<strong>头字段</strong>。先发头字段再发数据。</p>
 <p>Web服务器接收到请求消息完成对应工作后，将结果存在<strong>响应消息</strong>中。开头有一个状态码。</p>
 <h5 id="1-1-5-生成HTTP请求消息"><a href="#1-1-5-生成HTTP请求消息" class="headerlink" title="1.1.5 生成HTTP请求消息"></a>1.1.5 生成HTTP请求消息</h5><p>第一行为请求行，接着是消息头，空行后为消息体。</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIp4h9.png"  ><span class="image-caption">HTTP消息</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIp4h9.png" alt="HTTP消息"></p>
 <h5 id="1-1-6-发送请求收到响应"><a href="#1-1-6-发送请求收到响应" class="headerlink" title="1.1.6 发送请求收到响应"></a>1.1.6 发送请求收到响应</h5><p>响应与请求的格式只有第一行有差别，响应为HTTP版本 状态码 响应短语。</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIpfk4.png"  ><span class="image-caption">HTTP响应消息状态码</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIpfk4.png" alt="HTTP响应消息状态码"></p>
 <p>返回响应消息后，浏览器将数据显示，但如果有图片，就需要在图片处留出位置，再次访问服务器获得响应信息来取得图片。</p>
 <h4 id="1-2-向DNS服务器查询Web服务器IP地址"><a href="#1-2-向DNS服务器查询Web服务器IP地址" class="headerlink" title="1.2 向DNS服务器查询Web服务器IP地址"></a>1.2 向DNS服务器查询Web服务器IP地址</h4><h5 id="1-2-1-IP地址"><a href="#1-2-1-IP地址" class="headerlink" title="1.2.1 IP地址"></a>1.2.1 IP地址</h5><p>HTTP消息发送到服务器这一过程是浏览器委托操作系统实现的，必须告诉操作系统你目标服务器的IP地址。</p>
-<p>TCP&#x2F;IP基本思路：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpR7F.png"  ><span class="image-caption">子网</span></p>
-<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpy60.png"  ><span class="image-caption">子网掩码</span></p>
+<p>TCP&#x2F;IP基本思路：<br><img src="https://s1.ax1x.com/2022/04/02/qIpR7F.png" alt="子网"></p>
+<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img src="https://s1.ax1x.com/2022/04/02/qIpy60.png" alt="子网掩码"></p>
 <p>子网掩码为1部分为网络号，为0部分为主机号。<br>主机号部分全为0表示整个子网，全为1表示广播。</p>
 <h5 id="1-2-2-域名与IP"><a href="#1-2-2-域名与IP" class="headerlink" title="1.2.2 域名与IP"></a>1.2.2 域名与IP</h5><p>让人看域名，让机器传IP。</p>
 <h5 id="1-2-3-Socket库提供查询IP地址功能"><a href="#1-2-3-Socket库提供查询IP地址功能" class="headerlink" title="1.2.3 Socket库提供查询IP地址功能"></a>1.2.3 Socket库提供查询IP地址功能</h5><p>Socket库是用于调用网络功能的程序组件集合。其中包含解析器，相当于DNS客户端部分。</p>
-<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpIpR.png"  ><span class="image-caption">解析器调用</span></p>
+<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img src="https://s1.ax1x.com/2022/04/02/qIpIpR.png" alt="解析器调用"></p>
 <h5 id="1-2-5-解析器内部原理"><a href="#1-2-5-解析器内部原理" class="headerlink" title="1.2.5 解析器内部原理"></a>1.2.5 解析器内部原理</h5><p>解析器的调用就是计算机与DNS服务器的通信，通过协议栈（操作系统中网络控制软件）来执行：</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIp6XV.png"  ><span class="image-caption">解析器与DNS服务器通信</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIp6XV.png" alt="解析器与DNS服务器通信"></p>
 <p>DNS的IP是计算机已知的。</p>
 <h4 id="1-3-全世界DNS服务器的大接力"><a href="#1-3-全世界DNS服务器的大接力" class="headerlink" title="1.3 全世界DNS服务器的大接力"></a>1.3 全世界DNS服务器的大接力</h4><h5 id="1-3-1-DNS服务器的基本工作"><a href="#1-3-1-DNS服务器的基本工作" class="headerlink" title="1.3.1 DNS服务器的基本工作"></a>1.3.1 DNS服务器的基本工作</h5><p>解析器发出的查询消息包含：</p>
 <ol>
@@ -100,7 +100,7 @@
 </ol>
 <h5 id="1-3-2-域名的层次结构"><a href="#1-3-2-域名的层次结构" class="headerlink" title="1.3.2 域名的层次结构"></a>1.3.2 域名的层次结构</h5><p>域名是有层次结构的，以.分隔，越靠右层次越高。如<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com.com域最高.dns服务器按照域名的层次结构储存./">www.lab.glasscom.com。com域最高。DNS服务器按照域名的层次结构储存。</a></p>
 <h5 id="1-3-3-寻找相应的DNS服务器并获得IP地址"><a href="#1-3-3-寻找相应的DNS服务器并获得IP地址" class="headerlink" title="1.3.3 寻找相应的DNS服务器并获得IP地址"></a>1.3.3 寻找相应的DNS服务器并获得IP地址</h5><p>上级DNS服务器储存下级DNS服务器的IP，最上级为根域（最后的一个点）。每个DNS服务器都储存有根域服务器的IP，以便快速访问根域。</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIp20U.png"  ><span class="image-caption">DNS服务器的接力工作</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIp20U.png" alt="DNS服务器的接力工作"></p>
 <h5 id="1-3-4-通过缓存加快DNS服务器响应"><a href="#1-3-4-通过缓存加快DNS服务器响应" class="headerlink" title="1.3.4 通过缓存加快DNS服务器响应"></a>1.3.4 通过缓存加快DNS服务器响应</h5><p>如果访问的几级域在同一台DNS服务器中，可以越级访问。DNS服务器中具有缓存功能，可以迅速返回查询过的域名对应IP。</p>
 <h4 id="1-4-委托协议栈发送消息"><a href="#1-4-委托协议栈发送消息" class="headerlink" title="1.4 委托协议栈发送消息"></a>1.4 委托协议栈发送消息</h4><h5 id="1-4-1-数据收发操作概览"><a href="#1-4-1-数据收发操作概览" class="headerlink" title="1.4.1 数据收发操作概览"></a>1.4.1 数据收发操作概览</h5><ol>
 <li>创建套接字。</li>
@@ -108,7 +108,7 @@
 <li>收发数据。</li>
 <li>断开管道并删除套接字。</li>
 </ol>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIpgmT.png"  ><span class="image-caption">收发操作</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIpgmT.png" alt="收发操作"></p>
 <h5 id="1-4-2-创建套接字"><a href="#1-4-2-创建套接字" class="headerlink" title="1.4.2 创建套接字"></a>1.4.2 创建套接字</h5><p>调用socket组件。<br>描述符：应用程序用来识别套接字的东西。</p>
 <h5 id="1-4-3-连接阶段"><a href="#1-4-3-连接阶段" class="headerlink" title="1.4.3 连接阶段"></a>1.4.3 连接阶段</h5><p>调用connect组件，三个参数：描述符、IP、端口号。<br>服务器IP与端口号：客户端用来识别服务器套接字的东西。客户端套接字的端口号在创建时分配，在连接时会发送给服务器。</p>
 <h5 id="1-4-4-通信阶段"><a href="#1-4-4-通信阶段" class="headerlink" title="1.4.4 通信阶段"></a>1.4.4 通信阶段</h5><p>调用write与read。</p>
@@ -116,20 +116,8 @@
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
-                <source type="audio/mpeg" src="">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
             </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                        
-                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                </ul>
             
         </div>
         

@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>polymorphism_of_C++ - yunfei</title>
+    <title>C++中的多态 - yunfei</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,C,C++,macro"> 
-    <meta name="description" content="多态概念百度百科：多态
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="多态概念百度百科：
 本文所指的多态，即通过类继承与虚函数机制于运行时生效的动态多态。
-引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时,"> 
+引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物,"> 
     <meta name="author" content="yunfei"> 
     <link rel="alternative" href="atom.xml" title="yunfei" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -20,20 +20,20 @@
     
     
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="polymorphism_of_C++ - yunfei"/>
-    <meta name="twitter:description" content="多态概念百度百科：多态
+    <meta name="twitter:title" content="C++中的多态 - yunfei"/>
+    <meta name="twitter:description" content="多态概念百度百科：
 本文所指的多态，即通过类继承与虚函数机制于运行时生效的动态多态。
-引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时,"/>
+引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物,"/>
     
     
     
     
     <meta property="og:site_name" content="yunfei"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="polymorphism_of_C++ - yunfei"/>
-    <meta property="og:description" content="多态概念百度百科：多态
+    <meta property="og:title" content="C++中的多态 - yunfei"/>
+    <meta property="og:description" content="多态概念百度百科：
 本文所指的多态，即通过类继承与虚函数机制于运行时生效的动态多态。
-引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时,"/>
+引入考虑下面场景：父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -48,7 +48,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yanyunfei0921.github.io"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">polymorphism_of_C++</h3>
+    <h3 class="subtitle">C++中的多态</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -63,16 +63,16 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">polymorphism_of_C++</h1>
+        <h1 class="title">C++中的多态</h1>
         <div class="stuff">
             <span>四月 13, 2022</span>
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C-C/" rel="tag">C_C++</a></li></ul>
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img  src="https://s1.ax1x.com/2022/04/13/LK75cT.png"  ><span class="image-caption">多态</span></p>
+            <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img src="https://s1.ax1x.com/2022/04/13/LK75cT.png" alt="多态"></p>
 <p>本文所指的多态，即通过<strong>类继承</strong>与<strong>虚函数</strong>机制于运行时生效的动态多态。</p>
 <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>考虑下面场景：<br>父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物会叫。宠物医院给各种宠物打针，Inject方法的参数自然是Pet类型的指针。</p>
 <p>实现如下：</p>
@@ -102,7 +102,7 @@
 
 <p>Pet与Cat对象现在只需要16字节了，为什么不是4+8&#x3D;12呢，这时<strong>编译器为了CPU计算的方便做的数据对齐处理</strong>。所以我们可以发现，加上virtual（类中有虚函数）时，每个类对象会<strong>多出8字节</strong>（无论含有多少个虚函数都是多出一个指针大小的字节，可以自己验证）。</p>
 <p>这与后绑定机制的实现有关：<br>当一个类中含有虚函数时，这个类的对象的内存起始位置会加上一个虚指针（virtual ptr）（这是为何多8字节的原因），这个虚指针指向该类的虚函数表（virtual table），虚函数表中存有该类中所有虚函数地址。当一个对象调用虚函数时，编译器会从该对象起始位置的前8个字节中读出虚指针，再在虚函数表中找到该虚函数，实现<strong>后绑定</strong>。<strong>所以此时调用的是子类的虚函数还是子类的虚函数完全取决于起始位置虚指针指向的虚函数表中的虚函数实现。</strong></p>
-<p>如图：<br><img  src="https://s1.ax1x.com/2022/04/13/LK743V.png"  ><span class="image-caption">虚指针与虚函数表</span></p>
+<p>如图：<br><img src="https://s1.ax1x.com/2022/04/13/LK743V.png" alt="虚指针与虚函数表"></p>
 <p>我们可以通过改变一个对象所含虚指针指向位置来验证这个实现，将一个Cat对象虚指针指向Dog类的虚函数表：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span>* name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;	<span class="hljs-comment">//宠物会叫 </span><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Pet::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m a Pet.&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>:<span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类猫 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Cat::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;miao miao.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//猫叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>: <span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类狗 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Dog::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;wang wang.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//狗叫 </span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    Dog* pDog=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Dog</span>();<br>	Cat cat;<br>	Cat* pCat= &amp;cat; <br>	<span class="hljs-built_in">memcpy</span>(&amp;cat,pDog,<span class="hljs-number">8</span>);<br>	pCat-&gt;<span class="hljs-built_in">Speak</span>();<br>	cat.<span class="hljs-built_in">Speak</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>输出：</p>
@@ -134,20 +134,8 @@
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
-                <source type="audio/mpeg" src="">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
             </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                        
-                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                </ul>
             
         </div>
         

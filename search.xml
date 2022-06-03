@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/03/20/hello-world/</url>
+    <title>快速开始</title>
+    <url>/2022/06/03/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
 
@@ -19,7 +19,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title>how_network_works1</title>
+    <title>网络是怎样连接的（一）</title>
     <url>/2022/04/01/network_one/</url>
     <content><![CDATA[<h3 id="第一章、浏览器内部"><a href="#第一章、浏览器内部" class="headerlink" title="第一章、浏览器内部"></a>第一章、浏览器内部</h3><h4 id="1-1-HTTP请求消息"><a href="#1-1-HTTP请求消息" class="headerlink" title="1.1 HTTP请求消息"></a>1.1 HTTP请求消息</h4><h5 id="1-1-1-输入网址"><a href="#1-1-1-输入网址" class="headerlink" title="1.1.1 输入网址"></a>1.1.1 输入网址</h5><p>浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。</p>
 <p>协议：通信操作的规则定义为协议。</p>
@@ -30,19 +30,19 @@
 <p>HTTP请求消息中还有用来表示附加信息的<strong>头字段</strong>。先发头字段再发数据。</p>
 <p>Web服务器接收到请求消息完成对应工作后，将结果存在<strong>响应消息</strong>中。开头有一个状态码。</p>
 <h5 id="1-1-5-生成HTTP请求消息"><a href="#1-1-5-生成HTTP请求消息" class="headerlink" title="1.1.5 生成HTTP请求消息"></a>1.1.5 生成HTTP请求消息</h5><p>第一行为请求行，接着是消息头，空行后为消息体。</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIp4h9.png"  ><span class="image-caption">HTTP消息</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIp4h9.png" alt="HTTP消息"></p>
 <h5 id="1-1-6-发送请求收到响应"><a href="#1-1-6-发送请求收到响应" class="headerlink" title="1.1.6 发送请求收到响应"></a>1.1.6 发送请求收到响应</h5><p>响应与请求的格式只有第一行有差别，响应为HTTP版本 状态码 响应短语。</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIpfk4.png"  ><span class="image-caption">HTTP响应消息状态码</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIpfk4.png" alt="HTTP响应消息状态码"></p>
 <p>返回响应消息后，浏览器将数据显示，但如果有图片，就需要在图片处留出位置，再次访问服务器获得响应信息来取得图片。</p>
 <h4 id="1-2-向DNS服务器查询Web服务器IP地址"><a href="#1-2-向DNS服务器查询Web服务器IP地址" class="headerlink" title="1.2 向DNS服务器查询Web服务器IP地址"></a>1.2 向DNS服务器查询Web服务器IP地址</h4><h5 id="1-2-1-IP地址"><a href="#1-2-1-IP地址" class="headerlink" title="1.2.1 IP地址"></a>1.2.1 IP地址</h5><p>HTTP消息发送到服务器这一过程是浏览器委托操作系统实现的，必须告诉操作系统你目标服务器的IP地址。</p>
-<p>TCP&#x2F;IP基本思路：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpR7F.png"  ><span class="image-caption">子网</span></p>
-<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpy60.png"  ><span class="image-caption">子网掩码</span></p>
+<p>TCP&#x2F;IP基本思路：<br><img src="https://s1.ax1x.com/2022/04/02/qIpR7F.png" alt="子网"></p>
+<p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img src="https://s1.ax1x.com/2022/04/02/qIpy60.png" alt="子网掩码"></p>
 <p>子网掩码为1部分为网络号，为0部分为主机号。<br>主机号部分全为0表示整个子网，全为1表示广播。</p>
 <h5 id="1-2-2-域名与IP"><a href="#1-2-2-域名与IP" class="headerlink" title="1.2.2 域名与IP"></a>1.2.2 域名与IP</h5><p>让人看域名，让机器传IP。</p>
 <h5 id="1-2-3-Socket库提供查询IP地址功能"><a href="#1-2-3-Socket库提供查询IP地址功能" class="headerlink" title="1.2.3 Socket库提供查询IP地址功能"></a>1.2.3 Socket库提供查询IP地址功能</h5><p>Socket库是用于调用网络功能的程序组件集合。其中包含解析器，相当于DNS客户端部分。</p>
-<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img  src="https://s1.ax1x.com/2022/04/02/qIpIpR.png"  ><span class="image-caption">解析器调用</span></p>
+<h5 id="1-2-4-通过解析器向DNS服务器发出查询"><a href="#1-2-4-通过解析器向DNS服务器发出查询" class="headerlink" title="1.2.4 通过解析器向DNS服务器发出查询"></a>1.2.4 通过解析器向DNS服务器发出查询</h5><p>调用解析器即可：<br><img src="https://s1.ax1x.com/2022/04/02/qIpIpR.png" alt="解析器调用"></p>
 <h5 id="1-2-5-解析器内部原理"><a href="#1-2-5-解析器内部原理" class="headerlink" title="1.2.5 解析器内部原理"></a>1.2.5 解析器内部原理</h5><p>解析器的调用就是计算机与DNS服务器的通信，通过协议栈（操作系统中网络控制软件）来执行：</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIp6XV.png"  ><span class="image-caption">解析器与DNS服务器通信</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIp6XV.png" alt="解析器与DNS服务器通信"></p>
 <p>DNS的IP是计算机已知的。</p>
 <h4 id="1-3-全世界DNS服务器的大接力"><a href="#1-3-全世界DNS服务器的大接力" class="headerlink" title="1.3 全世界DNS服务器的大接力"></a>1.3 全世界DNS服务器的大接力</h4><h5 id="1-3-1-DNS服务器的基本工作"><a href="#1-3-1-DNS服务器的基本工作" class="headerlink" title="1.3.1 DNS服务器的基本工作"></a>1.3.1 DNS服务器的基本工作</h5><p>解析器发出的查询消息包含：</p>
 <ol>
@@ -52,7 +52,7 @@
 </ol>
 <h5 id="1-3-2-域名的层次结构"><a href="#1-3-2-域名的层次结构" class="headerlink" title="1.3.2 域名的层次结构"></a>1.3.2 域名的层次结构</h5><p>域名是有层次结构的，以.分隔，越靠右层次越高。如<a href="http://www.lab.glasscom.com.com域最高.dns服务器按照域名的层次结构储存./">www.lab.glasscom.com。com域最高。DNS服务器按照域名的层次结构储存。</a></p>
 <h5 id="1-3-3-寻找相应的DNS服务器并获得IP地址"><a href="#1-3-3-寻找相应的DNS服务器并获得IP地址" class="headerlink" title="1.3.3 寻找相应的DNS服务器并获得IP地址"></a>1.3.3 寻找相应的DNS服务器并获得IP地址</h5><p>上级DNS服务器储存下级DNS服务器的IP，最上级为根域（最后的一个点）。每个DNS服务器都储存有根域服务器的IP，以便快速访问根域。</p>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIp20U.png"  ><span class="image-caption">DNS服务器的接力工作</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIp20U.png" alt="DNS服务器的接力工作"></p>
 <h5 id="1-3-4-通过缓存加快DNS服务器响应"><a href="#1-3-4-通过缓存加快DNS服务器响应" class="headerlink" title="1.3.4 通过缓存加快DNS服务器响应"></a>1.3.4 通过缓存加快DNS服务器响应</h5><p>如果访问的几级域在同一台DNS服务器中，可以越级访问。DNS服务器中具有缓存功能，可以迅速返回查询过的域名对应IP。</p>
 <h4 id="1-4-委托协议栈发送消息"><a href="#1-4-委托协议栈发送消息" class="headerlink" title="1.4 委托协议栈发送消息"></a>1.4 委托协议栈发送消息</h4><h5 id="1-4-1-数据收发操作概览"><a href="#1-4-1-数据收发操作概览" class="headerlink" title="1.4.1 数据收发操作概览"></a>1.4.1 数据收发操作概览</h5><ol>
 <li>创建套接字。</li>
@@ -60,29 +60,29 @@
 <li>收发数据。</li>
 <li>断开管道并删除套接字。</li>
 </ol>
-<p><img  src="https://s1.ax1x.com/2022/04/02/qIpgmT.png"  ><span class="image-caption">收发操作</span></p>
+<p><img src="https://s1.ax1x.com/2022/04/02/qIpgmT.png" alt="收发操作"></p>
 <h5 id="1-4-2-创建套接字"><a href="#1-4-2-创建套接字" class="headerlink" title="1.4.2 创建套接字"></a>1.4.2 创建套接字</h5><p>调用socket组件。<br>描述符：应用程序用来识别套接字的东西。</p>
 <h5 id="1-4-3-连接阶段"><a href="#1-4-3-连接阶段" class="headerlink" title="1.4.3 连接阶段"></a>1.4.3 连接阶段</h5><p>调用connect组件，三个参数：描述符、IP、端口号。<br>服务器IP与端口号：客户端用来识别服务器套接字的东西。客户端套接字的端口号在创建时分配，在连接时会发送给服务器。</p>
 <h5 id="1-4-4-通信阶段"><a href="#1-4-4-通信阶段" class="headerlink" title="1.4.4 通信阶段"></a>1.4.4 通信阶段</h5><p>调用write与read。</p>
 <h5 id="1-4-5-断开阶段"><a href="#1-4-5-断开阶段" class="headerlink" title="1.4.5 断开阶段"></a>1.4.5 断开阶段</h5><p>调用close。<br>实际收发消息的是协议栈、网卡驱动和网卡。</p>
 ]]></content>
       <categories>
-        <category>how_network_works</category>
+        <category>网络是怎样连接的</category>
       </categories>
       <tags>
-        <tag>network</tag>
+        <tag>读书笔记</tag>
       </tags>
   </entry>
   <entry>
-    <title>py1</title>
+    <title>Python基础教程（一）</title>
     <url>/2022/03/30/py_one/</url>
-    <content><![CDATA[<h3 id="引言部分"><a href="#引言部分" class="headerlink" title="引言部分"></a>引言部分</h3><p>下载<a href="https://www.python.org/getit/">python</a>，访问该网站下载python3.10.4<strong>forwindows版本</strong>。<br><img  src="https://s1.ax1x.com/2022/03/29/q6ceFe.png"  ><span class="image-caption">下载网页.png</span></p>
+    <content><![CDATA[<h3 id="引言部分"><a href="#引言部分" class="headerlink" title="引言部分"></a>引言部分</h3><p>下载<a href="https://www.python.org/getit/">python</a>，访问该网站下载python3.10.4<strong>forwindows版本</strong>。<br><img src="https://s1.ax1x.com/2022/03/29/q6ceFe.png" alt="下载网页.png"></p>
 <h3 id="第一章、基础知识"><a href="#第一章、基础知识" class="headerlink" title="第一章、基础知识"></a>第一章、基础知识</h3><h4 id="1-1交互式解释器"><a href="#1-1交互式解释器" class="headerlink" title="1.1交互式解释器"></a>1.1交互式解释器</h4><p><strong>解释器</strong>就是将高级语言代码（人直接看得懂）转换为机器码（机器看的）的东西，以便于机器执行。交互式是当你的代码有任何输出操作它就会直接输出到当前界面，适合当计算器或验证语法等。</p>
 <p>现在语言可分为两种，解释型与编译型，c语言就是编译型，暂时不说他们的区别。</p>
-<p>按win键加R快捷键进入“运行”，输入<strong>cmd</strong>进入命令提示符界面，如果你安装好了python，在此<strong>输入python回车</strong>就会进入python的交互式解释器界面。<br><img  src="https://s1.ax1x.com/2022/03/29/q6cVoD.png"  ><span class="image-caption">交互式解释器.png</span></p>
+<p>按win键加R快捷键进入“运行”，输入<strong>cmd</strong>进入命令提示符界面，如果你安装好了python，在此<strong>输入python回车</strong>就会进入python的交互式解释器界面。<br><img src="https://s1.ax1x.com/2022/03/29/q6cVoD.png" alt="交互式解释器.png"></p>
 <p><strong>如果没有成功</strong>出现这些字样并且已经下载好了python，那么可能需要你自己动手将python所在位置添加到环境变量当中去。</p>
 <p>设置-&gt;系统-&gt;关于-&gt;高级系统设置-&gt;环境变量-&gt;用户变量或系统变量中的Path选项-&gt;编辑-&gt;新建-&gt;输入<strong>你的</strong>python路径（不是下面中我的）。</p>
-<p>比如，我的在C盘根目录下的Python310中，则输C:\Python310\Scripts<br>与C:\Python310\这两个新的环境变量，然后<strong>确定保存</strong>。<br><img  src="https://s1.ax1x.com/2022/03/29/q6cEdO.png"  ><span class="image-caption">配置环境变量.png</span></p>
+<p>比如，我的在C盘根目录下的Python310中，则输C:\Python310\Scripts<br>与C:\Python310\这两个新的环境变量，然后<strong>确定保存</strong>。<br><img src="https://s1.ax1x.com/2022/03/29/q6cEdO.png" alt="配置环境变量.png"></p>
 <p>至于环境变量的作用，就相当于桌面的快捷方式，让人们在cmd中可以直接访问到某个地方。<strong>不懂不要紧，但必须确保你有python的环境变量（出交互式解释器就是有了）</strong>。</p>
 <h4 id="1-2算法"><a href="#1-2算法" class="headerlink" title="1.2算法"></a>1.2算法</h4><p>简单来说，算法就是计算机程序的特定的工作流程。由于计算机计算功能强大，通过某些不同于人类的其他特定的流程工作会让它更强大。</p>
 <h4 id="1-3数和表达式"><a href="#1-3数和表达式" class="headerlink" title="1.3数和表达式"></a>1.3数和表达式</h4><p>在交互式解释器界面把py当计算器用，加减乘除都与正常的运算相同。需要注意的是，带有小数部分的数在计算机中称为<strong>浮点数</strong>。</p>
@@ -106,10 +106,10 @@
 <h4 id="1-9保存并执行程序"><a href="#1-9保存并执行程序" class="headerlink" title="1.9保存并执行程序"></a>1.9保存并执行程序</h4><p>前面所说的语法实例都可以通过交互式解释器来验证实现，但解释器关闭后，写的东西都会消失不见，且程序的输出与输入在一个界面，不美观。这节主要阐述<strong>在哪写代码的问题</strong>。</p>
 <p>注意书中很大一部分都是在说UNIX的命令行，但你使用的是windows，不用管它。可以通过<strong>下面的步骤</strong>找到一个可以保存并运行程序的东西——python自带的IDLE。</p>
 <p>windows菜单栏中找到标有python3.10的文件夹，点击其中的带有IDLE字样的图标。</p>
-<p>注意此时弹出的白框仍是交互式解释器，如下图。<br><img  src="https://s1.ax1x.com/2022/03/30/qc5mX4.png"  ><span class="image-caption">白的交互式解释器</span></p>
-<p>点击左上角的file-&gt;new file，此时进入文本编辑器界面。左上角的untitled即为该文件未命名，未保存。<br><img  src="https://s1.ax1x.com/2022/03/30/qc5KB9.png"  ><span class="image-caption">文本编辑器界面</span></p>
+<p>注意此时弹出的白框仍是交互式解释器，如下图。<br><img src="https://s1.ax1x.com/2022/03/30/qc5mX4.png" alt="白的交互式解释器"></p>
+<p>点击左上角的file-&gt;new file，此时进入文本编辑器界面。左上角的untitled即为该文件未命名，未保存。<br><img src="https://s1.ax1x.com/2022/03/30/qc5KB9.png" alt="文本编辑器界面"></p>
 <p>这时候就可以在这个界面编写代码，而不会写一行输出一下，只有你解释执行整个文件时才会输出程序输出（如果有输出的话）。</p>
-<p>写完代码<strong>保存后</strong>点击最上方的run-&gt;run module，然后之前看到的交互式解释器就会蹦出来显示你的输出，并显示你这个py文件的位置。<br><img  src="https://s1.ax1x.com/2022/03/30/qc5unJ.png"  ><span class="image-caption">输出样式</span></p>
+<p>写完代码<strong>保存后</strong>点击最上方的run-&gt;run module，然后之前看到的交互式解释器就会蹦出来显示你的输出，并显示你这个py文件的位置。<br><img src="https://s1.ax1x.com/2022/03/30/qc5unJ.png" alt="输出样式"></p>
 <p>这样你就成功的使用python IDLE编写代码了。</p>
 <p>在windows环境下，其实也能使用命令行（power shell）执行可执行文件（py文件也是一种可执行文件），也是能运行出来但是目前没啥其他作用。</p>
 <p>最后是<strong>注释</strong>的问题，代码是人写的，机器解释并运行的，但同时更是人看的，看的最多的人还是你自己。所以往往一段时间后，自己看不懂自己的代码。但是如果在代码中间穿插一部分解释性语句，<strong>只给人看，而电脑自动跳这部分</strong>，就能增强代码的可读性，这就是注释的作用。python中有两种注释方式，单行注释与多行注释。</p>
@@ -147,14 +147,14 @@
 <p>其中表达式、变量、语句、函数、字符串最为重要。</p>
 ]]></content>
       <categories>
-        <category>beginning_py</category>
+        <category>Python基础教程</category>
       </categories>
       <tags>
-        <tag>py</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>py2</title>
+    <title>Python基础教程（二）</title>
     <url>/2022/03/30/py_two/</url>
     <content><![CDATA[<h3 id="第二章、列表和元组"><a href="#第二章、列表和元组" class="headerlink" title="第二章、列表和元组"></a>第二章、列表和元组</h3><h4 id="2-1序列概述"><a href="#2-1序列概述" class="headerlink" title="2.1序列概述"></a>2.1序列概述</h4><p>想象一下如和表达一个有限长的数列，或者表示一个有限个元素构成的集合。一个一个变量的去定义肯定是不现实的，不仅耗时耗力而且不能很好的表达这些值之间的联系。所以需要<strong>容器</strong>（container）的数据结构。容器就是一种可以包含其他对象的对象。</p>
 <p>容器主要有序列、映射和集合。序列类型适合表示上面的有限长数列，集合自然用集合数据类型表示。<strong>这一章主要阐述序列</strong>。</p>
@@ -228,19 +228,19 @@
 <p>本章还提到了浅拷贝与深拷贝、排序等知识。</p>
 ]]></content>
       <categories>
-        <category>beginning_py</category>
+        <category>Python基础教程</category>
       </categories>
       <tags>
-        <tag>py</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>test</title>
+    <title></title>
     <url>/2022/03/29/test/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>macro_in_C_or_C++</title>
+    <title>C（C++）中的宏</title>
     <url>/2022/04/02/C_C++_macros/</url>
     <content><![CDATA[<h1 id="C-C-中的宏"><a href="#C-C-中的宏" class="headerlink" title="C\C++中的宏"></a>C\C++中的宏</h1><p>C中的有三种：常量宏、函数宏、控制宏。</p>
 <h2 id="常量宏"><a href="#常量宏" class="headerlink" title="常量宏"></a>常量宏</h2><p>常数宏经常用于<strong>消除代码当中的魔法数</strong>，增强代码的可读性。同时便于代码的维护与优化。<br>如：<br>将该段代码中的201替换为STU_CON，就可以很清楚的知道201是学生的数量。</p>
@@ -258,14 +258,14 @@
 <p>若直接单独执行这段代码，会只输出version two over。当该文件中或其包含的头文件中定义了宏VER_ONE则会仅输出version one over。</p>
 ]]></content>
       <categories>
-        <category>C++_from_liuyu</category>
+        <category>C++课堂</category>
       </categories>
       <tags>
-        <tag>C_C++</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
-    <title>default_parameter_of_C++</title>
+    <title>C++中的默认参数</title>
     <url>/2022/04/03/C++_default_parameter/</url>
     <content><![CDATA[<h1 id="C-默认参数"><a href="#C-默认参数" class="headerlink" title="C++默认参数"></a>C++默认参数</h1><p>C语言中，函数定义时指定了几个形参，在使用时就必须传入传入与定义时个数、类型相同的参数。</p>
 <p>在某些时候这样做不太方便，比如说，创建一个窗体的函数。使用者需要指定窗体的尺寸、颜色等所有参数，而往往窗体都是黑的，这就需要定义“黑的”为默认值。C++中引入默认参数优化该问题。</p>
@@ -298,14 +298,14 @@
 <p>这时如果这样[fun(1)]调用fun()函数，则会出现错误，编译器无法识别调用哪一个fun()函数。</p>
 ]]></content>
       <categories>
-        <category>C++_from_liuyu</category>
+        <category>C++课堂</category>
       </categories>
       <tags>
-        <tag>C_C++</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
-    <title>py3</title>
+    <title>Python基础教程（三）</title>
     <url>/2022/04/04/py3/</url>
     <content><![CDATA[<h3 id="第三章、使用字符串"><a href="#第三章、使用字符串" class="headerlink" title="第三章、使用字符串"></a>第三章、使用字符串</h3><h4 id="3-1-字符串基本操作"><a href="#3-1-字符串基本操作" class="headerlink" title="3.1 字符串基本操作"></a>3.1 字符串基本操作</h4><p>所有标准序列操作都能作，但是和元组一样，你不能改变字符串的值。</p>
 <h4 id="3-2-设置字符串的格式"><a href="#3-2-设置字符串的格式" class="headerlink" title="3.2 设置字符串的格式"></a>3.2 设置字符串的格式</h4><ol>
@@ -335,14 +335,14 @@
 </ol>
 ]]></content>
       <categories>
-        <category>beginning_py</category>
+        <category>Python基础教程</category>
       </categories>
       <tags>
-        <tag>py</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>py4</title>
+    <title>Python基础教程（四）</title>
     <url>/2022/04/04/py4/</url>
     <content><![CDATA[<h3 id="第四章、当索引行不通时"><a href="#第四章、当索引行不通时" class="headerlink" title="第四章、当索引行不通时"></a>第四章、当索引行不通时</h3><p>字典是python中唯一的映射数据结构。值与键相对应。</p>
 <h4 id="4-1-字典的用途"><a href="#4-1-字典的用途" class="headerlink" title="4.1 字典的用途"></a>4.1 字典的用途</h4><p>用列表储存一个电话簿，需要一个列表记录人名，一个列表记录电话号码。查询时也得动点脑筋。</p>
@@ -394,14 +394,14 @@
 <p>本章还复习了浅拷贝与深拷贝等内存相关概念。</p>
 ]]></content>
       <categories>
-        <category>beginning_py</category>
+        <category>Python基础教程</category>
       </categories>
       <tags>
-        <tag>py</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>py5</title>
+    <title>Python基础教程（四）</title>
     <url>/2022/04/05/py5/</url>
     <content><![CDATA[<h3 id="第五章、条件、循环及其他语句"><a href="#第五章、条件、循环及其他语句" class="headerlink" title="第五章、条件、循环及其他语句"></a>第五章、条件、循环及其他语句</h3><p>你还记得<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>里提到的文本编辑器界面吗？一直以来我们使用的都是交互式解释器，因为它简单方便，用来验证语法再好不过。但是当你需要写很多很多行并且保存的时候，它显然不能做的很好。当学完这一章，可能就需要使用IDLE进行编程了。</p>
 <h4 id="5-1-再谈print与import"><a href="#5-1-再谈print与import" class="headerlink" title="5.1 再谈print与import"></a>5.1 再谈print与import</h4><ol>
@@ -456,7 +456,7 @@
 <ol>
 <li>and</li>
 <li>or</li>
-<li>not<br>他们分别对应于逻辑与、或、非。正常使用就行。但是注意<strong>短路逻辑</strong>现象。<br><img  src="https://s1.ax1x.com/2022/04/05/qLs5TK.png"  ><span class="image-caption">短路逻辑</span></li>
+<li>not<br>他们分别对应于逻辑与、或、非。正常使用就行。但是注意<strong>短路逻辑</strong>现象。<br><img src="https://s1.ax1x.com/2022/04/05/qLs5TK.png" alt="短路逻辑"></li>
 </ol>
 <p>看出来毛病了吗？fun2压根没有执行。因为在或逻辑里，第一个如果是True的话，第二个是什么将不再重要，结果都将是True。所以or后面的代码将不再执行。特别是后面是个函数时，该情况下<strong>这个函数不会执行</strong>。</p>
 <p>接下来是一个有趣且使用的东西——断言。</p>
@@ -507,16 +507,16 @@
 <p>恭喜你，目前为止，最基础的语法学完了（貌似少了个函数）！</p>
 ]]></content>
       <categories>
-        <category>beginning_py</category>
+        <category>Python基础教程</category>
       </categories>
       <tags>
-        <tag>py</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>polymorphism_of_C++</title>
+    <title>C++中的多态</title>
     <url>/2022/04/13/polymorphism_of_C++/</url>
-    <content><![CDATA[<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img  src="https://s1.ax1x.com/2022/04/13/LK75cT.png"  ><span class="image-caption">多态</span></p>
+    <content><![CDATA[<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a href="https://baike.baidu.com/item/%E5%A4%9A%E6%80%81/2282489?fr=aladdin">百度百科</a>：<br><img src="https://s1.ax1x.com/2022/04/13/LK75cT.png" alt="多态"></p>
 <p>本文所指的多态，即通过<strong>类继承</strong>与<strong>虚函数</strong>机制于运行时生效的动态多态。</p>
 <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>考虑下面场景：<br>父类宠物，下面有两个子类猫和狗，宠物会叫，但猫和狗的叫声不一样。宠物医院给宠物打针，打针时宠物会叫。宠物医院给各种宠物打针，Inject方法的参数自然是Pet类型的指针。</p>
 <p>实现如下：</p>
@@ -546,7 +546,7 @@
 
 <p>Pet与Cat对象现在只需要16字节了，为什么不是4+8&#x3D;12呢，这时<strong>编译器为了CPU计算的方便做的数据对齐处理</strong>。所以我们可以发现，加上virtual（类中有虚函数）时，每个类对象会<strong>多出8字节</strong>（无论含有多少个虚函数都是多出一个指针大小的字节，可以自己验证）。</p>
 <p>这与后绑定机制的实现有关：<br>当一个类中含有虚函数时，这个类的对象的内存起始位置会加上一个虚指针（virtual ptr）（这是为何多8字节的原因），这个虚指针指向该类的虚函数表（virtual table），虚函数表中存有该类中所有虚函数地址。当一个对象调用虚函数时，编译器会从该对象起始位置的前8个字节中读出虚指针，再在虚函数表中找到该虚函数，实现<strong>后绑定</strong>。<strong>所以此时调用的是子类的虚函数还是子类的虚函数完全取决于起始位置虚指针指向的虚函数表中的虚函数实现。</strong></p>
-<p>如图：<br><img  src="https://s1.ax1x.com/2022/04/13/LK743V.png"  ><span class="image-caption">虚指针与虚函数表</span></p>
+<p>如图：<br><img src="https://s1.ax1x.com/2022/04/13/LK743V.png" alt="虚指针与虚函数表"></p>
 <p>我们可以通过改变一个对象所含虚指针指向位置来验证这个实现，将一个Cat对象虚指针指向Dog类的虚函数表：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span> </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Pet</span>	<span class="hljs-comment">//父类 </span><br>&#123;<br>	<span class="hljs-type">int</span> age;<br>	<span class="hljs-type">char</span>* name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;	<span class="hljs-comment">//宠物会叫 </span><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Pet::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m a Pet.&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>:<span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类猫 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Cat::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;miao miao.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//猫叫 </span><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>: <span class="hljs-keyword">public</span> Pet	<span class="hljs-comment">//子类狗 </span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Speak</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Dog::Speak</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout&lt;&lt;<span class="hljs-string">&quot;wang wang.&quot;</span>&lt;&lt;endl;	<span class="hljs-comment">//狗叫 </span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    Dog* pDog=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Dog</span>();<br>	Cat cat;<br>	Cat* pCat= &amp;cat; <br>	<span class="hljs-built_in">memcpy</span>(&amp;cat,pDog,<span class="hljs-number">8</span>);<br>	pCat-&gt;<span class="hljs-built_in">Speak</span>();<br>	cat.<span class="hljs-built_in">Speak</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>输出：</p>
@@ -577,14 +577,14 @@
 <p>那么这种方式算不算多重继承？这不重要了。对于多重继承，我们认为不要多重继承两个都有明确成员变量、成员方法的类，容易导致很多问题。<strong>但继承一个“实际意义父类”与多个抽象类是没有问题的</strong>。在Java中，明确指出一个类最多只有一个父类，但可以有多个接口。接口的作用就与C++中抽象类的这种作用相同。</p>
 ]]></content>
       <categories>
-        <category>C++_from_liuyu</category>
+        <category>C++课堂</category>
       </categories>
       <tags>
-        <tag>C_C++</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
-    <title>cailiaolixue2</title>
+    <title>外力与内力、应力与应变</title>
     <url>/2022/06/03/%E5%A4%96%E5%8A%9B%E4%B8%8E%E5%86%85%E5%8A%9B%E3%80%81%E5%BA%94%E5%8A%9B%E4%B8%8E%E5%BA%94%E5%8F%98/</url>
     <content><![CDATA[<h1 id="外力与内力、应力与应变"><a href="#外力与内力、应力与应变" class="headerlink" title="外力与内力、应力与应变"></a>外力与内力、应力与应变</h1><hr>
 <h2 id="外力与内力"><a href="#外力与内力" class="headerlink" title="外力与内力"></a>外力与内力</h2><p>对于系统（研究对象）来说，我们通常将其所受力分为<strong>外力与内力</strong>。外力指研究对象之外的物体对其作用之力，内力指由于外力产生的变形使得研究对象内部各个部分之间产生的相互作用力。</p>
@@ -610,14 +610,20 @@
 <p>很显然，这儿的内力大小为$F$，方向垂直截面指向分离体外，为轴力。我们对于轴力方向问题做出下面的规定：<strong>指向分离体之外为正，反之为负</strong>。之所以做出这样的正负规定，是因为这样对于左右分离体来说，内力代数值是相同的。</p>
 <hr>
 <h2 id="应力与应变"><a href="#应力与应变" class="headerlink" title="应力与应变"></a>应力与应变</h2><h3 id="应力"><a href="#应力" class="headerlink" title="应力"></a>应力</h3><p>我们思考这样一个问题：为什么材料在强度不足时会断开？为什么同样材料、同样受力状态越粗越“结实”？为什么会断开，势必是断开位置的内力过大，超过材料强度极限；为什么越粗越“结实”？势必是内力在横截面更大时更加“分散”，每个微小面积分到的内力更小。</p>
-<p>我们学过压强作为外力的分布集度，那么自然同样可以定义一个<strong>内力分布集度——应力</strong>。<br><img  src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602174803.png"  ><span class="image-caption">应力概念||400</span></p>
+<p>我们学过压强作为外力的分布集度，那么自然同样可以定义一个<strong>内力分布集度——应力</strong>。<br><img src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602174803.png" alt="应力概念||400"></p>
 <p>在截面上我们取一微小面积$\Delta A$，在该面积上作用的内力为$\Delta F$，则定义：<br>$$<br>\begin{align}<br>p_{av}&amp;&#x3D;\frac{\Delta F}{\Delta A}\<br>p&amp;&#x3D;lim_{\Delta A-&gt;0}\frac{\Delta F}{\Delta A}\<br>\end{align}<br>$$<br>其中$p_{av}$为平均应力，当微小面积无穷小时，变成$p$，即某点处应力。通常我们将应力$p$沿着截面法线方向与其垂直方向分解，沿着法线方向的应力为正应力，用$\sigma$表示；平行于截面方向的叫做切应力，记作$\tau$。有$p^2&#x3D;\sigma ^2+\tau^2$。</p>
-<h3 id="应变"><a href="#应变" class="headerlink" title="应变"></a>应变</h3><p>应力是内力的分布集度，与材料强度相对应，当应力过大时，材料会被破坏。而变形与材料刚度相对应，自然可以定义一个量来<strong>反映材料各点处的变形</strong>，这个量就是应变。<br><img  src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602180332.png"  ><span class="image-caption">应变定义||400</span></p>
+<h3 id="应变"><a href="#应变" class="headerlink" title="应变"></a>应变</h3><p>应力是内力的分布集度，与材料强度相对应，当应力过大时，材料会被破坏。而变形与材料刚度相对应，自然可以定义一个量来<strong>反映材料各点处的变形</strong>，这个量就是应变。<br><img src="https://raw.githubusercontent.com/yanyunfei0921/img/master/img/20220602180332.png" alt="应变定义||400"></p>
 <p>将材料分为一个个的小微体，它发生的形变可以分为两种。一种是棱长改变，也就是拉长了或者压短了；另一种是棱边夹角的改变，也就是歪了。对此，我们分别用<strong>正应变与切应变</strong>描述。<br>$$<br>\begin{align}<br>\epsilon_{av}&amp;&#x3D;\frac{bb^{‘}}{ab}\<br>\epsilon&amp;&#x3D;lim_{ab-&gt;0}\frac{bb^{‘}}{ab}<br>\end{align}<br>$$<br>$\epsilon$即为正应变。<br>$$<br>\tau&#x3D;\angle bab^{‘}<br>$$<br>$\tau$即为微体之直角改变量，即为切应变。</p>
 ]]></content>
+      <categories>
+        <category>材料力学</category>
+      </categories>
+      <tags>
+        <tag>复习笔记</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>材料力学魅力之所在</title>
     <url>/2022/06/03/%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E9%AD%85%E5%8A%9B%E4%B9%8B%E6%89%80%E5%9C%A8/</url>
     <content><![CDATA[<h1 id="材料力学魅力之所在"><a href="#材料力学魅力之所在" class="headerlink" title="材料力学魅力之所在"></a>材料力学魅力之所在</h1><hr>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>由于我是自动化专业，目前学校课程对机械、材料、力学这块涉及都很少。我们学的材料力学也很简单，所以命名为简单材料力学，仅仅为了自己复习总结时留下点东西。</p>
@@ -651,5 +657,11 @@
 <h2 id="魅力所在"><a href="#魅力所在" class="headerlink" title="魅力所在"></a>魅力所在</h2><p>这本是材料力学绪论中的内容，我之所以将其命名为“材料力学魅力之所在”，是因为我认为把握了材料力学研究对象、基本假设，体会到其<strong>工程性、实用性</strong>，就能更好的理解后续学习中遇到的假设或者近似，对于后续应力、应变分析方法的掌握也有帮助。</p>
 <p>同时，在我看来，材料力学的魅力所在也就是它利用<strong>合理的假设与近似</strong>将复杂的现实问题简单化，通过简单的计算即可得出合理、实用的答案。</p>
 ]]></content>
+      <categories>
+        <category>材料力学</category>
+      </categories>
+      <tags>
+        <tag>复习笔记</tag>
+      </tags>
   </entry>
 </search>
