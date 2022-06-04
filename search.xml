@@ -1005,4 +1005,95 @@ p&=lim_{\Delta A->0}\frac{\Delta F}{\Delta A}\\
         <tag>复习笔记</tag>
       </tags>
   </entry>
+  <entry>
+    <title>拉压杆</title>
+    <url>/2022/06/04/%E6%8B%89%E5%8E%8B%E6%9D%86/</url>
+    <content><![CDATA[<h1 id="拉压杆"><a href="#拉压杆" class="headerlink" title="拉压杆"></a>拉压杆</h1><hr>
+<h2 id="杆件变形基本形式"><a href="#杆件变形基本形式" class="headerlink" title="杆件变形基本形式"></a>杆件变形基本形式</h2><p>对于杆件，有着各种各样的受力、变形形式。</p>
+<ol>
+<li>轴向拉压。相当于柱子。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604175316.png" alt="拉压杆|400"></li>
+<li>扭转。相当于轴。</li>
+<li>弯曲。相当于梁。</li>
+</ol>
+<hr>
+<h2 id="轴力与轴力图"><a href="#轴力与轴力图" class="headerlink" title="轴力与轴力图"></a>轴力与轴力图</h2><p>很显然，对于拉压杆这种受力状态，某一横截面的内力简化到形心处仅有截面法向一个方向的分量——<strong>轴力</strong>，也没有矩。所以对于拉压杆内力的研究在于轴力。将轴力沿着杆件变化画出即为轴力图。<br>下面看一个例子。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604175358.png" alt="轴力图|400"></p>
+<p>需要注意的是，轴力方向的规定：<strong>拉力为正，压力为负</strong>。这与之前内力所说，指向分离体外为正，反之为负相吻合。</p>
+<p>轴力图中，分布载荷作用处线性变化，集中力作用出突变。</p>
+<hr>
+<h2 id="拉压杆的应力"><a href="#拉压杆的应力" class="headerlink" title="拉压杆的应力"></a>拉压杆的应力</h2><h3 id="横截面上应力"><a href="#横截面上应力" class="headerlink" title="横截面上应力"></a>横截面上应力</h3><p>在<a href="外力与内力、应力与应变.md">外力与内力、应力与应变</a>中我们说过，为了研究材料在某一点处的受（内）力状况，我们引入应力的概念。此处，我们研究拉压杆的应力分布情况。</p>
+<p>首先观察拉压杆的变形情况，根据其变形情况，推测其应力分布。</p>
+<p><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604175520.png" alt="变形情况|400"></p>
+<p>通过实验，我们发现，<strong>拉压杆变形前后，杆上两条线依旧平行且垂直于轴线</strong>，仅有沿轴线的平移。<br>所以，我们做出<strong>拉压杆的平面假设</strong>：变形后，横截面仍为横截面，仅有沿轴线的相对平移。我们想像拉压杆由无数纵向纤维组成，所有纤维变形状况均相同，所以导致这种状况。推测出，<strong>拉压杆横截面上仅有正应力，且沿横截面分布均匀</strong>。</p>
+<script type="math/tex; mode=display">
+\sigma=\sigma_{av}=\frac{F_N}{A}</script><h3 id="斜截面上应力"><a href="#斜截面上应力" class="headerlink" title="斜截面上应力"></a>斜截面上应力</h3><p>由我们的“纤维模型”可以推测，两个平行的斜截面变形后，仍保持平行状态。同时由对分离体的受力分析可知：<strong>斜截面上的应力沿截面均匀分布，且平行于轴线</strong>。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604175628.png" alt="斜截面|400"></p>
+<script type="math/tex; mode=display">
+\begin{align}
+F&=p_{\alpha}\frac{A}{cos\alpha}\\
+p_{\alpha}&=\frac{F}{A}cos\alpha=\sigma cos\alpha
+\end{align}</script><p>将其分解为正应力与切应力。</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\sigma_\alpha&=p_\alpha cos\alpha=\sigma cos^2\alpha\\
+\tau_\alpha&=p_\alpha sin\alpha=\frac{1}{2}\sigma sin2\alpha
+\end{align}</script><p>所以，$\alpha$=0时，$\sigma_{\alpha max}=\sigma$；$\alpha=45°$时，$\tau_{\alpha max}=\frac{\sigma}{2}$。<br>对于方位角$\alpha$与切应力$\tau$的正负，规定：<strong>方位角沿轴线逆时针为正，切应力沿外法线顺时针90°为正</strong>。</p>
+<hr>
+<h2 id="圣维南原理"><a href="#圣维南原理" class="headerlink" title="圣维南原理"></a>圣维南原理</h2><p>通常，在拉压杆两端所加外力沿截面不是均匀分布的，如一个集中力。而我们对于拉压杆应力的分析是<strong>基于拉压杆平面假设</strong>，当外力为非均匀分布时，该平面假设是否合理、<strong>应力沿截面是否均匀分布</strong>成为我们结论是否正确的关键。</p>
+<p>圣维南原理指出，集中力作用于杆端的分布方式，<strong>只影响杆端局部的应力分布</strong>，影响区域大约为杆端1~2倍杆的横向尺寸。离杆端稍远的位置应力即为均匀分布。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604175709.png" alt="圣危难|400"></p>
+<p>也就是说，只要杆的长度远远大于其横向尺寸，完全可以忽略杆端那一段非均匀应力分布。</p>
+<hr>
+<h2 id="材料拉伸、压缩试验"><a href="#材料拉伸、压缩试验" class="headerlink" title="材料拉伸、压缩试验"></a>材料拉伸、压缩试验</h2><p>上面我们仅仅分析了拉压杆的应力分布状况，并没有讨论材料问题，也就是说，没有考虑<strong>材料的力学性能</strong>。通过对于不同材料的拉压试验，就能得出其力学性能特性。最终大致将材料分为脆性材料，如铸铁，与塑性材料，如低碳钢。</p>
+<h3 id="拉伸试验"><a href="#拉伸试验" class="headerlink" title="拉伸试验"></a>拉伸试验</h3><p>低碳钢的拉伸力学性能如下图。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604200009.png" alt="低碳钢|400"></p>
+<p>低碳钢在拉伸过程中，先后经过<strong>线弹性阶段、屈服阶段、硬化阶段、缩颈阶段。产生45°的滑移线，最终沿横截面断开</strong>。</p>
+<p>有两个性能指标衡量材料的塑性，延伸率$\delta$ 与断面收缩率$\psi$。</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\delta&=\frac{\Delta l}{l} \times 100\%\\
+\psi&=\frac{A-A_1}{A}\times 100\%
+\end{align}</script><p>铸铁的拉伸力学性能如下图。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604200712.png" alt="铸铁|400"><br>没有像塑性材料那样，<strong>铸铁拉伸时应力随应变单调上升，达到强度极限时断裂，没有缩颈现象，最终断口与轴线垂直</strong>。</p>
+<h3 id="压缩试验"><a href="#压缩试验" class="headerlink" title="压缩试验"></a>压缩试验</h3><p>低碳钢的压缩力学性能如图。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604200940.png" alt="压缩低碳钢|400"><br>线弹性阶段与屈服阶段和拉伸试验大致相同。<strong>最终越压越扁，没有断裂</strong>。</p>
+<p>铸铁的压缩力学性能如下图。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604201136.png" alt="铸铁压缩|400"><br>铸铁压缩时，<strong>最终沿55~60°方向断裂</strong>。</p>
+<hr>
+<h2 id="应力集中"><a href="#应力集中" class="headerlink" title="应力集中"></a>应力集中</h2><p><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604201424.png" alt="孔|400"><br>对于这样一个杆，两端受力，直觉上哪儿最容易断裂？肯定是小孔处。<strong>假设杆各个横截面应力沿横截面均匀分布</strong>。</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\sigma&=\frac{F}{A}\\
+\sigma_孔&=\frac{F}{A-A_孔}
+\end{align}</script><p>这样看来，有孔的地方最大应力的确大于没孔的。但其实不仅如此，因为有孔的地方（<strong>截面急剧变化的地方</strong>）应力不再均匀分布，使得<strong>其最大应力大于均匀分布下的最大应力</strong>。这种现象叫做应力集中。<br><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604202305.png" alt="应力集中|400"></p>
+<p>我们把上面当作均匀分布算出来的应力$\sigma_孔$记作$\sigma_n$，即<strong>名义应力</strong>。把实际最大应力与名义应力比值定义为应力集中因数$K$，来描述应力集中现象。</p>
+<script type="math/tex; mode=display">
+K=\frac{\sigma_{max}}{\sigma_n}</script><hr>
+<h2 id="许用应力与强度条件"><a href="#许用应力与强度条件" class="headerlink" title="许用应力与强度条件"></a>许用应力与强度条件</h2><h3 id="许用应力"><a href="#许用应力" class="headerlink" title="许用应力"></a>许用应力</h3><p>在低碳钢与铸铁的拉伸、压缩试验中，我们已经得到了材料拉压时的$\sigma - \epsilon$图，知道了<strong>极限应力</strong>$\sigma_u$。即塑性材料的屈服应力$\sigma_s$与脆性材料的强度极限$\sigma_b$。</p>
+<p>当然，由于试验结果与现实材料构件往往有一定的误差，我们不应该让构件的工作应力达到他的极限应力。所以定义一个安全因数n（n&gt;1），得到许用应力$[\sigma]$。</p>
+<script type="math/tex; mode=display">
+[\sigma]=\frac{\sigma_u}{n}</script><h3 id="强度条件"><a href="#强度条件" class="headerlink" title="强度条件"></a>强度条件</h3><p>顾名思义，就是构件不因强度不够而破坏的条件。拉压杆这里就是最大应力小于许用应力。</p>
+<script type="math/tex; mode=display">
+\sigma_{max}=(\frac{F_N}{A})_{max}<=
+[\sigma]</script><hr>
+<h2 id="胡克定律与拉压杆变形"><a href="#胡克定律与拉压杆变形" class="headerlink" title="胡克定律与拉压杆变形"></a>胡克定律与拉压杆变形</h2><p>一个杆，拉伸时，纵向自然变长，横截面自然变小。试验结果表明：<strong>比例极限内</strong>，正应力$\sigma$正应变$\epsilon$成正比。其比值定义为<strong>杨氏模量</strong>。</p>
+<script type="math/tex; mode=display">
+\begin{align}
+E&=\frac{\sigma}{\epsilon}\\
+\sigma&=\frac{F_N}{A}\\
+\epsilon&=\frac{\Delta l}{l}\\
+\Delta l&=\epsilon l=\frac{\sigma}{E}l=\frac{F_N l}{EA}
+\end{align}</script><p>由于$EA$同时出现在分母上，影响其变形大小。我们将之称为<strong>拉压刚度</strong>。</p>
+<p>上面定量描述了纵向变长这件事，下面谈谈横截面变小这件事。试验又表明：对于<strong>传统材料</strong>而言，<strong>在比例极限内</strong>，横向正应变$\epsilon^{‘}$与纵向正应变$\epsilon$成正比，且异号。我们将之比值称为<strong>泊松比$\mu$</strong>。</p>
+<script type="math/tex; mode=display">
+\mu=-\frac{\epsilon^{'}}{\epsilon}</script><hr>
+<h2 id="简单静不定问题"><a href="#简单静不定问题" class="headerlink" title="简单静不定问题"></a>简单静不定问题</h2><p>在<a href="材料力学魅力之所在.md">材料力学魅力之所在</a>我们就提到过，材料力学能解决理论力学所不能解决的静不定问题。其思路就是考虑构件的刚性问题，让构件的<strong>变形“自洽”</strong>。</p>
+<p>对于静不定问题，仅仅通过静力学平衡方程是无法直接解出结果的。对于拉压杆，杆件会产生形变，而变形量大小又与杆的长度、轴力大小、拉压强度有关。通过这样的补充方程进而解出结果。</p>
+<p><img src="https://yyf-img-bed.oss-cn-beijing.aliyuncs.com/img/20220604205517.png" alt="例子|400"></p>
+<ol>
+<li>平面汇交力系，两个静力学平衡方程。</li>
+<li>三个杆的变形，1、2杆的变形为3杆变形的$cos\alpha$倍，一个几何方程。</li>
+<li>根据胡克定律可以写出杆形变大小。两个物理方程。<br>以上，足以解出结果。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>材料力学</category>
+      </categories>
+      <tags>
+        <tag>复习笔记</tag>
+      </tags>
+  </entry>
 </search>
