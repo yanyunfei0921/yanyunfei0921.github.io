@@ -71,8 +71,8 @@
         <div class="content markdown">
             <h3 id="第一章、浏览器内部"><a href="#第一章、浏览器内部" class="headerlink" title="第一章、浏览器内部"></a>第一章、浏览器内部</h3><h4 id="1-1-HTTP请求消息"><a href="#1-1-HTTP请求消息" class="headerlink" title="1.1 HTTP请求消息"></a>1.1 HTTP请求消息</h4><h5 id="1-1-1-输入网址"><a href="#1-1-1-输入网址" class="headerlink" title="1.1.1 输入网址"></a>1.1.1 输入网址</h5><p>浏览器是一个多功能客户端，http访问Web服务器，ftp访问FTP服务器等。这些URL的开头指名了浏览器使用的访问方法。</p>
 <p>协议：通信操作的规则定义为协议。</p>
-<h5 id="1-1-2-解析URL"><a href="#1-1-2-解析URL" class="headerlink" title="1.1.2 解析URL"></a>1.1.2 解析URL</h5><p>HTTP规定的URL格式：http: &#x2F;&#x2F; Web服务器名 &#x2F; 目录名 &#x2F; … &#x2F; 文件名</p>
-<h5 id="1-1-3-省略文件名"><a href="#1-1-3-省略文件名" class="headerlink" title="1.1.3 省略文件名"></a>1.1.3 省略文件名</h5><p>如：<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com/</a><br>再省略&#x2F;：<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com</a><br>访问该目录默认文件，大多数是index.html等。</p>
+<h5 id="1-1-2-解析URL"><a href="#1-1-2-解析URL" class="headerlink" title="1.1.2 解析URL"></a>1.1.2 解析URL</h5><p>HTTP规定的URL格式：http: // Web服务器名 / 目录名 / … / 文件名</p>
+<h5 id="1-1-3-省略文件名"><a href="#1-1-3-省略文件名" class="headerlink" title="1.1.3 省略文件名"></a>1.1.3 省略文件名</h5><p>如：<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com/">http://www.lab.glasscom.com/</a><br>再省略/：<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com">http://www.lab.glasscom.com</a><br>访问该目录默认文件，大多数是index.html等。</p>
 <h5 id="1-1-4-HTTP基本思路"><a href="#1-1-4-HTTP基本思路" class="headerlink" title="1.1.4 HTTP基本思路"></a>1.1.4 HTTP基本思路</h5><p>HTTP协议规定客户端与服务端交互的内容与步骤。客户端向服务器发送<strong>请求消息</strong>。请求消息中包括URI、方法等内容。对URI（统一资源标识符Uniform Resource Identifier）进行某些操作。其中<strong>URI就是访问目标</strong>，可以是网页文件名可以是URL等。</p>
 <p>这些操作称为方法。如GET（获取网页数据）、POST等。</p>
 <p>HTTP请求消息中还有用来表示附加信息的<strong>头字段</strong>。先发头字段再发数据。</p>
@@ -83,7 +83,7 @@
 <p><img src="https://s1.ax1x.com/2022/04/02/qIpfk4.png" alt="HTTP响应消息状态码"></p>
 <p>返回响应消息后，浏览器将数据显示，但如果有图片，就需要在图片处留出位置，再次访问服务器获得响应信息来取得图片。</p>
 <h4 id="1-2-向DNS服务器查询Web服务器IP地址"><a href="#1-2-向DNS服务器查询Web服务器IP地址" class="headerlink" title="1.2 向DNS服务器查询Web服务器IP地址"></a>1.2 向DNS服务器查询Web服务器IP地址</h4><h5 id="1-2-1-IP地址"><a href="#1-2-1-IP地址" class="headerlink" title="1.2.1 IP地址"></a>1.2.1 IP地址</h5><p>HTTP消息发送到服务器这一过程是浏览器委托操作系统实现的，必须告诉操作系统你目标服务器的IP地址。</p>
-<p>TCP&#x2F;IP基本思路：<br><img src="https://s1.ax1x.com/2022/04/02/qIpR7F.png" alt="子网"></p>
+<p>TCP/IP基本思路：<br><img src="https://s1.ax1x.com/2022/04/02/qIpR7F.png" alt="子网"></p>
 <p>IP包括两部分，网络号与主机号。通过子网掩码来表示IP地址内部结构：<br><img src="https://s1.ax1x.com/2022/04/02/qIpy60.png" alt="子网掩码"></p>
 <p>子网掩码为1部分为网络号，为0部分为主机号。<br>主机号部分全为0表示整个子网，全为1表示广播。</p>
 <h5 id="1-2-2-域名与IP"><a href="#1-2-2-域名与IP" class="headerlink" title="1.2.2 域名与IP"></a>1.2.2 域名与IP</h5><p>让人看域名，让机器传IP。</p>
@@ -98,7 +98,7 @@
 <li>Class<br>区别互联网与其他网络，Class of Network：IN</li>
 <li>记录类型<br>表示域名对应什么。IP：A（Address）；邮件服务器：MX</li>
 </ol>
-<h5 id="1-3-2-域名的层次结构"><a href="#1-3-2-域名的层次结构" class="headerlink" title="1.3.2 域名的层次结构"></a>1.3.2 域名的层次结构</h5><p>域名是有层次结构的，以.分隔，越靠右层次越高。如<a target="_blank" rel="noopener" href="http://www.lab.glasscom.com.com域最高.dns服务器按照域名的层次结构储存./">www.lab.glasscom.com。com域最高。DNS服务器按照域名的层次结构储存。</a></p>
+<h5 id="1-3-2-域名的层次结构"><a href="#1-3-2-域名的层次结构" class="headerlink" title="1.3.2 域名的层次结构"></a>1.3.2 域名的层次结构</h5><p>域名是有层次结构的，以.分隔，越靠右层次越高。如www.lab.glasscom.com。com域最高。DNS服务器按照域名的层次结构储存。</p>
 <h5 id="1-3-3-寻找相应的DNS服务器并获得IP地址"><a href="#1-3-3-寻找相应的DNS服务器并获得IP地址" class="headerlink" title="1.3.3 寻找相应的DNS服务器并获得IP地址"></a>1.3.3 寻找相应的DNS服务器并获得IP地址</h5><p>上级DNS服务器储存下级DNS服务器的IP，最上级为根域（最后的一个点）。每个DNS服务器都储存有根域服务器的IP，以便快速访问根域。</p>
 <p><img src="https://s1.ax1x.com/2022/04/02/qIp20U.png" alt="DNS服务器的接力工作"></p>
 <h5 id="1-3-4-通过缓存加快DNS服务器响应"><a href="#1-3-4-通过缓存加快DNS服务器响应" class="headerlink" title="1.3.4 通过缓存加快DNS服务器响应"></a>1.3.4 通过缓存加快DNS服务器响应</h5><p>如果访问的几级域在同一台DNS服务器中，可以越级访问。DNS服务器中具有缓存功能，可以迅速返回查询过的域名对应IP。</p>
@@ -140,6 +140,22 @@
 
     </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 
 

@@ -79,9 +79,7 @@
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>由于我是自动化专业，目前学校课程对机械、材料、力学这块涉及都很少。我们学的材料力学也很简单，所以命名为简单材料力学，仅仅为了自己复习总结时留下点东西。</p>
 <hr>
 <h2 id="研究对象"><a href="#研究对象" class="headerlink" title="研究对象"></a>研究对象</h2><p>19世纪铁路、桥梁工程的大力发展推动了材料力学的建立。所以最初，材料力学研究对象主要为钢材。这也意味着，材料力学是<strong>面向工程应用的、面向实际的</strong>。理论力学的学习中，常常伴随着<strong>刚体假设</strong>，也不考虑<strong>材料强度与稳定性问题</strong>。最典型的例子，理论力学无法解决如下的静不定问题。</p>
-<div align=center> <img src="https://s1.ax1x.com/2022/06/01/XYCoa6.png" width="400"> </div>
-而事实上，这样的系统必定有一个确定的受力状态，但仅仅根据理论力学平面力系平衡方程无法解出。在材料力学中，对于此类静不定问题，考虑其变形协调方程，可以得出一个与事实相接近的答案。
-
+<p><div align=center> <img src="https://s1.ax1x.com/2022/06/01/XYCoa6.png" width="400"> </div><br>而事实上，这样的系统必定有一个确定的受力状态，但仅仅根据理论力学平面力系平衡方程无法解出。在材料力学中，对于此类静不定问题，考虑其变形协调方程，可以得出一个与事实相接近的答案。</p>
 <p>所以，材料力学的<strong>研究对象</strong>是各种各样的机械零、构件，我们都称之为<strong>构件</strong>。为了合理的设计、使用构件组成的系统（比如桥梁设计），我们要对每一个构件进行研究分析。一般从<strong>刚度、强度、稳定性</strong>三个方面<br>进行探讨。</p>
 <ol>
 <li>刚度指构件抵抗变形的能力，所谓刚体，就是不考虑变形的物体。</li>
@@ -133,6 +131,22 @@
 
     </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 
 

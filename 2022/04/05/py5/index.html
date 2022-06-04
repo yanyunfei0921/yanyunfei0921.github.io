@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Python基础教程（四） - yunfei</title>
+    <title>Python基础教程（五） - yunfei</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -18,7 +18,7 @@
     
     
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Python基础教程（四） - yunfei"/>
+    <meta name="twitter:title" content="Python基础教程（五） - yunfei"/>
     <meta name="twitter:description" content="第五章、条件、循环及其他语句你还记得第一章里提到的文本编辑器界面吗？一直以来我们使用的都是交互式解释器，因为它简单方便，用来验证语法再好不过。但是当你需要写很多很多行并且保存的时候，它显然不能做的很,"/>
     
     
@@ -26,7 +26,7 @@
     
     <meta property="og:site_name" content="yunfei"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Python基础教程（四） - yunfei"/>
+    <meta property="og:title" content="Python基础教程（五） - yunfei"/>
     <meta property="og:description" content="第五章、条件、循环及其他语句你还记得第一章里提到的文本编辑器界面吗？一直以来我们使用的都是交互式解释器，因为它简单方便，用来验证语法再好不过。但是当你需要写很多很多行并且保存的时候，它显然不能做的很,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
@@ -42,7 +42,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yanyunfei0921.github.io"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Python基础教程（四）</h3>
+    <h3 class="subtitle">Python基础教程（五）</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -57,7 +57,7 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">Python基础教程（四）</h1>
+        <h1 class="title">Python基础教程（五）</h1>
         <div class="stuff">
             <span>四月 05, 2022</span>
             
@@ -69,51 +69,88 @@
             <h3 id="第五章、条件、循环及其他语句"><a href="#第五章、条件、循环及其他语句" class="headerlink" title="第五章、条件、循环及其他语句"></a>第五章、条件、循环及其他语句</h3><p>你还记得<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>里提到的文本编辑器界面吗？一直以来我们使用的都是交互式解释器，因为它简单方便，用来验证语法再好不过。但是当你需要写很多很多行并且保存的时候，它显然不能做的很好。当学完这一章，可能就需要使用IDLE进行编程了。</p>
 <h4 id="5-1-再谈print与import"><a href="#5-1-再谈print与import" class="headerlink" title="5.1 再谈print与import"></a>5.1 再谈print与import</h4><ol>
 <li><p>print的两个参数<br>print可以打印多个字符串，默认的间隔符是空格，默认的结束符是换行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>)<br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>,sep=<span class="hljs-string">&#x27; &#x27;</span>,end=<span class="hljs-string">&#x27;\n&#x27;</span>)<br><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">,</span>sep<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这两条语句是等价的。sep为间隔符关键字参数，end为结束符关键字参数。</p>
 </li>
 <li><p>导入模块时重命名<br>这部分在<a href="https://yanyunfei0921.github.io/2022/03/30/py_one/">第一章</a>讲过了哦。</p>
 </li>
 </ol>
 <h4 id="5-2-赋值魔法"><a href="#5-2-赋值魔法" class="headerlink" title="5.2 赋值魔法"></a>5.2 赋值魔法</h4><ol>
-<li>序列解包<br>元组不可改变，多用于函数返回值。而序列解包可以很方便的直接访问元组元素。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">x,y,z=funcation1() <span class="hljs-comment">#funcation的返回值为包含三个元素的元组</span><br></code></pre></td></tr></table></figure>
+<li>序列解包<br>元组不可改变，多用于函数返回值。而序列解包可以很方便的直接访问元组元素。<pre class="line-numbers language-python" data-language="python"><code class="language-python">x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token operator">=</span>funcation1<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#funcation的返回值为包含三个元素的元组</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 这时就能直接通过x，y，z访问该元组的三个元素。注意数量要对等（xyz是三个，返回值元组所含元素也是三个）。</li>
 </ol>
-<p>可通过*来实现“一对多的匹配”：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x,y,*z=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>z<br>[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
-<ol start="2">
+<p>可通过*来实现“一对多的匹配”：<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token operator">*</span>z<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> z
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></p>
+<ol>
 <li>链式赋值<br>就是一个连等号呗。但是<strong>注意浅拷贝的问题</strong>。</li>
-<li>简便写法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">a=a+<span class="hljs-number">1</span><br>a+=<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<li>简便写法<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span>a<span class="token operator">+</span><span class="token number">1</span>
+a<span class="token operator">+=</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 这两种写法等效。</li>
 </ol>
 <h4 id="5-3-代码块：关于缩进"><a href="#5-3-代码块：关于缩进" class="headerlink" title="5.3 代码块：关于缩进"></a>5.3 代码块：关于缩进</h4><p>代码块就是一块代码，包括若干行。为什么能将其称为块，因为他们共同属于某个函数或某个循环之类的。</p>
 <p>python使用缩进来表示代码的包含关系，即创建代码块。<strong>使用四个空格来缩进</strong>！<strong>别用Tab键，也别用其他数量的空格</strong>（尽管这样没有语法错误）！</p>
 <p>看不懂没关系，再看几行就懂了。</p>
 <h4 id="5-4-条件语句"><a href="#5-4-条件语句" class="headerlink" title="5.4 条件语句"></a>5.4 条件语句</h4><p>以前写的东西都是一行一行顺序执行的，加上条件判断语句就能跳着执行了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>：<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the bool is ture&quot;</span>)<br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;the bool is false&quot;</span>)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> <span class="token boolean">True</span>：
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"the bool is ture"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"the bool is false"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当if判断语句后的真值为True时，执行if下面的语句块，为False时执行else后语句块。若无else则继续顺序执行下方代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">num=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter a number:&quot;</span>))<br><span class="hljs-keyword">if</span> num&gt;<span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;大于0&quot;</span>)<br><span class="hljs-keyword">elif</span> num&lt;<span class="hljs-number">0</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;小于0&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;等于0&quot;</span>)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">num<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a number:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> num<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"大于0"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> num<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"小于0"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"等于0"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当if后条件不满足时，顺序向下查看elif中条件是否满足，若满足执行该elif后语句块，然后跳过本次if判断这一大块。若所有elif都不满足执行else后语句块。<br>故上例中这些print语句所在语句块肯定<strong>有一个且仅有一个</strong>被执行。</p>
-<p>如果if、else下面都只有一条语句，可以简化的写在一行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">status=<span class="hljs-string">&quot;friend&quot;</span> <span class="hljs-keyword">if</span> name.endswith(<span class="hljs-string">&quot;Tom&quot;</span>) <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;stranger&quot;</span><br></code></pre></td></tr></table></figure>
-
+<p>如果if、else下面都只有一条语句，可以简化的写在一行。<br><pre class="line-numbers language-python" data-language="python"><code class="language-python">status<span class="token operator">=</span><span class="token string">"friend"</span> <span class="token keyword">if</span> name<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">"stranger"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></p>
 <p>这时候我们就好考虑<strong>什么是True</strong>？</p>
 <p>False、空的东西（{}、[]等）、None为假，其他东西都为真。</p>
-<p>如果if后面是一条比较运算式，按常理理解就行了。比如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>&lt;<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>&gt;<span class="hljs-number">1</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>&lt;=<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span>==<span class="hljs-number">2</span><br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
-<p><strong>注意</strong>：判等时使用&#x3D;&#x3D;而非&#x3D;，&#x3D;是赋值操作，不能用于逻辑判断。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> a=<span class="hljs-number">1</span>:<br>  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> a=<span class="hljs-number">1</span>:<br>       ^^^<br>SyntaxError: invalid syntax. Maybe you meant <span class="hljs-string">&#x27;==&#x27;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&#x27;:=&#x27;</span> instead of <span class="hljs-string">&#x27;=&#x27;</span>?<br></code></pre></td></tr></table></figure>
-
+<p>如果if后面是一条比较运算式，按常理理解就行了。比如：<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span><span class="token operator">&lt;</span><span class="token number">2</span>
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">2</span><span class="token operator">></span><span class="token number">1</span>
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">2</span><span class="token operator">&lt;=</span><span class="token number">2</span>
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">2</span><span class="token operator">==</span><span class="token number">2</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br><strong>注意</strong>：判等时使用==而非=，=是赋值操作，不能用于逻辑判断。<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">if</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;stdin>"</span><span class="token punctuation">,</span> line <span class="token number">1</span>
+    <span class="token keyword">if</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span>
+       <span class="token operator">^</span><span class="token operator">^</span><span class="token operator">^</span>
+SyntaxError<span class="token punctuation">:</span> invalid syntax<span class="token punctuation">.</span> Maybe you meant <span class="token string">'=='</span> <span class="token keyword">or</span> <span class="token string">':='</span> instead of <span class="token string">'='</span>?<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <p>下面看几个其他<strong>比较运算符</strong>：</p>
 <ol>
-<li>&#x3D;&#x3D;与is<br>上面已经说过，&#x3D;&#x3D;是<strong>判等</strong>的比较运算符，is是用来判定是否<strong>相同</strong>的运算符。有什么区别呢？</li>
+<li>==与is<br>上面已经说过，==是<strong>判等</strong>的比较运算符，is是用来判定是否<strong>相同</strong>的运算符。有什么区别呢？</li>
 </ol>
-<p>这要结合<a href="https://yanyunfei0921.github.io/2022/03/30/py_two/">第二章</a>提到的内存相关知识来说。&#x3D;&#x3D;是判断两个变量的内容是否相同，is是判断两个变量是否指向同一块内存。对于int、string这些非容器变量类型，两者并无差别，但对于list、tuple、set等千差万别。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x=<span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>y=<span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x==y<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x <span class="hljs-keyword">is</span> y<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst_=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst==lst_<br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>lst <span class="hljs-keyword">is</span> lst_<br><span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
-<ol start="2">
+<p>这要结合<a href="https://yanyunfei0921.github.io/2022/03/30/py_two/">第二章</a>提到的内存相关知识来说。==是判断两个变量的内容是否相同，is是判断两个变量是否指向同一块内存。对于int、string这些非容器变量类型，两者并无差别，但对于list、tuple、set等千差万别。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token operator">=</span><span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> y<span class="token operator">=</span><span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> x<span class="token operator">==</span>y
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> x <span class="token keyword">is</span> y
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> lst_<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> lst<span class="token operator">==</span>lst_
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> lst <span class="token keyword">is</span> lst_
+<span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
 <li>in<br>这是第二章提到的成员资格运算符，就是判断容器内是否有该元素的。也可用于条件表达式。<br>这些用来判断“是不是”、“有没有”的东西都也可用在if后面，毕竟如果他们不返回一个布尔值怎么反应是或不是呢？</li>
-<li>字符串与序列的比较<br>python中字符是按Unicode编码规则储存的，所有每个字符都对应着一个数字（码点），字符的大小比较就是按着这个数字大小来的。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&#x27;a&#x27;</span>&lt;<span class="hljs-string">&#x27;c&#x27;</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)<br><span class="hljs-number">97</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;c&#x27;</span>)<br><span class="hljs-number">99</span><br></code></pre></td></tr></table></figure>
-可以看出，小写字母的码点是连续依次递增的，大写字母也是如此。但<strong>大小写字母之间不是的</strong>。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;Z&#x27;</span>)<br><span class="hljs-number">90</span><br></code></pre></td></tr></table></figure></li>
+<li>字符串与序列的比较<br>python中字符是按Unicode编码规则储存的，所有每个字符都对应着一个数字（码点），字符的大小比较就是按着这个数字大小来的。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token string">'a'</span><span class="token operator">&lt;</span><span class="token string">'c'</span>
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+<span class="token number">97</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">)</span>
+<span class="token number">99</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+可以看出，小写字母的码点是连续依次递增的，大写字母也是如此。但<strong>大小写字母之间不是的</strong>。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'Z'</span><span class="token punctuation">)</span>
+<span class="token number">90</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <p>下面说几个<strong>布尔逻辑运算符</strong>：</p>
 <ol>
@@ -122,38 +159,51 @@
 <li>not<br>他们分别对应于逻辑与、或、非。正常使用就行。但是注意<strong>短路逻辑</strong>现象。<br><img src="https://s1.ax1x.com/2022/04/05/qLs5TK.png" alt="短路逻辑"></li>
 </ol>
 <p>看出来毛病了吗？fun2压根没有执行。因为在或逻辑里，第一个如果是True的话，第二个是什么将不再重要，结果都将是True。所以or后面的代码将不再执行。特别是后面是个函数时，该情况下<strong>这个函数不会执行</strong>。</p>
-<p>接下来是一个有趣且使用的东西——断言。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">age=<span class="hljs-number">10</span><br><span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>age=-<span class="hljs-number">1</span><br><span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>Traceback (most recent call last):<br>  File <span class="hljs-string">&quot;C:/Users/86178/Desktop/test.py&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> &lt;module&gt;<br>    <span class="hljs-keyword">assert</span> age&gt;<span class="hljs-number">0</span><br>AssertionError<br></code></pre></td></tr></table></figure>
-<p>当不满足assert条件时，程序报错中断。这个可以用来找bug。</p>
+<p>接下来是一个有趣且使用的东西——断言。<br><pre class="line-numbers language-python" data-language="python"><code class="language-python">age<span class="token operator">=</span><span class="token number">10</span>
+<span class="token keyword">assert</span> age<span class="token operator">></span><span class="token number">0</span>
+age<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token keyword">assert</span> age<span class="token operator">></span><span class="token number">0</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"C:/Users/86178/Desktop/test.py"</span><span class="token punctuation">,</span> line <span class="token number">4</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    <span class="token keyword">assert</span> age<span class="token operator">></span><span class="token number">0</span>
+AssertionError<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>当不满足assert条件时，程序报错中断。这个可以用来找bug。</p>
 <h4 id="5-5循环"><a href="#5-5循环" class="headerlink" title="5.5循环"></a>5.5循环</h4><p>程序就是用来实现大量计算的，想想你要计算1+2+……+10000，难道要写一万行吗？</p>
 <p>循环可以解决这个问题。循环这里掌握while、for、break、continue、zip、enumerate、reversed就好了。</p>
-<h5 id="while"><a href="#while" class="headerlink" title="while"></a>while</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do somthing</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="for"><a href="#for" class="headerlink" title="for"></a>for</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="break"><a href="#break" class="headerlink" title="break"></a>break</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do something</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-comment">#do something</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-keyword">continue</span><br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> num,string <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(nums,strings):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> index ,num <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="reversed"><a href="#reversed" class="headerlink" title="reversed"></a>reversed</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">reversed</span>(lst):<br>    <span class="hljs-comment">#do something</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="5-6-简单推导"><a href="#5-6-简单推导" class="headerlink" title="5.6 简单推导"></a>5.6 简单推导</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-built_in">str</span>(x)+<span class="hljs-string">&#x27;and&#x27;</span>+<span class="hljs-built_in">str</span>(y) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">if</span> x%<span class="hljs-number">2</span>==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> y%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>]<br>[<span class="hljs-string">&#x27;0and1&#x27;</span>, <span class="hljs-string">&#x27;0and3&#x27;</span>, <span class="hljs-string">&#x27;0and5&#x27;</span>, <span class="hljs-string">&#x27;0and7&#x27;</span>, <span class="hljs-string">&#x27;0and9&#x27;</span>, <span class="hljs-string">&#x27;2and1&#x27;</span>, <span class="hljs-string">&#x27;2and3&#x27;</span>, <span class="hljs-string">&#x27;2and5&#x27;</span>, <span class="hljs-string">&#x27;2and7&#x27;</span>, <span class="hljs-string">&#x27;2and9&#x27;</span>, <span class="hljs-string">&#x27;4and1&#x27;</span>, <span class="hljs-string">&#x27;4and3&#x27;</span>, <span class="hljs-string">&#x27;4and5&#x27;</span>, <span class="hljs-string">&#x27;4and7&#x27;</span>, <span class="hljs-string">&#x27;4and9&#x27;</span>, <span class="hljs-string">&#x27;6and1&#x27;</span>, <span class="hljs-string">&#x27;6and3&#x27;</span>, <span class="hljs-string">&#x27;6and5&#x27;</span>, <span class="hljs-string">&#x27;6and7&#x27;</span>, <span class="hljs-string">&#x27;6and9&#x27;</span>, <span class="hljs-string">&#x27;8and1&#x27;</span>, <span class="hljs-string">&#x27;8and3&#x27;</span>, <span class="hljs-string">&#x27;8and5&#x27;</span>, <span class="hljs-string">&#x27;8and7&#x27;</span>, <span class="hljs-string">&#x27;8and9&#x27;</span>, <span class="hljs-string">&#x27;10and1&#x27;</span>, <span class="hljs-string">&#x27;10and3&#x27;</span>, <span class="hljs-string">&#x27;10and5&#x27;</span>, <span class="hljs-string">&#x27;10and7&#x27;</span>, <span class="hljs-string">&#x27;10and9&#x27;</span>]<br></code></pre></td></tr></table></figure>
-
+<h5 id="while"><a href="#while" class="headerlink" title="while"></a>while</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment">#do somthing</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="for"><a href="#for" class="headerlink" title="for"></a>for</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#do something</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="break"><a href="#break" class="headerlink" title="break"></a>break</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment">#do something</span>
+    <span class="token keyword">if</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token comment">#do something</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment">#do something</span>
+    <span class="token keyword">if</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    <span class="token comment">#do something</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> num<span class="token punctuation">,</span>string <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>strings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#do something</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> index <span class="token punctuation">,</span>num <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#do something</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="reversed"><a href="#reversed" class="headerlink" title="reversed"></a>reversed</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">reversed</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#do something</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="5-6-简单推导"><a href="#5-6-简单推导" class="headerlink" title="5.6 简单推导"></a>5.6 简单推导</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'and'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">if</span> x<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span> <span class="token keyword">and</span> y<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'0and1'</span><span class="token punctuation">,</span> <span class="token string">'0and3'</span><span class="token punctuation">,</span> <span class="token string">'0and5'</span><span class="token punctuation">,</span> <span class="token string">'0and7'</span><span class="token punctuation">,</span> <span class="token string">'0and9'</span><span class="token punctuation">,</span> <span class="token string">'2and1'</span><span class="token punctuation">,</span> <span class="token string">'2and3'</span><span class="token punctuation">,</span> <span class="token string">'2and5'</span><span class="token punctuation">,</span> <span class="token string">'2and7'</span><span class="token punctuation">,</span> <span class="token string">'2and9'</span><span class="token punctuation">,</span> <span class="token string">'4and1'</span><span class="token punctuation">,</span> <span class="token string">'4and3'</span><span class="token punctuation">,</span> <span class="token string">'4and5'</span><span class="token punctuation">,</span> <span class="token string">'4and7'</span><span class="token punctuation">,</span> <span class="token string">'4and9'</span><span class="token punctuation">,</span> <span class="token string">'6and1'</span><span class="token punctuation">,</span> <span class="token string">'6and3'</span><span class="token punctuation">,</span> <span class="token string">'6and5'</span><span class="token punctuation">,</span> <span class="token string">'6and7'</span><span class="token punctuation">,</span> <span class="token string">'6and9'</span><span class="token punctuation">,</span> <span class="token string">'8and1'</span><span class="token punctuation">,</span> <span class="token string">'8and3'</span><span class="token punctuation">,</span> <span class="token string">'8and5'</span><span class="token punctuation">,</span> <span class="token string">'8and7'</span><span class="token punctuation">,</span> <span class="token string">'8and9'</span><span class="token punctuation">,</span> <span class="token string">'10and1'</span><span class="token punctuation">,</span> <span class="token string">'10and3'</span><span class="token punctuation">,</span> <span class="token string">'10and5'</span><span class="token punctuation">,</span> <span class="token string">'10and7'</span><span class="token punctuation">,</span> <span class="token string">'10and9'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>的确很简单。</p>
 <h4 id="5-7-del-pass-exec"><a href="#5-7-del-pass-exec" class="headerlink" title="5.7 del pass exec"></a>5.7 del pass exec</h4><ol>
 <li>pass<br>pass就是<strong>啥也不做</strong>。由于python靠<strong>缩进表达层次关系</strong>，什么也不做的地方空着容易误会，就写个pass吧（C语言等靠大括号的就是空着）。</li>
-<li>del</li>
+<li>del<br><strong>del会删除变量所指向的那块内存与变量名自身</strong>。但如果多个变量名指向同一块内存，只会删除变量名。</li>
 </ol>
-<p><strong>del会删除变量所指向的那块内存与变量名自身</strong>。但如果多个变量名指向同一块内存，只会删除变量名。</p>
-<p>这里提到了python的<strong>垃圾回收机制</strong>。当你创建一个列表时，程序为你的这个列表分配了一块内存，然后你执行lst&#x3D;None，让lst不再指向那块内存了，想一想如果那块内存一直储存着以前lst的内容的话会导致什么后果？一个lst可能没有感觉，那如果一百万个lst再指向别处时它以前占用的内存都没有释放的话，程序一定会崩溃，因为内存不足了（C语言中称为<strong>内存泄漏</strong>）。所以python的垃圾回收机制就是把这些无家可归的内存（没有变量指向的内存）清除，以便重用。</p>
-<p>在C&#x2F;C++中是没有垃圾回收机制的，所以使用时程序员必须手动释放内存回收垃圾。</p>
-<p>内存泄漏是及其可怕的事，可能什么事也不会发生，可能会导致程序运行缓慢，可能上午可以运行下午再试就崩溃了。<br>3. exec<br>将字符串作为代码运行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">exec</span>(<span class="hljs-string">&quot;print(&#x27;this is exec!&#x27;)&quot;</span>)<br>this <span class="hljs-keyword">is</span> <span class="hljs-built_in">exec</span>!<br></code></pre></td></tr></table></figure>
-<p>但是一般不要使用它。</p>
+<p>这里提到了python的<strong>垃圾回收机制</strong>。当你创建一个列表时，程序为你的这个列表分配了一块内存，然后你执行lst=None，让lst不再指向那块内存了，想一想如果那块内存一直储存着以前lst的内容的话会导致什么后果？一个lst可能没有感觉，那如果一百万个lst再指向别处时它以前占用的内存都没有释放的话，程序一定会崩溃，因为内存不足了（C语言中称为<strong>内存泄漏</strong>）。所以python的垃圾回收机制就是把这些无家可归的内存（没有变量指向的内存）清除，以便重用。</p>
+<p>在C/C++中是没有垃圾回收机制的，所以使用时程序员必须手动释放内存回收垃圾。</p>
+<p>内存泄漏是及其可怕的事，可能什么事也不会发生，可能会导致程序运行缓慢，可能上午可以运行下午再试就崩溃了。</p>
+<ol>
+<li>exec<br>将字符串作为代码运行。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">exec</span><span class="token punctuation">(</span><span class="token string">"print('this is exec!')"</span><span class="token punctuation">)</span>
+this <span class="token keyword">is</span> <span class="token keyword">exec</span>!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+但是一般不要使用它。</li>
+</ol>
 <h4 id="5-8小结"><a href="#5-8小结" class="headerlink" title="5.8小结"></a>5.8小结</h4><p>本章主要内容：</p>
 <ol>
 <li>print的两个关键字参数：sep、end</li>
@@ -195,6 +245,22 @@
 
     </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 
 

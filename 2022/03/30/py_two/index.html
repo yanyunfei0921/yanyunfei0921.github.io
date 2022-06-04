@@ -68,9 +68,8 @@
         <div class="content markdown">
             <h3 id="第二章、列表和元组"><a href="#第二章、列表和元组" class="headerlink" title="第二章、列表和元组"></a>第二章、列表和元组</h3><h4 id="2-1序列概述"><a href="#2-1序列概述" class="headerlink" title="2.1序列概述"></a>2.1序列概述</h4><p>想象一下如和表达一个有限长的数列，或者表示一个有限个元素构成的集合。一个一个变量的去定义肯定是不现实的，不仅耗时耗力而且不能很好的表达这些值之间的联系。所以需要<strong>容器</strong>（container）的数据结构。容器就是一种可以包含其他对象的对象。</p>
 <p>容器主要有序列、映射和集合。序列类型适合表示上面的有限长数列，集合自然用集合数据类型表示。<strong>这一章主要阐述序列</strong>。</p>
-<p>python种序列对应的数据类型——列表和元组。区别就是，<strong>列表成员可变，元组成员不可变</strong>。当然字符串也是一种序列结构。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">lst=[<span class="hljs-number">1</span>,<span class="hljs-string">&quot;this&quot;</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">#这是一个列表</span><br>tup=(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;lalala&quot;</span>) <span class="hljs-comment">#这是一个元组</span><br></code></pre></td></tr></table></figure>
-
+<p>python种序列对应的数据类型——列表和元组。区别就是，<strong>列表成员可变，元组成员不可变</strong>。当然字符串也是一种序列结构。<br><pre class="line-numbers language-python" data-language="python"><code class="language-python">lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"this"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment">#这是一个列表</span>
+tup<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"lalala"</span><span class="token punctuation">)</span> <span class="token comment">#这是一个元组</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></p>
 <h4 id="2-2通用序列操作"><a href="#2-2通用序列操作" class="headerlink" title="2.2通用序列操作"></a>2.2通用序列操作</h4><p>序列是一串<strong>有序</strong>变量，既然是<strong>一串</strong>，那么就能进行一些操作。比如直接找到第几个位置的变量，比如把这一串切成几串，比如把几串合成一串，比如从前向后依次进行某种操作等。这些都是对于序列的通用操作。</p>
 <p><strong>索引</strong>（indexing）就是访问某个特定位置的元素，因为序列是有序的，所以每个元素都有一个对应的值来表示它的位置，通常叫下标或索引值。从第一个元素往后，分别是<strong>0</strong>、1、……。<strong>程序中所有数数的东西都是从0开始的</strong>。</p>
 <p>python出来的比较晚，所以新奇、简单的方法比较多，它还支持从后往前数，<strong>最后一个元素对应-1</strong>，往前依次减1。也就是所你可以通过两种下标索引。</p>
@@ -89,24 +88,30 @@
 <li>等等</li>
 </ol>
 <p>这里，书中提到了方法一词，方法就是函数，只不过我们更常用方法称呼类中的函数。至于类，比如列表、比如字符串等数据类型都是一种类。现在可以将方法理解为<strong>和数据类型紧密联系的函数</strong>。比如，列表的方法只有列表类型的变量可以使用，其他类型的变量不能使用。</p>
-<p>通过以下方式使用方法使用方法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">object</span>.method(arguments)<br></code></pre></td></tr></table></figure>
-<p>列表有以下方法：</p>
+<p>通过以下方式使用方法使用方法：<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">object</span><span class="token punctuation">.</span>method<span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br>列表有以下方法：</p>
 <ol>
 <li>append<br>将<strong>一个对象</strong>添加到列表末尾，注意不管你传入什么东西，这个东西都将以一个对象的形式添加到列表尾部。且append方法不会返回新列表，它会直接更改当前列表。</li>
 </ol>
-<p>比如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst2=[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst.append(lst2)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]] <span class="hljs-comment">#这里的结果不是[1,2,3,4,5,6]</span><br></code></pre></td></tr></table></figure>
-<ol start="2">
+<p>比如：<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> lst2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>lst2<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> lst
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">#这里的结果不是[1,2,3,4,5,6]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<ol>
 <li>clear<br>清空列表。</li>
 <li>copy<br>这里涉及到<strong>浅拷贝和深拷贝</strong>的概念。</li>
 </ol>
 <p>数据在内存中以二进制方式储存。当你执行<code>lst1=[1,2,3]</code>时，内存中会分配一定空间来储存这个<code>[1,2,3]</code>，你又说了把这个东西赋值给lst1，所以lst1就成为了你访问这片空间的钥匙或者说handle。此时如果你再执行<code>lst2=lst1</code>，用lst1给lst2赋值，这时其实是给你那个存储着<code>[1,2,3]</code>的空间又加了一个handle，<strong>一个门两把手</strong>。所以<strong>此时lst1与lst2指向的空间是一个东西</strong>，对于lst1的操作等同于对于lst2的操作。这种拷贝叫做浅拷贝。</p>
 <p><strong>浅拷贝会带来很多问题</strong>，有时候你这样拷贝完了，然后去动了lst2，然后lst1其实也变了，你以为它没变，这就会导致很多未知错误。</p>
 <p>而深拷贝，就是创建一个与本体完全分离且内容相同的副本。在内存上考虑这件事，其实是<strong>又开辟了一片空间</strong>，空间内储存着和本体指向的空间内相同的东西，然后lst2作为这片新空间的handle。自然此时lst1与lst2半毛钱关系都没有。</p>
-<p>copy方法就是用来进行深拷贝的，等同于[:]。但是这种做法<strong>真的所有情况下都能深拷贝吗</strong>？考虑以下如果lst中某个元素也是列表的情况。可以参考我<a target="_blank" rel="noopener" href="https://blog.csdn.net/yanyunfei0921/article/details/118739162">以前的笔记</a>。<br>4. count<br>计算指定<strong>元素</strong>出现的次数。<br>5. extend<br>与append相反，它将参数序列中<strong>每一个元素作为元素</strong>添加到列表末尾。如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst1=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst2=[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]]<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst1.extend(lst2)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst1<br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]]<br></code></pre></td></tr></table></figure>
-<ol start="6">
+<p>copy方法就是用来进行深拷贝的，等同于[:]。但是这种做法<strong>真的所有情况下都能深拷贝吗</strong>？考虑以下如果lst中某个元素也是列表的情况。可以参考我<a target="_blank" rel="noopener" href="https://blog.csdn.net/yanyunfei0921/article/details/118739162">以前的笔记</a>。</p>
+<ol>
+<li>count<br>计算指定<strong>元素</strong>出现的次数。</li>
+<li>extend<br>与append相反，它将参数序列中<strong>每一个元素作为元素</strong>添加到列表末尾。如：<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> lst1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> lst2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> lst1<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>lst2<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> lst1
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>index<br>查找参数元素<strong>第一次出现</strong>的索引。</li>
 <li>insert<br>指定位置插入元素，<strong>指定索引为插入后该元素所在位置</strong>。</li>
 <li>pop<br>删除列表最后一个元素并将其返回。为什么叫pop这个名称？这与书中提到的栈结构有关，<strong>该部分看不懂没关系</strong>。</li>
@@ -122,11 +127,14 @@
 <li>直接改变当前列表无返回值的有：<br>append、clear、extend、insert、remove、reverse、sort</li>
 <li>有返回值的有：<br>copy、count、index、pop</li>
 </ol>
-<h4 id="2-4元组：不可修改的序列"><a href="#2-4元组：不可修改的序列" class="headerlink" title="2.4元组：不可修改的序列"></a>2.4元组：不可修改的序列</h4><p>元组不可修改是指<strong>元组本身包含的元素不增不减</strong>。如果一个元组包含的一个元素是列表，这个列表的元素是可以修改的。如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup=(lst,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>lst.append(<span class="hljs-number">4</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>tup<br>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>
-<p>需要小小注意一下，只有一个元素的元组需要在这个元素后面加上一个逗号以表示它是元组。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>a=(<span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>b=(<span class="hljs-number">1</span>,)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(a,b)<br><span class="hljs-number">1</span> (<span class="hljs-number">1</span>,) <span class="hljs-comment">#a是整数，b是元组</span><br></code></pre></td></tr></table></figure>
-
+<h4 id="2-4元组：不可修改的序列"><a href="#2-4元组：不可修改的序列" class="headerlink" title="2.4元组：不可修改的序列"></a>2.4元组：不可修改的序列</h4><p>元组不可修改是指<strong>元组本身包含的元素不增不减</strong>。如果一个元组包含的一个元素是列表，这个列表的元素是可以修改的。如：<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> tup<span class="token operator">=</span><span class="token punctuation">(</span>lst<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> tup
+<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>需要小小注意一下，只有一个元素的元组需要在这个元素后面加上一个逗号以表示它是元组。<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> b<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span> <span class="token comment">#a是整数，b是元组</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></p>
 <p>元组多用于返回值，很多内置函数的返回值都是元组。序列通用的操作（索引、切片等）元组都可以做，只要你<strong>不尝试去写入</strong>就没毛病。</p>
 <h4 id="2-5小结"><a href="#2-5小结" class="headerlink" title="2.5小结"></a>2.5小结</h4><p>本章主要内容：</p>
 <ol>
@@ -163,6 +171,22 @@
 
     </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 
 

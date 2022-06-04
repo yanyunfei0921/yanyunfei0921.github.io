@@ -75,17 +75,17 @@
 <p>按win键加R快捷键进入“运行”，输入<strong>cmd</strong>进入命令提示符界面，如果你安装好了python，在此<strong>输入python回车</strong>就会进入python的交互式解释器界面。<br><img src="https://s1.ax1x.com/2022/03/29/q6cVoD.png" alt="交互式解释器.png"></p>
 <p><strong>如果没有成功</strong>出现这些字样并且已经下载好了python，那么可能需要你自己动手将python所在位置添加到环境变量当中去。</p>
 <p>设置-&gt;系统-&gt;关于-&gt;高级系统设置-&gt;环境变量-&gt;用户变量或系统变量中的Path选项-&gt;编辑-&gt;新建-&gt;输入<strong>你的</strong>python路径（不是下面中我的）。</p>
-<p>比如，我的在C盘根目录下的Python310中，则输C:\Python310\Scripts<br>与C:\Python310\这两个新的环境变量，然后<strong>确定保存</strong>。<br><img src="https://s1.ax1x.com/2022/03/29/q6cEdO.png" alt="配置环境变量.png"></p>
+<p>比如，我的在C盘根目录下的Python310中，则输C:\Python310\Scripts\<br>与C:\Python310\这两个新的环境变量，然后<strong>确定保存</strong>。<br><img src="https://s1.ax1x.com/2022/03/29/q6cEdO.png" alt="配置环境变量.png"></p>
 <p>至于环境变量的作用，就相当于桌面的快捷方式，让人们在cmd中可以直接访问到某个地方。<strong>不懂不要紧，但必须确保你有python的环境变量（出交互式解释器就是有了）</strong>。</p>
 <h4 id="1-2算法"><a href="#1-2算法" class="headerlink" title="1.2算法"></a>1.2算法</h4><p>简单来说，算法就是计算机程序的特定的工作流程。由于计算机计算功能强大，通过某些不同于人类的其他特定的流程工作会让它更强大。</p>
 <h4 id="1-3数和表达式"><a href="#1-3数和表达式" class="headerlink" title="1.3数和表达式"></a>1.3数和表达式</h4><p>在交互式解释器界面把py当计算器用，加减乘除都与正常的运算相同。需要注意的是，带有小数部分的数在计算机中称为<strong>浮点数</strong>。</p>
-<p>你可能会陌生的两个运算符：%、**与&#x2F;&#x2F;。%为取模运算，就是得到整除不完的余数部分，如10%3&#x3D;1。**是幂运算，3**2&#x3D;9。&#x2F;&#x2F;为整除运算，得到<strong>向下取值</strong>的一个整数，<strong>不会四舍五入</strong>。</p>
-<p><em>书中关于python2.几的论述不用看，2.几的年代已经过去了。</em></p>
-<p>最后部分的其他进制数，就是说<strong>满几进一</strong>。正常生活中使用的是10进制数，满10进1，然后就需要10个符号表示这个十进制数的某一位，这10个符号就是0、1、……、9。所以<strong>十六进制就需要16个符号</strong>，9以后的符号不能用10……因为这样看不出是这个数的<strong>一位</strong>，所以采用A<del>F表示10</del>15。至于数前面的前缀，如0x（不是o是0）等是表示该数采用的进制，0x是16进制等。</p>
+<p>你可能会陌生的两个运算符：%、**与//。%为取模运算，就是得到整除不完的余数部分，如10%3=1。**是幂运算，3**2=9。//为整除运算，得到<strong>向下取值</strong>的一个整数，<strong>不会四舍五入</strong>。</p>
+<p>_书中关于python2.几的论述不用看，2.几的年代已经过去了。_</p>
+<p>最后部分的其他进制数，就是说<strong>满几进一</strong>。正常生活中使用的是10进制数，满10进1，然后就需要10个符号表示这个十进制数的某一位，这10个符号就是0、1、……、9。所以<strong>十六进制就需要16个符号</strong>，9以后的符号不能用10……因为这样看不出是这个数的<strong>一位</strong>，所以采用A~F表示10~15。至于数前面的前缀，如0x（不是o是0）等是表示该数采用的进制，0x是16进制等。</p>
 <h4 id="1-4变量"><a href="#1-4变量" class="headerlink" title="1.4变量"></a>1.4变量</h4><p>变量与小学到初中过程中把数值用字母表示的过程差不多，既然能当计算器，如果能用字母代替指定数值，再用字母运算，就可以实现更多有趣的效果。</p>
-<p>计算机中x&#x3D;3这个语句，它与数学题中我们经常写的“设x&#x3D;3”或“令x&#x3D;3”相同，是一种强行让x这个符号代表3这个整数的过程，称之为<strong>赋值</strong>。这时候你再在下一行输入x回车就会输出3（这是输出x是多少的操作）。这里的x叫做<strong>变量</strong>，因为你可以再写一行x&#x3D;4，这时候x就被你令成4了，可以变。x这个名称（叫做变量的<strong>标识符</strong>）<strong>不能乱起</strong>，只能由字母与数字与下划线组成且只能字母或下划线打头。</p>
-<h4 id="1-5语句"><a href="#1-5语句" class="headerlink" title="1.5语句"></a>1.5语句</h4><p>上面我已经提到了语句这个词，简单来说就是<strong>你输入的一行</strong>。x&#x3D;3回车就是一条将x这个变量定义并且赋值为3的<strong>赋值操作语句</strong>。</p>
-<h4 id="1-6获取用户输入"><a href="#1-6获取用户输入" class="headerlink" title="1.6获取用户输入"></a>1.6获取用户输入</h4><p>这一节看不懂没关系，就是如何获取用户输入的一个函数。将你输入的东西放在&#x3D;前面的变量里保存。用等号前面的东西接着等号后面的东西或者等号后面执行后返回的东西。</p>
+<p>计算机中x=3这个语句，它与数学题中我们经常写的“设x=3”或“令x=3”相同，是一种强行让x这个符号代表3这个整数的过程，称之为<strong>赋值</strong>。这时候你再在下一行输入x回车就会输出3（这是输出x是多少的操作）。这里的x叫做<strong>变量</strong>，因为你可以再写一行x=4，这时候x就被你令成4了，可以变。x这个名称（叫做变量的<strong>标识符</strong>）<strong>不能乱起</strong>，只能由字母与数字与下划线组成且只能字母或下划线打头。</p>
+<h4 id="1-5语句"><a href="#1-5语句" class="headerlink" title="1.5语句"></a>1.5语句</h4><p>上面我已经提到了语句这个词，简单来说就是<strong>你输入的一行</strong>。x=3回车就是一条将x这个变量定义并且赋值为3的<strong>赋值操作语句</strong>。</p>
+<h4 id="1-6获取用户输入"><a href="#1-6获取用户输入" class="headerlink" title="1.6获取用户输入"></a>1.6获取用户输入</h4><p>这一节看不懂没关系，就是如何获取用户输入的一个函数。将你输入的东西放在=前面的变量里保存。用等号前面的东西接着等号后面的东西或者等号后面执行后返回的东西。</p>
 <h4 id="1-7函数"><a href="#1-7函数" class="headerlink" title="1.7函数"></a>1.7函数</h4><p>完成特定功能的一块东西。比如你经常用到比较两个数的大小，那么写好那一段代码后你要用就要复制粘贴过来，如果放在函数内部，每次使用时就只需要<strong>调用函数</strong>，不用赋值粘贴。</p>
 <p>书中举的例子都是内置函数，直接可以使用的那种，用户也能自己定义函数。</p>
 <h4 id="1-8模块"><a href="#1-8模块" class="headerlink" title="1.8模块"></a>1.8模块</h4><p>模块是一种扩展，使用他人定义的函数就需要导入包含该函数的模块（<code>import module</code>），然后通过<code>module.funcation</code>的方式使用这个函数。</p>
@@ -115,15 +115,14 @@
 <ol>
 <li>双引号<br>“hello world!”</li>
 <li>单引号<br>‘hello world!’</li>
-<li>三引号<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;hello </span><br><span class="hljs-string">world!&#x27;&#x27;&#x27;</span><br></code></pre></td></tr></table></figure>
+<li>三引号<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''hello 
+world!'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 为何要有三种表达方式？考虑这几种字符串：包含双引号的、包含单引号的、很长很长需要跨行写的。</li>
 </ol>
 <p>字符串中含有双引号，再用双引号表示字符串就会有歧义，此时使用单引号就更方便；包含单引号的用双引号就更方便。而三个单引号就是为了解决跨行问题的，有没有想起来前一部分讲的<strong>多行注释</strong>，对的，那就是一个跨行的字符串，对于一个跨行字符串，<strong>如果你对它什么都不干</strong>，解释器就不会管它，自然起到注释作用。</p>
 <p>书中提到的反斜杠与原始字符串部分，其实就是对于<strong>转义字符</strong>的阐述。键盘上只有常用的部分字符，如&amp;、%等。想一想你敲Enter（或Mac中的return）输入了什么？如何通过输出字符串的方式达到输出一个Enter？Enter会使光标位置变为下一行行首，在windows中这一操作相当于输出”\r\n”字符串。’\r’都是’\n’转义字符。</p>
-<p>转义字符都以’\‘开头，后面大多为一个字母，是对于不可见字符的编码。比如你想在hello的下一行在输出world!，就可以这样：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;hello \nworld!&quot;</span>)<br></code></pre></td></tr></table></figure>
-<p>其中”\n”起到换行作用。</p>
-<p>这样也会导致很多不便，比如输入文件路径的时候，本身就会有很多反斜杠，如果直接print就会优先按着转义字符来，不知道输出什么乱七八糟的。这种想输出反斜杠自身的时候，可以使用’\\‘两个反斜杠来表示反斜杠。或者采用原始字符串的方式，在字符串前加r（python是r，其他语言不一定是）。</p>
+<p>转义字符都以’\\’开头，后面大多为一个字母，是对于不可见字符的编码。比如你想在hello的下一行在输出world!，就可以这样：<br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello \nworld!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br>其中”\n”起到换行作用。</p>
+<p>这样也会导致很多不便，比如输入文件路径的时候，本身就会有很多反斜杠，如果直接print就会优先按着转义字符来，不知道输出什么乱七八糟的。这种想输出反斜杠自身的时候，可以使用’\\\\’两个反斜杠来表示反斜杠。或者采用原始字符串的方式，在字符串前加r（python是r，其他语言不一定是）。</p>
 <p>书中最后一部分提到的Unicode与三种编码方式（<strong>ASCII</strong>、UTF-32、UTF-8），可以先了解一下。至于bytes与bytearray暂时不用管。</p>
 <h4 id="1-11小结"><a href="#1-11小结" class="headerlink" title="1.11小结"></a>1.11小结</h4><p>本章主要内容：</p>
 <ol>
@@ -165,6 +164,22 @@
 
     </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 
 

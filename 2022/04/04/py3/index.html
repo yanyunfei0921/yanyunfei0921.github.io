@@ -12,7 +12,7 @@
     <meta name="keywords" content="Fechin,"> 
     <meta name="description" content="第三章、使用字符串3.1 字符串基本操作所有标准序列操作都能作，但是和元组一样，你不能改变字符串的值。
 3.2 设置字符串的格式
-转换说明符%1234&amp;gt;&amp;gt;&amp;gt; format=&amp;quo,"> 
+转换说明符%&gt;&gt;&gt; format=&#34;hello %s,this is,"> 
     <meta name="author" content="yunfei"> 
     <link rel="alternative" href="atom.xml" title="yunfei" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -23,7 +23,7 @@
     <meta name="twitter:title" content="Python基础教程（三） - yunfei"/>
     <meta name="twitter:description" content="第三章、使用字符串3.1 字符串基本操作所有标准序列操作都能作，但是和元组一样，你不能改变字符串的值。
 3.2 设置字符串的格式
-转换说明符%1234&amp;gt;&amp;gt;&amp;gt; format=&amp;quo,"/>
+转换说明符%&gt;&gt;&gt; format=&#34;hello %s,this is,"/>
     
     
     
@@ -33,7 +33,7 @@
     <meta property="og:title" content="Python基础教程（三） - yunfei"/>
     <meta property="og:description" content="第三章、使用字符串3.1 字符串基本操作所有标准序列操作都能作，但是和元组一样，你不能改变字符串的值。
 3.2 设置字符串的格式
-转换说明符%1234&amp;gt;&amp;gt;&amp;gt; format=&amp;quo,"/>
+转换说明符%&gt;&gt;&gt; format=&#34;hello %s,this is,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -74,23 +74,49 @@
         <div class="content markdown">
             <h3 id="第三章、使用字符串"><a href="#第三章、使用字符串" class="headerlink" title="第三章、使用字符串"></a>第三章、使用字符串</h3><h4 id="3-1-字符串基本操作"><a href="#3-1-字符串基本操作" class="headerlink" title="3.1 字符串基本操作"></a>3.1 字符串基本操作</h4><p>所有标准序列操作都能作，但是和元组一样，你不能改变字符串的值。</p>
 <h4 id="3-2-设置字符串的格式"><a href="#3-2-设置字符串的格式" class="headerlink" title="3.2 设置字符串的格式"></a>3.2 设置字符串的格式</h4><ol>
-<li>转换说明符%<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">format</span>=<span class="hljs-string">&quot;hello %s,this is %d day&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>values=(<span class="hljs-string">&quot;someone&quot;</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">format</span>%values<br><span class="hljs-string">&#x27;hello someone,this is 5 day&#x27;</span><br></code></pre></td></tr></table></figure></li>
-<li>关键字参数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;this is the &#123;0&#125; parameter,and &#123;1&#125; is the next&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;first&quot;</span>,<span class="hljs-string">&quot;that&quot;</span>)<br><span class="hljs-string">&#x27;this is the first parameter,and that is the next&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>转换说明符%<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">format</span><span class="token operator">=</span><span class="token string">"hello %s,this is %d day"</span>
+<span class="token operator">>></span><span class="token operator">></span> values<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"someone"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">format</span><span class="token operator">%</span>values
+<span class="token string">'hello someone,this is 5 day'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>关键字参数<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token string">"this is the &#123;0&#125; parameter,and &#123;1&#125; is the next"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token string">"first"</span><span class="token punctuation">,</span><span class="token string">"that"</span><span class="token punctuation">)</span>
+<span class="token string">'this is the first parameter,and that is the next'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;my name is &#123;name&#125;,and i am &#123;age&#125;&quot;</span>.<span class="hljs-built_in">format</span>(name=<span class="hljs-string">&quot;Bob&quot;</span>,age=<span class="hljs-number">19</span>)<br><span class="hljs-string">&#x27;my name is Bob,and i am 19&#x27;</span><br></code></pre></td></tr></table></figure>
-<ol start="3">
-<li>f字符串<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>name=<span class="hljs-string">&quot;S&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&quot;I&#x27;m <span class="hljs-subst">&#123;name&#125;</span>&quot;</span><br><span class="hljs-string">&quot;I&#x27;m S&quot;</span><br></code></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token string">"my name is &#123;name&#125;,and i am &#123;age&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"Bob"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">19</span><span class="token punctuation">)</span>
+<span class="token string">'my name is Bob,and i am 19'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol>
+<li>f字符串<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> name<span class="token operator">=</span><span class="token string">"S"</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token string-interpolation"><span class="token string">f"I'm </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span>
+<span class="token string">"I'm S"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h4 id="3-4-字符串方法"><a href="#3-4-字符串方法" class="headerlink" title="3.4 字符串方法"></a>3.4 字符串方法</h4><ol>
-<li>center<br>两边填充字符，使得字符串居中。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;The Middle by Jim&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.center(<span class="hljs-number">20</span>,<span class="hljs-string">&#x27;#&#x27;</span>)<br><span class="hljs-string">&#x27;#The Middle by Jim##&#x27;</span><br></code></pre></td></tr></table></figure></li>
-<li>find<br>查找子串，返回其第一个字符索引，没有返回-1。<br>第一个参数为子串，第二个第三个为查找起始处（包含）与终点（不包含）。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;The Middle by Jim&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.find(<span class="hljs-string">&quot;Jim&quot;</span>)<br><span class="hljs-number">14</span><br></code></pre></td></tr></table></figure>
+<li>center<br>两边填充字符，使得字符串居中。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s<span class="token operator">=</span><span class="token string">"The Middle by Jim"</span>
+<span class="token operator">>></span><span class="token operator">></span> s<span class="token punctuation">.</span>center<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'#'</span><span class="token punctuation">)</span>
+<span class="token string">'#The Middle by Jim##'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>find<br>查找子串，返回其第一个字符索引，没有返回-1。<br>第一个参数为子串，第二个第三个为查找起始处（包含）与终点（不包含）。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s<span class="token operator">=</span><span class="token string">"The Middle by Jim"</span>
+<span class="token operator">>></span><span class="token operator">></span> s<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"Jim"</span><span class="token punctuation">)</span>
+<span class="token number">14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 还记得in操作符吗？对于字符串来说，它与find方法有何区别？</li>
-<li>join<br>用于合并序列的元素，这里的所有元素必须为字符串。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>lst=[<span class="hljs-string">&#x27;1&#x27;</span>,<span class="hljs-string">&#x27;2&#x27;</span>,<span class="hljs-string">&#x27;3&#x27;</span>,<span class="hljs-string">&#x27;4&#x27;</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>sep=<span class="hljs-string">&#x27;+&#x27;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>sep.join(lst)<br><span class="hljs-string">&#x27;1+2+3+4&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>join<br>用于合并序列的元素，这里的所有元素必须为字符串。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'2'</span><span class="token punctuation">,</span><span class="token string">'3'</span><span class="token punctuation">,</span><span class="token string">'4'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> sep<span class="token operator">=</span><span class="token string">'+'</span>
+<span class="token operator">>></span><span class="token operator">></span> sep<span class="token punctuation">.</span>join<span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+<span class="token string">'1+2+3+4'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>lower<br>返回字符串小写版本。</li>
-<li>replace<br>指定子串替换为另一个字符串，返回替换结果。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;Tom is a small cat&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.replace(<span class="hljs-string">&quot;Tom&quot;</span>,<span class="hljs-string">&quot;Job&quot;</span>)<br><span class="hljs-string">&#x27;Job is a small cat&#x27;</span><br></code></pre></td></tr></table></figure></li>
-<li>split<br>字符串拆分，与join相反。若不指定分隔符则默认为单个或多个空白字符。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;1+2+3&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.split(<span class="hljs-string">&#x27;+&#x27;</span>)<br>[<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-string">&#x27;3&#x27;</span>]<br></code></pre></td></tr></table></figure></li>
-<li>strip<br>删除字符串两端空白字符，返回删除后结果。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>s=<span class="hljs-string">&quot;          lalala  &quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>s.strip()<br><span class="hljs-string">&#x27;lalala&#x27;</span><br></code></pre></td></tr></table></figure></li>
-<li>translate<br>替换单个字符，使用时要指名字符的替代关系（Unicode码点之间的映射，采用字典数据类型）。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>table=<span class="hljs-built_in">str</span>.maketrans(<span class="hljs-string">&#x27;cs&#x27;</span>,<span class="hljs-string">&#x27;kz&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>table<br>&#123;<span class="hljs-number">99</span>: <span class="hljs-number">107</span>, <span class="hljs-number">115</span>: <span class="hljs-number">122</span>, <span class="hljs-number">32</span>: <span class="hljs-literal">None</span>&#125;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;this is an incredible test&quot;</span>.translate(table)<br><span class="hljs-string">&#x27;thizizaninkredibletezt&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>replace<br>指定子串替换为另一个字符串，返回替换结果。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s<span class="token operator">=</span><span class="token string">"Tom is a small cat"</span>
+<span class="token operator">>></span><span class="token operator">></span> s<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span><span class="token string">"Job"</span><span class="token punctuation">)</span>
+<span class="token string">'Job is a small cat'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>split<br>字符串拆分，与join相反。若不指定分隔符则默认为单个或多个空白字符。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s<span class="token operator">=</span><span class="token string">"1+2+3"</span>
+<span class="token operator">>></span><span class="token operator">></span> s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'+'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>strip<br>删除字符串两端空白字符，返回删除后结果。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s<span class="token operator">=</span><span class="token string">"          lalala  "</span>
+<span class="token operator">>></span><span class="token operator">></span> s<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'lalala'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>translate<br>替换单个字符，使用时要指名字符的替代关系（Unicode码点之间的映射，采用字典数据类型）。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> table<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span><span class="token string">'cs'</span><span class="token punctuation">,</span><span class="token string">'kz'</span><span class="token punctuation">,</span><span class="token string">' '</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> table
+<span class="token punctuation">&#123;</span><span class="token number">99</span><span class="token punctuation">:</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">115</span><span class="token punctuation">:</span> <span class="token number">122</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">:</span> <span class="token boolean">None</span><span class="token punctuation">&#125;</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token string">"this is an incredible test"</span><span class="token punctuation">.</span>translate<span class="token punctuation">(</span>table<span class="token punctuation">)</span>
+<span class="token string">'thizizaninkredibletezt'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>isXXX<br>如isspace等，他们返回一个Bool值。</li>
 </ol>
 <h4 id="3-5-小结"><a href="#3-5-小结" class="headerlink" title="3.5 小结"></a>3.5 小结</h4><p>本章主要包括这些内容：</p>
@@ -125,6 +151,22 @@
 
     </div>
 </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 
 
